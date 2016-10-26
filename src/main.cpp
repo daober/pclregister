@@ -10,16 +10,22 @@
 
 int main(int argc, char **argv){
 
+    int err = 0;
     //create new class object as smart pointer
     boost::shared_ptr<registration> reg = boost::make_shared<registration>();
 
     //Create output directory
-    if(!boost::filesystem::create_directory("aligned")) {
-        std::cout << "Error! Could not create output directory." << std::endl;
-        return (-1);
+    if(boost::filesystem::exists("aligned")) {
+        std::cout << "directory alread exists, doing nothing." << std::endl;
+        err = -0;
+    }
+    else if(!boost::filesystem::create_directory("aligned")){
+        std::cout<<"Error! Could not create output directory."<<std::endl;
+        err = -1;
     }
     else{
         std::cout<<"directory created"<<std::endl;
+        err = 0;
     }
 
     //load point clouds

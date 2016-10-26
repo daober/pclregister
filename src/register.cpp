@@ -136,8 +136,9 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
 
     //compute fpfh features
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 3.0);
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 3.0);
+    //TODO: feature estimation takes to long or loops
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.3);
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.3);
 
     //intialize alignment method
     pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
@@ -148,7 +149,6 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     scia.setTargetFeatures(tgt_features);
 
     //set parameters for allignment and RANSAC
-    //TODO: change parameters
     scia.setMaxCorrespondenceDistance(0.05);
     scia.setMinSampleDistance(0.5);
     scia.setMaximumIterations(1000);
@@ -183,7 +183,7 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 }
 
 
-
+//TODO: this function loops or takes far to long!!!
 pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
                                                                          pcl::PointCloud<pcl::Normal>::Ptr normals,
                                                                          double radius) {
@@ -213,7 +213,6 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
 
     return features;
 }
-
 
 
 pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud,
