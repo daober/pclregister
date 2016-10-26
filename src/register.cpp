@@ -46,8 +46,6 @@ registration::registration(float downSampleSize, float featureRadius, float maxI
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadPointClouds(const std::string filename) {
 
-    PCL_INFO("loading *.pcd file...\n");
-
     pcl::PCDReader reader;
 
     //create new cloud object on heap
@@ -60,10 +58,9 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadPointClouds(const std::
         exit(-1);
     }
 
-    PCL_INFO("successfully loaded point cloud!\n");
+    //filter outliers and return filtered cloud
+    //pcl::PointCloud<pcl::PointXYZRGB>::Ptr outcloud = filterOutliers(cloud);
 
-
-    //return (successfully) loaded cloud
     return cloud;
 }
 
@@ -80,13 +77,13 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::filterOutliers(pcl::PointCl
 
     //remove outliers
     pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB>::Ptr
-            sorfilter = boost::make_shared<pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB>>();
+            sor = boost::make_shared<pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB>>();
 
     //filter parameters
-    sorfilter->setMeanK(50);
-    sorfilter->setStddevMulThresh(1.0);
-    sorfilter->setInputCloud(inCloud);
-    sorfilter->filter(*outCloud);
+    sor->setMeanK(50);
+    sor->setStddevMulThresh(1.0);
+    sor->setInputCloud(inCloud);
+    sor->filter(*outCloud);
 
     PCL_INFO("filtering outliers from point cloud done!\n");
 
@@ -106,12 +103,15 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pc
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
     inCloud = cloud;
+    std::cout<<"point clouds before filtering: " << inCloud->width * inCloud->height << std::endl;
 
     //leaf size for x, y, z pointcloud coordinates
     voxGrid.setLeafSize(downSampleSize, downSampleSize, downSampleSize);
 
     voxGrid.setInputCloud(inCloud);
     voxGrid.filter(*outCloud);
+
+    std::cout<<"point clouds after filtering: " << outCloud->width * outCloud->height << std::endl;
 
     PCL_INFO("voxelization of point cloud done!\n");
 
@@ -128,8 +128,8 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity();
 
     //downsample source and target cloud
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.01);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.01);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.1);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.1);
 
     //compute normals
     pcl::PointCloud<pcl::Normal>::Ptr src_normals = getNormals(ds_srcCloud, src);
@@ -151,7 +151,7 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     scia.setInputTarget(ds_tgtCloud);
     scia.setTargetFeatures(tgt_features);
 
-    //set parameters for allignment and RANSAC
+    //set parameters for alignment and RANSAC
     scia.setMaxCorrespondenceDistance(0.05);
     scia.setMinSampleDistance(0.5);
     scia.setMaximumIterations(1000);
@@ -235,15 +235,17 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
 
     pcl::PointCloud<pcl::Normal>::Ptr normals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
 
-    double radius = 0.30;
-
+    double radius = 0.1;        //radius of 1cm
     ne.setRadiusSearch(radius);
+
+    //compute features
     ne.compute(*normals);
 
     PCL_INFO("detection of normals from point cloud done!\n");
 
     return normals;
 }
+
 
 
 int registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, const std::string filename) {
@@ -260,7 +262,6 @@ int registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, const 
     else{
         PCL_INFO("point cloud written successfully!\n");
     }
-
     return err;
 }
 
@@ -268,6 +269,7 @@ int registration::visualizePointCloud(pcl::PointCloud<pcl::PointXYZRGB> cloud) {
     //empty for now
     return 0;
 }
+
 
 int registration::initTransform(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename) {
 
