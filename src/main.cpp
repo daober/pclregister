@@ -2,7 +2,6 @@
 //include own headers first
 #include "register.hpp"
 
-#include <iostream>
 #include <pcl/io/boost.h>
 #include <boost/make_shared.hpp>
 #include <pcl/common/transforms.h>
@@ -28,9 +27,15 @@ int main(int argc, char **argv){
         err = 0;
     }
 
+
+
     //load point clouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src = reg->loadPointClouds("room_cloud01.pcd");
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt = reg->loadPointClouds("room_cloud03.pcd");
+
+    //initial transformation
+    reg->initTransform(src, "aligned/room_cloud01.pcd");
+    reg->initTransform(tgt, "aligned/room_cloud03.pcd");
 
     //create temporary point clouds
     std::cout<<"create temp clouds"<<std::endl;

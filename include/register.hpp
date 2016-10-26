@@ -23,6 +23,9 @@ public:
     //method for loading pointclouds efficiently enough
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr loadPointClouds(const std::string filename);
 
+    //intial transform of point cloud
+    int initTransform(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename);
+
     //method for downsampling via voxelization
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, float downSampleSize = 0.3);
 

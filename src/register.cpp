@@ -145,7 +145,7 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
      * Current input cloud sizes: 137304 vs 110090.
      */
     pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
-
+    //TODO: needs to be the other way around? src <-> tgt ???
     scia.setInputSource(ds_srcCloud);
     scia.setSourceFeatures(src_features);
     scia.setInputTarget(ds_tgtCloud);
@@ -176,7 +176,7 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
     icp.align(*ds_srcCloud);
 
-    std::cout << "has converged: " << icp.hasConverged() << "score: " << icp.getFitnessScore() << std::endl;
+    std::cout << "has converged: " << icp.hasConverged() << " score: " <<std::endl << icp.getFitnessScore() << std::endl;
 
     transform = icp.getFinalTransformation() * transform;
 
@@ -267,4 +267,27 @@ int registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, const 
 int registration::visualizePointCloud(pcl::PointCloud<pcl::PointXYZRGB> cloud) {
     //empty for now
     return 0;
+}
+
+int registration::initTransform(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename) {
+
+    PCL_INFO("performing initial rotation on X-Axis (PITCH)\n");
+
+    int err = 0;
+
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
+    Eigen::Affine3f transform = Eigen::Affine3f::Identity();
+
+    transform.rotate(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitX()));
+
+    //transform.rotate(Eigen::AngleAxisf(-(M_PI/2), Eigen::Vector3f::UnitY()));
+
+    pcl::transformPointCloud(*cloud, *outCloud, transform);
+
+    err = pcl::io::savePCDFile(filename, *outCloud);
+
+    PCL_INFO("rotated and written point cloud successfully!\n");
+
+    return err;
 }
