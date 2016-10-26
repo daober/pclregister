@@ -271,6 +271,8 @@ int registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, const 
     return err;
 }
 
+
+
 int registration::visualizePointCloud(pcl::PointCloud<pcl::PointXYZRGB> cloud) {
     //empty for now
     return 0;
