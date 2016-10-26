@@ -41,7 +41,7 @@ public:
 
 
     //save aligned point cloud to disk
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
+    int saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
                                                      const std::string filename);
 
 

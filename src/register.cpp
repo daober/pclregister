@@ -166,21 +166,42 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
 
     pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> ne;
 
-    ne.setInputCloud(inCloud);
-    ne.setSearchSurface(outCloud);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr inputCloud = inCloud;
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outputCloud = outCloud;
+
+    ne.setInputCloud(inputCloud);
+    ne.setSearchSurface(outputCloud);
 
     pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
-
     ne.setSearchMethod(tree);
+
+    pcl::PointCloud<pcl::Normal>::Ptr normals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
+
+    double radius = 3.00;
+
+    ne.setRadiusSearch(radius);
+    ne.compute(*normals);
 
     PCL_INFO("detection of normals from point cloud done!");
 
+    return normals;
 }
 
 
-pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
-                                                               const std::string filename) {
+int registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, const std::string filename) {
 
+    PCL_INFO("writing point cloud...");
 
+    pcl::PCDWriter writer;
 
+    int err = writer.write(filename, *cloud);
+
+    if(err){
+        PCL_ERROR("failed to write *.pcd file!");
+    }
+    else{
+        PCL_INFO("point cloud written successfully!");
+    }
+
+    return err;
 }
