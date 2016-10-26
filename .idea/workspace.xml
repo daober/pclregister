@@ -12,8 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80b605bf-f784-4461-ad6d-3abcf789eeea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/register.hpp" afterPath="$PROJECT_DIR$/include/register.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/register.cpp" afterPath="$PROJECT_DIR$/src/register.cpp" />
     </list>
     <ignored path="icp_register.iws" />
@@ -71,11 +69,21 @@
       <file leaf-file-name="register.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/register.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+            <state relative-caret-position="179">
+              <caret line="166" column="60" selection-start-line="166" selection-start-column="60" selection-end-line="166" selection-end-column="60" />
               <folding>
-                <element signature="e#87#124#0" expanded="true" />
+                <element signature="e#88#125#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kdtree.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -390,12 +398,12 @@
       <workItem from="1477481295363" duration="10335000" />
       <workItem from="1477493750624" duration="3020000" />
       <workItem from="1477496786310" duration="130000" />
-      <workItem from="1477497262717" duration="772000" />
+      <workItem from="1477497262717" duration="1321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15130000" />
+    <option name="totallyTimeSpent" value="15679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -480,7 +488,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#87#124#0" expanded="true" />
+            <element signature="e#88#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -518,7 +526,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#87#124#0" expanded="true" />
+            <element signature="e#88#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -571,12 +579,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/register.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+        <state relative-caret-position="179">
+          <caret line="166" column="60" selection-start-line="166" selection-start-column="60" selection-end-line="166" selection-end-column="60" />
           <folding>
-            <element signature="e#87#124#0" expanded="true" />
+            <element signature="e#88#125#0" expanded="true" />
           </folding>
         </state>
       </provider>

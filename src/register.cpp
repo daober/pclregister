@@ -1,10 +1,9 @@
 #include "register.hpp"
 
+
 //this file is needed for succesful linking on *unix machines
 #include <pcl/search/impl/search.hpp>
 
-#include <pcl/point_types.h>
-#include <pcl/point_cloud.h>
 #include <pcl/registration/icp.h>
 #include <pcl/features/normal_3d.h>
 
@@ -22,8 +21,6 @@
 #include <pcl/registration/icp.h>
 #include <pcl/registration/ndt.h>
 #include <pcl/registration/icp_nl.h>
-#include <pcl/registration/transforms.h>
-
 
 #include <pcl/keypoints/sift_keypoint.h>
 #include <pcl/registration/correspondence_rejection_features.h>
@@ -31,6 +28,7 @@
 
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
+
 #include <string.h>
 
 
@@ -143,17 +141,16 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
     inNormals = normals;
 
     //create new feature signature for FPFH algorithm
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr features (new pcl::PointCloud<pcl::FPFHSignature33> ());
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr feat_tree (new pcl::search::KdTree<pcl::PointXYZRGB> ());
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr features = boost::make_shared<pcl::PointCloud<pcl::FPFHSignature33>>();
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr feat_tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
 
     pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33> fpfh_est;
 
-
-    //fpfh_est.setInputCloud(inCloud);
-    //fpfh_est.setInputNormals(inNormals);
-    //fpfh_est.setSearchMethod(feat_tree);
-    //fpfh_est.setRadiusSearch(radius);
-    //fpfh_est.compute(*features);
+    fpfh_est.setInputCloud(inCloud);
+    fpfh_est.setInputNormals(inNormals);
+    fpfh_est.setSearchMethod(feat_tree);
+    fpfh_est.setRadiusSearch(radius);
+    fpfh_est.compute(*features);
 
     PCL_INFO("feature detection of point cloud done!");
 
@@ -168,13 +165,13 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
     PCL_INFO("begin to determine normals of point cloud...");
 
     pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> ne;
-    //ne.setInputCloud(inCloud);
-    //ne.setSearchSurface(outCloud);
 
-    //pcl::search::KdTree::Ptr tree (new pcl::search::KdTree());
-    //ne.setSearchMethod(tree);
+    ne.setInputCloud(inCloud);
+    ne.setSearchSurface(outCloud);
 
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
 
+    ne.setSearchMethod(tree);
 
     PCL_INFO("detection of normals from point cloud done!");
 
