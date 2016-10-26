@@ -33,7 +33,7 @@
 
 
 registration::registration(){
-    std::cout<< "created registration object!"<<std::endl;
+    std::cout<< "created registration object!\n"<<std::endl;
 }
 
 //use constructor initializer list
@@ -46,7 +46,7 @@ registration::registration(float downSampleSize, float featureRadius, float maxI
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadPointClouds(const std::string filename) {
 
-    PCL_INFO("loading *.pcd file...");
+    PCL_INFO("loading *.pcd file...\n");
 
     pcl::PCDReader reader;
 
@@ -56,11 +56,12 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadPointClouds(const std::
     int err = reader.read(filename, *cloud);
 
     if(err){
-        PCL_ERROR("could not read *.pcd file");
+        PCL_ERROR("could not read *.pcd file\n");
         exit(-1);
     }
 
-    PCL_INFO("successfully loaded point cloud!");
+    PCL_INFO("successfully loaded point cloud!\n");
+
 
     //return (successfully) loaded cloud
     return cloud;
@@ -69,7 +70,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadPointClouds(const std::
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::filterOutliers(pcl::PointCloud<pcl::PointXYZRGB>::Ptr rawCloud) {
 
-    PCL_INFO("filtering outliers from point cloud...");
+    PCL_INFO("filtering outliers from point cloud...\n");
 
     //create new cloud object on heap
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
@@ -87,7 +88,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::filterOutliers(pcl::PointCl
     sorfilter->setInputCloud(inCloud);
     sorfilter->filter(*outCloud);
 
-    PCL_INFO("filtering outliers from point cloud done!");
+    PCL_INFO("filtering outliers from point cloud done!\n");
 
     return outCloud;
 }
@@ -97,7 +98,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::filterOutliers(pcl::PointCl
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
                                                               float downSampleSize) {
 
-    PCL_INFO("begin to voxelize (downsample) point cloud");
+    PCL_INFO("begin to voxelize (downsample) point cloud\n");
 
     pcl::VoxelGrid<pcl::PointXYZRGB> voxGrid;
 
@@ -112,7 +113,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pc
     voxGrid.setInputCloud(inCloud);
     voxGrid.filter(*outCloud);
 
-    PCL_INFO("voxelization of point cloud done!");
+    PCL_INFO("voxelization of point cloud done!\n");
 
     return outCloud;
 }
@@ -120,6 +121,8 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pc
 
 
 Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt) {
+
+    PCL_INFO("begin to register point clouds\n");
 
     //declare transformation matrix
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity();
@@ -185,7 +188,7 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
                                                                          pcl::PointCloud<pcl::Normal>::Ptr normals,
                                                                          double radius) {
 
-    PCL_INFO("begin to detect features of point cloud...");
+    PCL_INFO("begin to detect features of point cloud...\n");
 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
     pcl::PointCloud<pcl::Normal>::Ptr inNormals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
@@ -206,7 +209,7 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
     fpfh_est.setRadiusSearch(radius);
     fpfh_est.compute(*features);
 
-    PCL_INFO("feature detection of point cloud done!");
+    PCL_INFO("feature detection of point cloud done!\n");
 
     return features;
 }
@@ -216,7 +219,7 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
 pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud,
                                                            pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud) {
 
-    PCL_INFO("begin to determine normals of point cloud...");
+    PCL_INFO("begin to determine normals of point cloud...\n");
 
     pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> ne;
 
@@ -236,7 +239,7 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
     ne.setRadiusSearch(radius);
     ne.compute(*normals);
 
-    PCL_INFO("detection of normals from point cloud done!");
+    PCL_INFO("detection of normals from point cloud done!\n");
 
     return normals;
 }
@@ -244,18 +247,23 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
 
 int registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, const std::string filename) {
 
-    PCL_INFO("writing point cloud...");
+    PCL_INFO("writing point cloud...\n");
 
     pcl::PCDWriter writer;
 
     int err = writer.write(filename, *cloud);
 
     if(err){
-        PCL_ERROR("failed to write *.pcd file!");
+        PCL_ERROR("failed to write *.pcd file!\n");
     }
     else{
-        PCL_INFO("point cloud written successfully!");
+        PCL_INFO("point cloud written successfully!\n");
     }
 
     return err;
+}
+
+int registration::visualizePointCloud(pcl::PointCloud<pcl::PointXYZRGB> cloud) {
+    //empty for now
+    return 0;
 }

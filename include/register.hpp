@@ -46,6 +46,7 @@ public:
     int saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
                                                      const std::string filename);
 
+    int visualizePointCloud(pcl::PointCloud<pcl::PointXYZRGB> cloud);
 
 private:
 

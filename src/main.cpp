@@ -21,12 +21,13 @@ int main(int argc, char **argv){
     else{
         std::cout<<"directory created"<<std::endl;
     }
-    
+
     //load point clouds
-    //TODO: ERROR infinite loop...?
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src = reg->loadPointClouds("room_cloud01.pcd");
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt = reg->loadPointClouds("room_cloud03.pcd");
 
+    //create temporary point clouds
+    std::cout<<"create temp clouds"<<std::endl;
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempSrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempTgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
