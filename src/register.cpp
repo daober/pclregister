@@ -32,7 +32,9 @@
 #include <string.h>
 
 
-
+registration::registration(){
+    std::cout<< "created registration object!"<<std::endl;
+}
 
 //use constructor initializer list
 registration::registration(float downSampleSize, float featureRadius, float maxIterationsSAC) : downSampleSize_(downSampleSize),
@@ -76,13 +78,10 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::filterOutliers(pcl::PointCl
     inCloud = rawCloud;
 
     //remove outliers
-    //TODO: need to change parameters for own cloud
     pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB>::Ptr
             sorfilter = boost::make_shared<pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB>>();
 
     //filter parameters
-    //TODO: needs to refined
-
     sorfilter->setMeanK(50);
     sorfilter->setStddevMulThresh(1.0);
     sorfilter->setInputCloud(inCloud);
@@ -147,9 +146,9 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
     //set parameters for allignment and RANSAC
     //TODO: change parameters
-    scia.setMaxCorrespondenceDistance(0.5);
-    scia.setMinSampleDistance(0.01);
-    scia.setMaximumIterations(30);
+    scia.setMaxCorrespondenceDistance(0.05);
+    scia.setMinSampleDistance(0.5);
+    scia.setMaximumIterations(1000);
 
     //align frame using fpfh features
     scia.align(*ds_tgtCloud);
@@ -160,14 +159,14 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
     //icp algorithm
     pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB> icp;
-    icp.setInputCloud(ds_srcCloud);
+    icp.setInputSource(ds_srcCloud);
     icp.setInputTarget(ds_tgtCloud);
 
     //set standard icp parameters
-    icp.setMaxCorrespondenceDistance(1);
-    icp.setMaximumIterations(1);
-    icp.setTransformationEpsilon(1);
-    icp.setEuclideanFitnessEpsilon(1);
+    icp.setMaxCorrespondenceDistance(0.2);
+    icp.setMaximumIterations(50);
+    icp.setTransformationEpsilon(1e-6);
+    icp.setEuclideanFitnessEpsilon(1e-5);
 
     icp.align(*ds_srcCloud);
 
@@ -232,7 +231,7 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
 
     pcl::PointCloud<pcl::Normal>::Ptr normals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
 
-    double radius = 3.00;
+    double radius = 0.30;
 
     ne.setRadiusSearch(radius);
     ne.compute(*normals);

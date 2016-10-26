@@ -15,6 +15,8 @@
 class registration {
 
 public:
+
+    registration();
     //constructor which sets initial parameters
     registration(float downSampleSize, float featureRadius, float maxIterationsSAC );
 
@@ -22,7 +24,7 @@ public:
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr loadPointClouds(const std::string filename);
 
     //method for downsampling via voxelization
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, float downSampleSize);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, float downSampleSize = 0.3);
 
     //method for registration of point clouds
     Eigen::Matrix4f registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt);
