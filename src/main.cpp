@@ -28,7 +28,7 @@ int main(int argc, char **argv){
         err = 0;
     }
 
-
+    //TODO: ITERATION is necessary!!!!
     //load point clouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src = reg->loadPointClouds("room_cloud01.pcd");
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt = reg->loadPointClouds("room_cloud03.pcd");
