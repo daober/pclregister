@@ -1,5 +1,8 @@
 #include "register.hpp"
 
+//this file is needed for succesful linking on *unix machines
+#include <pcl/search/impl/search.hpp>
+
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 #include <pcl/registration/icp.h>
@@ -143,7 +146,7 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr features (new pcl::PointCloud<pcl::FPFHSignature33> ());
     pcl::search::KdTree<pcl::PointXYZRGB>::Ptr feat_tree (new pcl::search::KdTree<pcl::PointXYZRGB> ());
 
-    //pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33> fpfh_est;
+    pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33> fpfh_est;
 
 
     //fpfh_est.setInputCloud(inCloud);
@@ -163,7 +166,8 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
                                                            pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud) {
 
     PCL_INFO("begin to determine normals of point cloud...");
-    //pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> ne;
+
+    pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> ne;
     //ne.setInputCloud(inCloud);
     //ne.setSearchSurface(outCloud);
 
