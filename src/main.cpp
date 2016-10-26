@@ -45,7 +45,8 @@ int main(int argc, char **argv){
     Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
 
     //transform according to current transformation
-    pcl::transformPointCloud(*tempTgtCloud, *tempTgtCloud, current_transform);
+    pcl::transformPointCloud(*tgt, *tempTgtCloud, current_transform);
+    pcl::transformPointCloud(*src, *tempSrcCloud, current_transform);
 
     //do the registration and update the transformation
     Eigen::Matrix4f transform = reg->registerClouds(tempTgtCloud, tempSrcCloud, true, false);
