@@ -18,5 +18,7 @@ add_definitions(${PCL_DEFINITIONS})
 #headers are in include directory
 include_directories(include)
 
-add_executable(register src/main.cpp src/register.cpp)
+set(SOURCES src/main.cpp src/register.cpp)
+
+add_executable(register ${SOURCES} include/register.hpp)
 target_link_libraries (register ${PCL_LIBRARIES} )
