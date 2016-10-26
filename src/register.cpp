@@ -120,7 +120,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pc
 
 
 
-Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt) {
+Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt, pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, bool useFPFH, bool useICP) {
 
     PCL_INFO("begin to register point clouds\n");
 
@@ -131,56 +131,62 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.1);
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.1);
 
-    //compute normals
-    pcl::PointCloud<pcl::Normal>::Ptr src_normals = getNormals(ds_srcCloud, src);
-    pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
+    if(useFPFH){
+        //compute normals
+        pcl::PointCloud<pcl::Normal>::Ptr src_normals = getNormals(ds_srcCloud, src);
+        pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
 
-    //compute fpfh features
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.3);
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.3);
+        //compute fpfh features
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.3);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.3);
 
-    //intialize alignment method
-    /** TODO: ERROR [pcl::SampleConsensusInitialAlignment::computeTransformation]
-     * The target points and target feature points need to be in a one-to-one relationship!
-     * Current input cloud sizes: 137304 vs 110090.
-     */
-    pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
-    //TODO: needs to be the other way around? src <-> tgt ???
-    scia.setInputSource(ds_srcCloud);
-    scia.setSourceFeatures(src_features);
-    scia.setInputTarget(ds_tgtCloud);
-    scia.setTargetFeatures(tgt_features);
+        //intialize alignment method
+        /** TODO: ERROR [pcl::SampleConsensusInitialAlignment::computeTransformation]
+         * The target points and target feature points need to be in a one-to-one relationship!
+         * Current input cloud sizes: 137304 vs 110090.
+         */
+        pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
 
-    //set parameters for alignment and RANSAC
-    scia.setMaxCorrespondenceDistance(0.05);
-    scia.setMinSampleDistance(0.5);
-    scia.setMaximumIterations(1000);
+        scia.setInputSource(ds_tgtCloud);
+        scia.setSourceFeatures(tgt_features);
+        scia.setInputTarget(ds_srcCloud);
+        scia.setTargetFeatures(src_features);
 
-    //align frame using fpfh features
-    scia.align(*ds_tgtCloud);
+        //set parameters for alignment and RANSAC
+        scia.setMaxCorrespondenceDistance(0.05);
+        scia.setMinSampleDistance(0.5);
+        scia.setMaximumIterations(1000);
 
-    //get the new transformation for icp
-    transform = scia.getFinalTransformation();
+        //align frame using fpfh features
+        scia.align(*ds_tgtCloud);
 
+        //get the new transformation for icp
+        transform = scia.getFinalTransformation();
+    }
 
-    //icp algorithm
-    pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB> icp;
-    icp.setInputSource(ds_srcCloud);
-    icp.setInputTarget(ds_tgtCloud);
+    if(useICP){
+        //icp algorithm
+        pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB> icp;
+        icp.setInputSource(ds_tgtCloud);
+        icp.setInputTarget(ds_srcCloud);
 
-    //set standard icp parameters
-    icp.setMaxCorrespondenceDistance(0.2);
-    icp.setMaximumIterations(50);
-    icp.setTransformationEpsilon(1e-6);
-    icp.setEuclideanFitnessEpsilon(1e-5);
+        //set standard icp parameters
+        icp.setMaxCorrespondenceDistance(0.2);
+        icp.setMaximumIterations(50);
+        icp.setTransformationEpsilon(1e-6);
+        icp.setEuclideanFitnessEpsilon(1e-5);
 
-    icp.align(*ds_srcCloud);
+        icp.align(*ds_tgtCloud);
 
-    std::cout << "has converged: " << icp.hasConverged() << " score: " << icp.getFitnessScore() << std::endl;
+        std::cout << "has converged: " << icp.hasConverged() << " score: " << icp.getFitnessScore() << std::endl;
 
-    transform = icp.getFinalTransformation() * transform;
+        transform = icp.getFinalTransformation() * transform;
+    }
 
     std::cout << "found transformation: " <<std::endl << transform << std::endl;
+
+    //transform point cloud according to calculated transformation values
+    pcl::transformPointCloud(*ds_tgtCloud, *ds_tgtCloud, transform);
 
     return transform;
 }
