@@ -7,11 +7,11 @@
 #include <boost/make_shared.hpp>
 
 
-int main(int argc, char **argv){
 
+int main(int argc, char **argv){
+    
     //create new class object as smart pointer
     boost::shared_ptr<registration> reg = boost::make_shared<registration>();
-
 
     //Create output directory
     if(!boost::filesystem::create_directory("aligned")) {
@@ -26,7 +26,7 @@ int main(int argc, char **argv){
     //initialize transformation from points in frame to points in model
     Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
 
-    
+
 
     return (0);
 }
