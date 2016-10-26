@@ -25,13 +25,17 @@ register.hpp
 /home/danbuntu/src/icp_register/src/register.hpp
 iostream
 -
+pcl/io/boost.h
+-
+boost/make_shared.hpp
+-
+pcl/common/transforms.h
+-
 
 /home/danbuntu/src/icp_register/src/register.cpp
 register.hpp
 /home/danbuntu/src/icp_register/src/register.hpp
-pcl/point_types.h
--
-pcl/point_cloud.h
+pcl/search/impl/search.hpp
 -
 pcl/registration/icp.h
 -
@@ -60,8 +64,6 @@ pcl/registration/icp.h
 pcl/registration/ndt.h
 -
 pcl/registration/icp_nl.h
--
-pcl/registration/transforms.h
 -
 pcl/keypoints/sift_keypoint.h
 -
@@ -2384,10 +2386,6 @@ pcl/registration/transformation_estimation.h
 pcl/cloud_iterator.h
 -
 pcl/registration/impl/transformation_estimation_svd.hpp
--
-
-/usr/local/include/pcl-1.8/pcl/registration/transforms.h
-pcl/common/transforms.h
 -
 
 /usr/local/include/pcl-1.8/pcl/registration/warp_point_rigid.h

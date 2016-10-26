@@ -208,19 +208,24 @@ CMakeFiles/register.dir/src/main.cpp.o
  /usr/local/include/pcl-1.8/pcl/PCLPointField.h
  /usr/local/include/pcl-1.8/pcl/PointIndices.h
  /usr/local/include/pcl-1.8/pcl/cloud_iterator.h
+ /usr/local/include/pcl-1.8/pcl/common/centroid.h
  /usr/local/include/pcl-1.8/pcl/common/common.h
  /usr/local/include/pcl-1.8/pcl/common/concatenate.h
  /usr/local/include/pcl-1.8/pcl/common/copy_point.h
  /usr/local/include/pcl-1.8/pcl/common/eigen.h
+ /usr/local/include/pcl-1.8/pcl/common/impl/accumulators.hpp
+ /usr/local/include/pcl-1.8/pcl/common/impl/centroid.hpp
  /usr/local/include/pcl-1.8/pcl/common/impl/common.hpp
  /usr/local/include/pcl-1.8/pcl/common/impl/copy_point.hpp
  /usr/local/include/pcl-1.8/pcl/common/impl/eigen.hpp
  /usr/local/include/pcl-1.8/pcl/common/impl/io.hpp
  /usr/local/include/pcl-1.8/pcl/common/impl/projection_matrix.hpp
+ /usr/local/include/pcl-1.8/pcl/common/impl/transforms.hpp
  /usr/local/include/pcl-1.8/pcl/common/io.h
  /usr/local/include/pcl-1.8/pcl/common/point_tests.h
  /usr/local/include/pcl-1.8/pcl/common/projection_matrix.h
  /usr/local/include/pcl-1.8/pcl/common/time.h
+ /usr/local/include/pcl-1.8/pcl/common/transforms.h
  /usr/local/include/pcl-1.8/pcl/console/print.h
  /usr/local/include/pcl-1.8/pcl/conversions.h
  /usr/local/include/pcl-1.8/pcl/correspondence.h
@@ -236,6 +241,7 @@ CMakeFiles/register.dir/src/main.cpp.o
  /usr/local/include/pcl-1.8/pcl/impl/cloud_iterator.hpp
  /usr/local/include/pcl-1.8/pcl/impl/pcl_base.hpp
  /usr/local/include/pcl-1.8/pcl/impl/point_types.hpp
+ /usr/local/include/pcl-1.8/pcl/io/boost.h
  /usr/local/include/pcl-1.8/pcl/kdtree/flann.h
  /usr/local/include/pcl-1.8/pcl/kdtree/impl/kdtree_flann.hpp
  /usr/local/include/pcl-1.8/pcl/kdtree/kdtree.h
@@ -608,7 +614,6 @@ CMakeFiles/register.dir/src/register.cpp.o
  /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_lm.h
  /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_point_to_plane_lls.h
  /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_svd.h
- /usr/local/include/pcl-1.8/pcl/registration/transforms.h
  /usr/local/include/pcl-1.8/pcl/registration/warp_point_rigid.h
  /usr/local/include/pcl-1.8/pcl/registration/warp_point_rigid_6d.h
  /usr/local/include/pcl-1.8/pcl/sample_consensus/boost.h
