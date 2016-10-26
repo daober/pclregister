@@ -25,7 +25,7 @@ public:
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, float downSampleSize);
 
     //method for registration of point clouds
-    Eigen::Matrix4f registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud);
+    Eigen::Matrix4f registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt);
 
     //method to get fpfh features
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr getFeaturesFPFH(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
