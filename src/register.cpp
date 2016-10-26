@@ -176,11 +176,11 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
     icp.align(*ds_srcCloud);
 
-    std::cout << "has converged: " << icp.hasConverged() << " score: " <<std::endl << icp.getFitnessScore() << std::endl;
+    std::cout << "has converged: " << icp.hasConverged() << " score: " << icp.getFitnessScore() << std::endl;
 
     transform = icp.getFinalTransformation() * transform;
 
-    std::cout << "found transformation: " << transform << std::endl;
+    std::cout << "found transformation: " <<std::endl << transform << std::endl;
 
     return transform;
 }
