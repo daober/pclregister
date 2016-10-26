@@ -19,4 +19,4 @@ add_definitions(${PCL_DEFINITIONS})
 include_directories(include)
 
 add_executable(register src/main.cpp src/register.cpp)
-target_link_libraries (register ${PCL_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries (register ${PCL_LIBRARIES} )

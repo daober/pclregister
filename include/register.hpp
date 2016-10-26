@@ -6,6 +6,7 @@
 #include <pcl/point_cloud.h>
 
 #include <pcl/features/fpfh.h>
+#include <pcl/features/pfh.h>
 
 #include <Eigen/Geometry>
 
@@ -16,7 +17,7 @@ public:
     registration(float downSampleSize, float featureRadius, float maxIterationsSAC );
 
     //method for loading pointclouds efficiently enough
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr loadPointClouds(std::string path, std::string filetype);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr loadPointClouds(const std::string filename);
 
     //method for downsampling via voxelization
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, float downSampleSize);
@@ -26,18 +27,29 @@ public:
 
     //method to get fpfh features
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr getFeaturesFPFH(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
-                                                               pcl::PointCloud<pcl::Normal>::Ptr normals,
-                                                               double radius);
+                                                                             pcl::PointCloud<pcl::Normal>::Ptr normals,
+                                                                             double radius);
 
     //methods to determine normals in pointclouds
     pcl::PointCloud<pcl::Normal>::Ptr getNormals(pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud,
                                                  pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud);
 
+    //outlier removal for more accuracy in aligning of pointclouds
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr filterOutliers(pcl::PointCloud<pcl::PointXYZRGB>::Ptr rawCloud);
+
+
+    //save aligned point cloud to disk
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
+                                                     const std::string filename);
+
+
 private:
 
     //private member vars
-    float downSampleSize;
-    float featureRadius;
-    float maxIterationsSAC;
+    float downSampleSize_;
+    float featureRadius_;
+    float maxIterationsSAC_;
+
+    //pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_;
 
 };
