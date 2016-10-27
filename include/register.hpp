@@ -9,7 +9,7 @@
 #include <pcl/features/pfh.h>
 
 #include <Eigen/Geometry>
-
+#include <pcl/keypoints/sift_keypoint.h>
 
 
 class registration {
@@ -24,7 +24,11 @@ public:
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr loadPointClouds(const std::string filename);
 
     //intial transform of point cloud
-    int initTransform(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename);
+    int initRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename);
+
+    //merge clouds based on transformation matrix
+    Eigen::Matrix4f mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt, pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, Eigen::Matrix4f &transform,  pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
+                                pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat);
 
     //method for downsampling via voxelization
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, float downSampleSize = 0.3);
@@ -36,6 +40,16 @@ public:
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr getFeaturesFPFH(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
                                                                              pcl::PointCloud<pcl::Normal>::Ptr normals,
                                                                              double radius);
+
+    //determine sift keypoints
+    pcl::PointCloud<pcl::PointWithScale>::Ptr getSIFTKeypoints(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud);
+
+    //estimate correspondences
+    pcl::Correspondences estimateCorrespondences(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
+                                                 pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
+                                                 pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
+                                                 pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat);
+
 
     //methods to determine normals in pointclouds
     pcl::PointCloud<pcl::Normal>::Ptr getNormals(pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud,

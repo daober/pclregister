@@ -28,43 +28,40 @@ int main(int argc, char **argv){
         err = 0;
     }
 
-    //TODO: ITERATION is necessary!!!!
+
     //load point clouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src = reg->loadPointClouds("room1.pcd");
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt = reg->loadPointClouds("room2.pcd");
 
-    //initial transformation
-    reg->initTransform(src, "aligned/room1.pcd");
-    reg->initTransform(tgt, "aligned/room2.pcd");
+    //initial (rotation)
+    reg->initRotation(src, "aligned/room1.pcd");
+    reg->initRotation(tgt, "aligned/room2.pcd");
 
     //create temporary point clouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempSrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempTgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr finalCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
     //sample down point clouds
-    tempSrcCloud = reg->voxelize(tempSrcCloud, 0.15f);
-    tempTgtCloud = reg->voxelize(tempTgtCloud, 0.15f);
+    tempSrcCloud = reg->voxelize(src, 0.01f);
+    tempTgtCloud = reg->voxelize(tgt, 0.01f);
 
     //initialize transformation from points in frame to points in model
     Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
 
-    //for(int i = 0; i < 30; ++i){
-        //PCL_INFO ("Iteration Nr. %d.\n", i);
+    /*pcl::transformPointCloud(*tgt, *tempTgtCloud, current_transform);
+    pcl::transformPointCloud(*src, *tempSrcCloud, current_transform);*/
 
-        pcl::transformPointCloud(*tgt, *tempTgtCloud, current_transform);
-        pcl::transformPointCloud(*src, *tempSrcCloud, current_transform);
+    //do the registration and update the transformation
+    Eigen::Matrix4f transform = reg->registerClouds(tempTgtCloud, tempSrcCloud, true, false);
+    current_transform = transform * current_transform;
 
-        //do the registration and update the transformation
-        Eigen::Matrix4f transform = reg->registerClouds(tempTgtCloud, tempSrcCloud, true, false);
-        current_transform = transform * current_transform;
+    //merge point clouds into global model
+    *tempSrcCloud += *tempTgtCloud;
 
-        //add target cloud to source cloud
-        *tempSrcCloud += *tempTgtCloud;
-
-   // }
-
+    //save merged point cloud as pcd file
     reg->saveCloud(tempSrcCloud, "aligned/outputSrc.pcd");
-    reg->saveCloud(tempTgtCloud, "aligned/outputTgt.pcd");
 
     return (0);
 }

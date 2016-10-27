@@ -25,6 +25,7 @@
 #include <pcl/keypoints/sift_keypoint.h>
 #include <pcl/registration/correspondence_rejection_features.h>
 #include <pcl/registration/transformation_estimation.h>
+#include <pcl/registration/correspondence_rejection_features.h>
 
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
@@ -145,26 +146,15 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
         pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.3);
         pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.3);
 
-        //intialize alignment method
-        pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
+        pcl::Correspondences corr = estimateCorrespondences(ds_tgtCloud, ds_srcCloud, tgt_features, src_features);
 
-        scia.setInputSource(ds_tgtCloud);
-        scia.setSourceFeatures(tgt_features);
-        scia.setInputTarget(ds_srcCloud);
-        scia.setTargetFeatures(src_features);
+        //merge point clouds into global model with transformation for alignment
+        //TODO: this function needs to be looped!!!
+        transform = mergeClouds(ds_tgtCloud, ds_srcCloud, transform, tgt_features, src_features);
 
-        //set parameters for alignment and RANSAC
-        scia.setMaxCorrespondenceDistance(0.05);
-        scia.setMinSampleDistance(0.5);
-        scia.setMaximumIterations(1000);
-
-        //align frame using fpfh features
-        scia.align(*ds_tgtCloud);
-
-        //get the new transformation for icp
-        transform = scia.getFinalTransformation();
     }
 
+    //TODO: ICP not used for now!!!
     if(useICP){
 
         std::cout<< "icp selected" << std::endl;
@@ -285,7 +275,7 @@ int registration::visualizePointCloud(pcl::PointCloud<pcl::PointXYZRGB> cloud) {
 }
 
 
-int registration::initTransform(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename) {
+int registration::initRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename) {
 
     PCL_INFO("performing initial rotation on X-Axis (PITCH)\n");
 
@@ -306,4 +296,106 @@ int registration::initTransform(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, st
     PCL_INFO("rotated and written point cloud successfully!\n");
 
     return err;
+}
+
+
+
+pcl::PointCloud<pcl::PointWithScale>::Ptr registration::getSIFTKeypoints(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud) {
+
+    pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>::Ptr
+            sift (new pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>());
+
+
+    pcl::PointCloud<pcl::PointWithScale>::Ptr result (new pcl::PointCloud<pcl::PointWithScale> ());
+
+    //use FLANN-based KdTree to perform neighborhood searches Format PointWithScale(x, y, z, scale)
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>());
+
+    sift->setSearchMethod(tree);
+
+    const float min_scale = 0.1f;
+    const float min_contrast = 0.1f;
+    const int nr_octaves = 8;
+    const int scales_per_octave = 16;
+
+    //set sift input parameters
+    sift->setScales(min_scale, nr_octaves, scales_per_octave);
+    sift->setMinimumContrast(min_contrast);
+    sift->setInputCloud(cloud);
+    sift->compute(*result);
+
+    std::cout<<"result of sift (size) source: " << result->points.size() << std::endl;
+
+    return result;
+}
+
+
+
+pcl::Correspondences registration::estimateCorrespondences(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
+                                                           pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
+                                                           pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
+                                                           pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat) {
+
+
+    pcl::registration::CorrespondenceEstimation<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr corr_est
+            (new pcl::registration::CorrespondenceEstimation<pcl::PointXYZRGB, pcl::PointXYZRGB>());
+
+    //holds correspondences between source and target clouds
+    boost::shared_ptr<pcl::Correspondences> corr (new pcl::Correspondences());
+
+    corr_est->setInputSource(src);
+    corr_est->setInputTarget(tgt);
+
+    corr_est->determineReciprocalCorrespondences(*corr);
+    std::cout<<"correspondences between target and source are: " << corr->size() <<std::endl;
+
+    //reject bad correspondences
+     pcl::registration::CorrespondenceRejectorFeatures::Ptr corr_reject
+             (new pcl::registration::CorrespondenceRejectorFeatures());
+
+
+    //boost::shared_ptr<pcl::Correspondences> corr_remain (new pcl::Correspondences());
+
+    //corr_reject->setSourceFeature(src, "source");
+    //corr_reject.setTargetFeature(tgtfeat, "target");
+
+    //corr_reject.setInputCorrespondences(corr);
+    //corr_reject.getCorrespondences(*corr);
+
+    //std::cout<<"correspondences after rejection are: " << corr->size() <<std::endl;
+
+    return *corr;
+}
+
+Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
+                                          pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
+                                          Eigen::Matrix4f &transform,
+                                          pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
+                                          pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat) {
+
+
+    std::cout<< "begin to merge clouds..." <<std::endl;
+
+    //initial alignment
+    pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
+
+    scia.setInputSource(tgt);
+    scia.setSourceFeatures(tgtfeat);
+    scia.setInputTarget(src);
+    scia.setTargetFeatures(srcfeat);
+
+    //set parameters for alignment and RANSAC
+    scia.setMaxCorrespondenceDistance(0.05);
+    scia.setMinSampleDistance(0.5);
+    scia.setMaximumIterations(1000);
+
+    //align frame using fpfh features
+    scia.align(*tgt);
+
+    //get the new transformation for icp
+    transform = scia.getFinalTransformation();
+
+    std::cout<< "end of merging..." <<std::endl;
+
+    return transform;
 }
