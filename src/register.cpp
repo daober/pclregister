@@ -137,7 +137,7 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
     //set random transformation matrix values
     //TODO: CHANGE THIS VALUE BELOW to initial transformation guess!
-    transform.setRandom();
+    //transform.setRandom();
 
     std::cout <<"transform is: " << std::endl << transform << std::endl;
 
@@ -396,8 +396,10 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
     //TODO: evaluate some error metric based on correspondence
     double err_metric = 1e-3;
 
+
+    //TODO: if uncommenting this line, the alignment is a little 'off'. investigate..
     // initial alignment
-    pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
+    /*pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
 
     scia.setInputSource(tgt);
     scia.setSourceFeatures(tgtfeat);
@@ -410,7 +412,7 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
     scia.setMaximumIterations(100);
 
     //align frame using fpfh features
-    scia.align(*tgt);
+    scia.align(*tgt);*/
 
 
     //TODO: estimate a (rigid) transformation between camera poses (motion estimate) and minimize error metric
