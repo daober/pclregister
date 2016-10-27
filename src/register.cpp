@@ -11,6 +11,7 @@
 #include <pcl/impl/point_types.hpp>
 
 #include <pcl/filters/filter.h>
+#include <pcl/registration/correspondence_rejection_sample_consensus.h>
 #include <pcl/filters/approximate_voxel_grid.h>
 
 #include <pcl/visualization/pcl_visualizer.h>
@@ -131,8 +132,8 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity();
 
     //downsample source and target cloud
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.1);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.1);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.01);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.01);
 
     if(useFPFH){
         //TODO: visualize features
@@ -143,14 +144,15 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
         pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
 
         //compute fpfh features
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.3);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.3);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.2);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.2);
 
+        //get refined interest points
         pcl::Correspondences corr = estimateCorrespondences(ds_tgtCloud, ds_srcCloud, tgt_features, src_features);
 
         //merge point clouds into global model with transformation for alignment
         //TODO: this function needs to be looped!!!
-        transform = mergeClouds(ds_tgtCloud, ds_srcCloud, transform, tgt_features, src_features);
+        transform = mergeClouds(ds_tgtCloud, ds_srcCloud, transform, tgt_features, src_features, corr);
 
     }
 
@@ -349,14 +351,14 @@ pcl::Correspondences registration::estimateCorrespondences(pcl::PointCloud<pcl::
     corr_est->determineReciprocalCorrespondences(*corr);
     std::cout<<"correspondences between target and source are: " << corr->size() <<std::endl;
 
-    //reject bad correspondences
-     pcl::registration::CorrespondenceRejectorFeatures::Ptr corr_reject
-             (new pcl::registration::CorrespondenceRejectorFeatures());
+    //TODO: reject bad correspondences
+     pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB>::Ptr corr_reject
+             (new pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB>());
 
 
     //boost::shared_ptr<pcl::Correspondences> corr_remain (new pcl::Correspondences());
 
-    //corr_reject->setSourceFeature(src, "source");
+    //corr_reject->setInputSource();
     //corr_reject.setTargetFeature(tgtfeat, "target");
 
     //corr_reject.setInputCorrespondences(corr);
@@ -371,13 +373,14 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
                                           pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
                                           Eigen::Matrix4f &transform,
                                           pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
-                                          pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat) {
+                                          pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat,
+                                          pcl::Correspondences &corr) {
 
 
     std::cout<< "begin to merge clouds..." <<std::endl;
 
     //initial alignment
-    pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
+    /*pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
 
     scia.setInputSource(tgt);
     scia.setSourceFeatures(tgtfeat);
@@ -385,15 +388,33 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
     scia.setTargetFeatures(srcfeat);
 
     //set parameters for alignment and RANSAC
-    scia.setMaxCorrespondenceDistance(0.05);
+    scia.setMaxCorrespondenceDistance(0.50);
     scia.setMinSampleDistance(0.5);
     scia.setMaximumIterations(1000);
 
     //align frame using fpfh features
-    scia.align(*tgt);
+    scia.align(*tgt);*/
+
+    //Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
+
+    //estimate rigid transformation
+    //pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
+    //        est_trans (new pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>());
+
+
+    //est_trans->estimateRigidTransformation(*tgt, *src, corr, transform);
+    //pcl::transformPointCloud(*src, *tgt, transform);
 
     //get the new transformation for icp
-    transform = scia.getFinalTransformation();
+    //transform = scia.getFinalTransformation();
+
+    //current_transform = transform * current_transform;
+
+    //merge point clouds into global model
+    *src += *tgt;
+
+    //save merged point cloud as pcd file
+    pcl::io::savePCDFile("aligned/finalOutput.pcd", *src);
 
     std::cout<< "end of merging..." <<std::endl;
 

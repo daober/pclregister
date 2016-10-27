@@ -26,9 +26,15 @@ public:
     //intial transform of point cloud
     int initRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename);
 
+
     //merge clouds based on transformation matrix
-    Eigen::Matrix4f mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt, pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, Eigen::Matrix4f &transform,  pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
-                                pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat);
+    Eigen::Matrix4f mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
+                                pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
+                                Eigen::Matrix4f &transform,
+                                pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
+                                pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat,
+                                pcl::Correspondences &corr);
+
 
     //method for downsampling via voxelization
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, float downSampleSize = 0.3);

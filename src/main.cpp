@@ -10,7 +10,9 @@
 
 int main(int argc, char **argv){
 
+    //error code
     int err = 0;
+
     //create new class object as smart pointer
     boost::shared_ptr<registration> reg = boost::make_shared<registration>();
 
@@ -43,25 +45,8 @@ int main(int argc, char **argv){
 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr finalCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
-    //sample down point clouds
-    tempSrcCloud = reg->voxelize(src, 0.01f);
-    tempTgtCloud = reg->voxelize(tgt, 0.01f);
-
-    //initialize transformation from points in frame to points in model
-    Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
-
-    /*pcl::transformPointCloud(*tgt, *tempTgtCloud, current_transform);
-    pcl::transformPointCloud(*src, *tempSrcCloud, current_transform);*/
-
     //do the registration and update the transformation
-    Eigen::Matrix4f transform = reg->registerClouds(tempTgtCloud, tempSrcCloud, true, false);
-    current_transform = transform * current_transform;
-
-    //merge point clouds into global model
-    *tempSrcCloud += *tempTgtCloud;
-
-    //save merged point cloud as pcd file
-    reg->saveCloud(tempSrcCloud, "aligned/outputSrc.pcd");
+    Eigen::Matrix4f transform = reg->registerClouds(tgt, src, true, false);
 
     return (0);
 }
