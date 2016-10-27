@@ -131,6 +131,8 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
     //declare transformation matrix
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity();
+    //set random transformation matrix values
+    transform.setRandom();
 
     //downsample source and target cloud
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.01);
@@ -145,6 +147,7 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
         pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
 
         //compute fpfh features (descriptors)
+        //TODO: ERROR HERE because features are with normals for each src and tgt
         pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.2);
         pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.2);
 
@@ -395,9 +398,9 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
     scia.setTargetFeatures(srcfeat);
 
     //set parameters for alignment and RANSAC
-    scia.setMaxCorrespondenceDistance(0.50);
+    scia.setMaxCorrespondenceDistance(1.50);
     scia.setMinSampleDistance(0.5);
-    scia.setMaximumIterations(1000);
+    scia.setMaximumIterations(100);
 
     //align frame using fpfh features
     scia.align(*tgt);
