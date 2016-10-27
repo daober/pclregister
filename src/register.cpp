@@ -27,6 +27,7 @@
 #include <pcl/registration/correspondence_rejection_features.h>
 #include <pcl/registration/transformation_estimation.h>
 #include <pcl/registration/correspondence_rejection_features.h>
+#include <pcl/registration/transformation_estimation_svd.h>
 
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
@@ -143,7 +144,7 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
         pcl::PointCloud<pcl::Normal>::Ptr src_normals = getNormals(ds_srcCloud, src);
         pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
 
-        //compute fpfh features
+        //compute fpfh features (descriptors)
         pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.2);
         pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.2);
 
@@ -348,26 +349,28 @@ pcl::Correspondences registration::estimateCorrespondences(pcl::PointCloud<pcl::
     corr_est->setInputSource(src);
     corr_est->setInputTarget(tgt);
 
-    corr_est->determineReciprocalCorrespondences(*corr);
-    std::cout<<"correspondences between target and source are: " << corr->size() <<std::endl;
+    //corr_est->determineReciprocalCorrespondences(*corr);
+    corr_est->determineCorrespondences(*corr, 0.20f);
+
+    std::cout<<"initial correspondences between target and source are: " << corr->size() <<std::endl;
 
     //TODO: reject bad correspondences
      pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB>::Ptr corr_reject
              (new pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB>());
 
 
-    //boost::shared_ptr<pcl::Correspondences> corr_remain (new pcl::Correspondences());
+    boost::shared_ptr<pcl::Correspondences> corr_remain (new pcl::Correspondences());
 
-    //corr_reject->setInputSource();
-    //corr_reject.setTargetFeature(tgtfeat, "target");
+    corr_reject->setMaximumIterations(50);
+    corr_reject->setInputSource(src);
+    corr_reject->setInputTarget(tgt);
+    corr_reject->getRemainingCorrespondences(*corr, *corr_remain);
 
-    //corr_reject.setInputCorrespondences(corr);
-    //corr_reject.getCorrespondences(*corr);
+    std::cout<<"correspondences after rejection are: " << corr_remain->size() <<std::endl;
 
-    //std::cout<<"correspondences after rejection are: " << corr->size() <<std::endl;
-
-    return *corr;
+    return *corr_remain;
 }
+
 
 Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
                                           pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
@@ -377,10 +380,14 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
                                           pcl::Correspondences &corr) {
 
 
+
     std::cout<< "begin to merge clouds..." <<std::endl;
 
-    //initial alignment
-    /*pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
+    //TODO: evaluate some error metric based on correspondence
+    double err_metric = 1e-3;
+
+    // initial alignment
+    pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
 
     scia.setInputSource(tgt);
     scia.setSourceFeatures(tgtfeat);
@@ -393,17 +400,35 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
     scia.setMaximumIterations(1000);
 
     //align frame using fpfh features
-    scia.align(*tgt);*/
+    scia.align(*tgt);
 
-    //Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
 
+    //TODO: estimate a (rigid) transformation between camera poses (motion estimate) and minimize error metric
     //estimate rigid transformation
-    //pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
-    //        est_trans (new pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>());
+    pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
+            est_trans (new pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>());
 
 
-    //est_trans->estimateRigidTransformation(*tgt, *src, corr, transform);
+    Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
+
+    est_trans->estimateRigidTransformation(*src, *tgt, corr, transform);
     //pcl::transformPointCloud(*src, *tgt, transform);
+
+    std::cout<< "transformation matrix is: " << std::endl << transform <<std::endl;
+
+
+    //TODO: optimize the structure of the points
+    //Examples: - SVD for motion estimate; - Levenberg-Marquardt with different kernels for motion estimate;
+
+
+    //TODO: use the rigid transformation to rotate/translate the source onto the target,
+    // and potentially run an internal ICP loop with either all points or a subset of points or the keypoints
+
+
+
+    //TODO: iterate until some convergence criterion is met
+
+
 
     //get the new transformation for icp
     //transform = scia.getFinalTransformation();
