@@ -125,14 +125,21 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pc
 
 
 
-Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt, pcl::PointCloud<pcl::PointXYZRGB>::Ptr src, bool useFPFH, bool useICP) {
+Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
+                                             pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
+                                             bool useFPFH,
+                                             bool useICP) {
 
     PCL_INFO("begin to register point clouds\n");
 
     //declare transformation matrix
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity();
+
     //set random transformation matrix values
+    //TODO: CHANGE THIS VALUE BELOW to initial transformation guess!
     transform.setRandom();
+
+    std::cout <<"transform is: " << std::endl << transform << std::endl;
 
     //downsample source and target cloud
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.01);
