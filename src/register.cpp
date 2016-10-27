@@ -102,7 +102,9 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pc
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
+    //assign clouds
     inCloud = cloud;
+
     std::cout<<"point clouds before filtering: " << inCloud->width * inCloud->height << std::endl;
 
     //leaf size for x, y, z pointcloud coordinates
@@ -132,6 +134,9 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.1);
 
     if(useFPFH){
+        //TODO: visualize features
+        std::cout<< "FPFH estimation selected" << std::endl;
+
         //compute normals
         pcl::PointCloud<pcl::Normal>::Ptr src_normals = getNormals(ds_srcCloud, src);
         pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
@@ -141,10 +146,6 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
         pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.3);
 
         //intialize alignment method
-        /** TODO: ERROR [pcl::SampleConsensusInitialAlignment::computeTransformation]
-         * The target points and target feature points need to be in a one-to-one relationship!
-         * Current input cloud sizes: 137304 vs 110090.
-         */
         pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
 
         scia.setInputSource(ds_tgtCloud);
@@ -165,6 +166,9 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     }
 
     if(useICP){
+
+        std::cout<< "icp selected" << std::endl;
+
         //icp algorithm
         pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB> icp;
         icp.setInputSource(ds_tgtCloud);
@@ -216,6 +220,8 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
     fpfh_est.setSearchMethod(feat_tree);
     fpfh_est.setRadiusSearch(radius);
     fpfh_est.compute(*features);
+
+    std::cout<< "number interest points: "<< features->width * features->height <<std::endl;
 
     PCL_INFO("feature detection of point cloud done!\n");
 

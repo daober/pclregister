@@ -41,21 +41,27 @@ int main(int argc, char **argv){
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempSrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempTgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
+    //sample down point clouds
+    tempSrcCloud = reg->voxelize(tempSrcCloud, 0.15f);
+    tempTgtCloud = reg->voxelize(tempTgtCloud, 0.15f);
+
     //initialize transformation from points in frame to points in model
     Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
 
-    //transform according to current transformation
-    pcl::transformPointCloud(*tgt, *tempTgtCloud, current_transform);
-    pcl::transformPointCloud(*src, *tempSrcCloud, current_transform);
+    //for(int i = 0; i < 30; ++i){
+        //PCL_INFO ("Iteration Nr. %d.\n", i);
 
-    //do the registration and update the transformation
-    Eigen::Matrix4f transform = reg->registerClouds(tempTgtCloud, tempSrcCloud, true, false);
-    current_transform = transform * current_transform;
+        pcl::transformPointCloud(*tgt, *tempTgtCloud, current_transform);
+        pcl::transformPointCloud(*src, *tempSrcCloud, current_transform);
 
-    reg->voxelize(tempSrcCloud, 0.3f);
+        //do the registration and update the transformation
+        Eigen::Matrix4f transform = reg->registerClouds(tempTgtCloud, tempSrcCloud, true, false);
+        current_transform = transform * current_transform;
 
-    //add target cloud to source cloud
-    *tempSrcCloud += *tempTgtCloud;
+        //add target cloud to source cloud
+        *tempSrcCloud += *tempTgtCloud;
+
+   // }
 
     reg->saveCloud(tempSrcCloud, "aligned/outputSrc.pcd");
     reg->saveCloud(tempTgtCloud, "aligned/outputTgt.pcd");
