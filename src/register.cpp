@@ -221,7 +221,7 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
     fpfh_est.setRadiusSearch(radius);
     fpfh_est.compute(*features);
 
-    std::cout<< "number interest points: "<< features->width * features->height <<std::endl;
+    std::cout<< "number of interest points: "<< features->width * features->height <<std::endl;
 
     PCL_INFO("feature detection of point cloud done!\n");
 

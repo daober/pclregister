@@ -30,12 +30,12 @@ int main(int argc, char **argv){
 
     //TODO: ITERATION is necessary!!!!
     //load point clouds
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src = reg->loadPointClouds("room_cloud01.pcd");
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt = reg->loadPointClouds("room_cloud03.pcd");
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src = reg->loadPointClouds("room1.pcd");
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt = reg->loadPointClouds("room2.pcd");
 
     //initial transformation
-    reg->initTransform(src, "aligned/room_cloud01.pcd");
-    reg->initTransform(tgt, "aligned/room_cloud03.pcd");
+    reg->initTransform(src, "aligned/room1.pcd");
+    reg->initTransform(tgt, "aligned/room2.pcd");
 
     //create temporary point clouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempSrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
