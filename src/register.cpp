@@ -155,8 +155,8 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
         //compute fpfh features (descriptors)
         //TODO: ERROR HERE because features are with normals for each src and tgt
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.2);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.2);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.05);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.05);
 
         //get refined interest points
         pcl::Correspondences corr = estimateCorrespondences(ds_tgtCloud, ds_srcCloud, tgt_features, src_features);
@@ -214,14 +214,19 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::Po
 
     //create new feature signature for FPFH algorithm
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr features = boost::make_shared<pcl::PointCloud<pcl::FPFHSignature33>>();
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr feat_tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
 
     pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33> fpfh_est;
 
     fpfh_est.setInputCloud(inCloud);
     fpfh_est.setInputNormals(inNormals);
-    fpfh_est.setSearchMethod(feat_tree);
+    fpfh_est.setSearchMethod(tree);
+    
+    //use all neighbors in a sphere of radius 5 cm
+    // IMPORTANT: the radius used here has to be larger than the radius used to estimate the surface normals!!!
     fpfh_est.setRadiusSearch(radius);
+    
+    //compute the features
     fpfh_est.compute(*features);
 
     std::cout<< "number of interest points: "<< features->width * features->height <<std::endl;
@@ -250,7 +255,7 @@ pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::
 
     pcl::PointCloud<pcl::Normal>::Ptr normals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
 
-    double radius = 0.1;        //radius of 1cm
+    double radius = 0.03;        //radius of 2cm
     ne.setRadiusSearch(radius);
 
     //compute features
@@ -299,8 +304,6 @@ int registration::initRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std
     Eigen::Affine3f transform = Eigen::Affine3f::Identity();
 
     transform.rotate(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitX()));
-
-    //transform.rotate(Eigen::AngleAxisf(-(M_PI/2), Eigen::Vector3f::UnitY()));
 
     pcl::transformPointCloud(*cloud, *outCloud, transform);
 
@@ -360,7 +363,7 @@ pcl::Correspondences registration::estimateCorrespondences(pcl::PointCloud<pcl::
     corr_est->setInputTarget(tgt);
 
     //corr_est->determineReciprocalCorrespondences(*corr);
-    corr_est->determineCorrespondences(*corr, 0.20f);
+    corr_est->determineCorrespondences(*corr, 0.03f);
 
     std::cout<<"initial correspondences between target and source are: " << corr->size() <<std::endl;
 
@@ -407,14 +410,17 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
     scia.setTargetFeatures(srcfeat);
 
     //set parameters for alignment and RANSAC
-    scia.setMaxCorrespondenceDistance(1.50);
-    scia.setMinSampleDistance(0.5);
-    scia.setMaximumIterations(100);
+    scia.setMaxCorrespondenceDistance(0.30);
+
+    //scia.setNumberOfSamples(2);
+    
+    scia.setMinSampleDistance(0.08);
+    scia.setMaximumIterations(30);
 
     //align frame using fpfh features
     scia.align(*tgt);*/
 
-
+    
     //TODO: estimate a (rigid) transformation between camera poses (motion estimate) and minimize error metric
     //estimate rigid transformation
     pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr

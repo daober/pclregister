@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		05B35F070CA440A59D0593FF /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9C5A5BD36B284D8E8D56D496 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				6A11E4A97D00407B8FB6A548 /* CMake Rules */,
+			);
+			dependencies = (
+				3AFFCC33D86240179AC1C302 /* PBXTargetDependency */,
+				7E0763FA4A9549D5AE74E6FE /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		D58F0032B44D48F5BCF41448 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C5E48E04383048B8BB3F2F8C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				C82306C43E314579A678EE02 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		4ECE67CC1CE849D7BCE1FA8D /* /Users/dan/src/pclregister/src/register.cpp */ = {isa = PBXBuildFile; fileRef = 12C28C5FFC054DA6A1DC7928 /* /Users/dan/src/pclregister/src/register.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5895AC6CB7424EECBDD2EA77 /* /Users/dan/src/pclregister/src/main.cpp */ = {isa = PBXBuildFile; fileRef = 0B80A835D1E34339AD19E14B /* /Users/dan/src/pclregister/src/main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		6CFBFC78643049A285348D8B /* /Users/dan/src/pclregister/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 72B47DF497BB42F1AB03C418 /* /Users/dan/src/pclregister/CMakeLists.txt */; settings = {COMPILER_FLAGS = ""; }; };
+		CEB20A2900714389AA520F12 /* /Users/dan/src/pclregister/include/register.hpp */ = {isa = PBXBuildFile; fileRef = D470619632D34090AB486FC3 /* /Users/dan/src/pclregister/include/register.hpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		1A960241CB994E2BAD8DBC43 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		3591280B52394181A03ADD83 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		8A4911B7A37243A5A0F19D6C = {
+			isa = PBXBuildStyle;
+		};
+		AA7D9C87FF444968B473D229 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		D705B0114A6147A1BF6FD39C /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		8EBA0B2CDC9E4299BD0F9737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87DB9803784F4E0D8DF71FCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58F0032B44D48F5BCF41448;
+			remoteInfo = ZERO_CHECK;
+		};
+		EFDDC6105D0E4EB6A99CAB60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87DB9803784F4E0D8DF71FCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02629E0147B54D7D8783F87A;
+			remoteInfo = register;
+		};
+		FBB85E78F5994013B871B815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87DB9803784F4E0D8DF71FCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58F0032B44D48F5BCF41448;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B80A835D1E34339AD19E14B /* /Users/dan/src/pclregister/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		12C28C5FFC054DA6A1DC7928 /* /Users/dan/src/pclregister/src/register.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = register.cpp; path = src/register.cpp; sourceTree = SOURCE_ROOT; };
+		2C99C485FBC2409D970DE8F8 /* /Users/dan/src/pclregister/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		72B47DF497BB42F1AB03C418 /* /Users/dan/src/pclregister/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C890505EBBA145C1A55A6F0A /* register */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = register; sourceTree = BUILT_PRODUCTS_DIR; };
+		D470619632D34090AB486FC3 /* /Users/dan/src/pclregister/include/register.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = register.hpp; path = include/register.hpp; sourceTree = SOURCE_ROOT; };
+		E185641689D14584894CBC9C /* /Users/dan/src/pclregister/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0F791278AA0E4E839A10A068 = {
+			isa = PBXGroup;
+			children = (
+				247E8C51819946D197775824 /* Sources */,
+				5BE42CEBB12D45FCB4A7F2FB /* Resources */,
+				17D719B6C74441D6948C2E48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17D719B6C74441D6948C2E48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C890505EBBA145C1A55A6F0A /* register */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E1C803685EB4018B4269E59 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B80A835D1E34339AD19E14B /* /Users/dan/src/pclregister/src/main.cpp */,
+				12C28C5FFC054DA6A1DC7928 /* /Users/dan/src/pclregister/src/register.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		22C7988718594514B3FB0431 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				1E1C803685EB4018B4269E59 /* Source Files */,
+				250FBBBCE0AD425E87CD0AE5 /* Header Files */,
+				72B47DF497BB42F1AB03C418 /* /Users/dan/src/pclregister/CMakeLists.txt */,
+			);
+			name = register;
+			sourceTree = "<group>";
+		};
+		247E8C51819946D197775824 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				22C7988718594514B3FB0431 /* register */,
+				E67703581AF9467F9241E2CD /* ALL_BUILD */,
+				FF2E080C74D742B488E44771 /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		250FBBBCE0AD425E87CD0AE5 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				D470619632D34090AB486FC3 /* /Users/dan/src/pclregister/include/register.hpp */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		5BE42CEBB12D45FCB4A7F2FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9801DAD4662B4DF4BECC9D4C /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		E4BFA07531FD406D826A37C4 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		E67703581AF9467F9241E2CD /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				9801DAD4662B4DF4BECC9D4C /* CMake Rules */,
+				E185641689D14584894CBC9C /* /Users/dan/src/pclregister/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		FF2E080C74D742B488E44771 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFA07531FD406D826A37C4 /* CMake Rules */,
+				2C99C485FBC2409D970DE8F8 /* /Users/dan/src/pclregister/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02629E0147B54D7D8783F87A /* register */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF874559B50C4609A3471D28 /* Build configuration list for PBXNativeTarget "register" */;
+			buildPhases = (
+				8C70147332F94B9E98A7D07C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA1DC23BB0154B429B7274BF /* PBXTargetDependency */,
+			);
+			name = register;
+			productName = register;
+			productReference = C890505EBBA145C1A55A6F0A /* register */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87DB9803784F4E0D8DF71FCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0800;
+			};
+			buildConfigurationList = 9C93297BF56646748D397A3E /* Build configuration list for PBXProject "register" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				D705B0114A6147A1BF6FD39C /* Debug */,
+				3591280B52394181A03ADD83 /* Release */,
+				AA7D9C87FF444968B473D229 /* MinSizeRel */,
+				1A960241CB994E2BAD8DBC43 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 0F791278AA0E4E839A10A068;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				05B35F070CA440A59D0593FF /* ALL_BUILD */,
+				D58F0032B44D48F5BCF41448 /* ZERO_CHECK */,
+				02629E0147B54D7D8783F87A /* register */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19A09681D674427A864CEF99 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		625C64F48E1948D08CBB5EF2 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		6A11E4A97D00407B8FB6A548 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/dan/src/pclregister/build -f /Users/dan/src/pclregister/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		C82306C43E314579A678EE02 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/dan/src/pclregister/build -f /Users/dan/src/pclregister/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C70147332F94B9E98A7D07C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5895AC6CB7424EECBDD2EA77 /* /Users/dan/src/pclregister/src/main.cpp */,
+				4ECE67CC1CE849D7BCE1FA8D /* /Users/dan/src/pclregister/src/register.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AFFCC33D86240179AC1C302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02629E0147B54D7D8783F87A /* register */;
+			targetProxy = EFDDC6105D0E4EB6A99CAB60 /* PBXContainerItemProxy */;
+		};
+		7E0763FA4A9549D5AE74E6FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58F0032B44D48F5BCF41448 /* ZERO_CHECK */;
+			targetProxy = 8EBA0B2CDC9E4299BD0F9737 /* PBXContainerItemProxy */;
+		};
+		BA1DC23BB0154B429B7274BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58F0032B44D48F5BCF41448 /* ZERO_CHECK */;
+			targetProxy = FBB85E78F5994013B871B815 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0200B2944580429BB574FEC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		21F2060385AE4004845E771B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/dan/src/pclregister/build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		2C73B1B6744F4FB9A2335EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		3729AB95790D4BEE879F0646 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		3A2C1D71304D42F8AF6BF0C6 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		404169C53DA14391A4993F05 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		48F7F21788764BCEA668B111 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		56B9D9BB90F14A14BEAB9B4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/dan/src/pclregister/build/build;
+			};
+			name = Release;
+		};
+		625F2444090C426D85083677 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		71FE96F91AC54199B5738F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/dan/src/pclregister/build/build;
+			};
+			name = Debug;
+		};
+		90690B132F544EF8B9FCA4EC /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		971FF5BFE85D4E9C9277CFD5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/usr/local/opt/qt5/lib);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)'","'vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)'","'vtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)'","'vtkRenderingFreeType_AUTOINIT=1(vtkRenderingFreeTypeFontConfig)'","'vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)'",EIGEN_USE_NEW_STDVECTOR,EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET,DISABLE_ENSENSO,DISABLE_DAVIDSDK,DISABLE_DSSDK,DISABLE_PCAP,DISABLE_PNG,DISABLE_LIBUSB_1_0,FLANN_STATIC,DISABLE_RSSDK,qh_QHpointer,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_NO_DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include,/usr/local/opt/qt5/lib/QtWidgets.framework/Headers,/usr/local/opt/qt5/lib/QtGui.framework/Headers,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers,/usr/local/opt/qt5/lib/QtCore.framework/Headers,"/usr/local/opt/qt5/./mkspecs/macx-clang");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = " /usr/local/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /usr/local/lib";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -march=native      -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/lib/libxml2.dylib /usr/local/lib/libpcl_io.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libqhull_p.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libqhull_p.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistryOpenGL2-7.0.1.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersFlowPaths-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneric-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHyperTree-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallelImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersProgrammable-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersPython-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingPython27Core-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSMP-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSelection-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersVerdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkverdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQtSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGeovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkproj4-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOAMR-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOEnSight-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExodus-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOInfovis-7.0.1.dylib /usr/lib/libxml2.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLSDyna-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMINC-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMovie-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkoggtheora-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOPLY-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkjsoncpp-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallelXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOVideo-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMorphological-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStencil-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisBoostGraphAlgorithms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkLocalExample-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContextOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeTypeFontConfig-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLOD-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolumeOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingGenericBridge-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingRendering-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsQt-7.0.1.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/lib/libpcl_io.dylib /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistry-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersAMR-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkexoIIc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIONetCDF-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF_cxx-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib -lm /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXMLParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkParallelCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLegacy-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersTexture-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksqlite-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkglew-7.0.1.dylib -framework Cocoa /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsInfovis-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkChartsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisLayout-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionWidgets-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDICOMParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkmetaio-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersModeling-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionStyle-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingAnnotation-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolume-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLabel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeType-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersExtraction-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingFourier-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkalglib-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonExecutionModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonComputationalGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonDataModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMisc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonTransforms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonSystem-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksys-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkfreetype-7.0.1.dylib /usr/lib/libz.dylib -framework ApplicationServices -framework CoreServices /usr/local/opt/qt5/lib/QtWidgets.framework/QtWidgets /usr/local/opt/qt5/lib/QtGui.framework/QtGui /usr/local/opt/qt5/lib/QtCore.framework/QtCore";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = register;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C30E90E72ED94560A150472C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/usr/local/opt/qt5/lib);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)'","'vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)'","'vtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)'","'vtkRenderingFreeType_AUTOINIT=1(vtkRenderingFreeTypeFontConfig)'","'vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)'",EIGEN_USE_NEW_STDVECTOR,EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET,DISABLE_ENSENSO,DISABLE_DAVIDSDK,DISABLE_DSSDK,DISABLE_PCAP,DISABLE_PNG,DISABLE_LIBUSB_1_0,FLANN_STATIC,DISABLE_RSSDK,qh_QHpointer,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include,/usr/local/opt/qt5/lib/QtWidgets.framework/Headers,/usr/local/opt/qt5/lib/QtGui.framework/Headers,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers,/usr/local/opt/qt5/lib/QtCore.framework/Headers,"/usr/local/opt/qt5/./mkspecs/macx-clang");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = " /usr/local/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /usr/local/lib";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -march=native     -fPIC  ";
+				OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/lib/libxml2.dylib /usr/local/lib/libpcl_io.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libqhull_p.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libqhull_p.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistryOpenGL2-7.0.1.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersFlowPaths-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneric-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHyperTree-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallelImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersProgrammable-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersPython-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingPython27Core-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSMP-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSelection-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersVerdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkverdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQtSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGeovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkproj4-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOAMR-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOEnSight-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExodus-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOInfovis-7.0.1.dylib /usr/lib/libxml2.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLSDyna-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMINC-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMovie-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkoggtheora-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOPLY-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkjsoncpp-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallelXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOVideo-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMorphological-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStencil-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisBoostGraphAlgorithms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkLocalExample-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContextOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeTypeFontConfig-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLOD-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolumeOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingGenericBridge-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingRendering-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsQt-7.0.1.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/lib/libpcl_io.dylib /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistry-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersAMR-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkexoIIc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIONetCDF-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF_cxx-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib -lm /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXMLParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkParallelCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLegacy-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersTexture-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksqlite-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkglew-7.0.1.dylib -framework Cocoa /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsInfovis-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkChartsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisLayout-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionWidgets-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDICOMParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkmetaio-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersModeling-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionStyle-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingAnnotation-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolume-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLabel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeType-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersExtraction-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingFourier-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkalglib-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonExecutionModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonComputationalGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonDataModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMisc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonTransforms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonSystem-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksys-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkfreetype-7.0.1.dylib /usr/lib/libz.dylib -framework ApplicationServices -framework CoreServices /usr/local/opt/qt5/lib/QtWidgets.framework/QtWidgets /usr/local/opt/qt5/lib/QtGui.framework/QtGui /usr/local/opt/qt5/lib/QtCore.framework/QtCore";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = register;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		C8F1DD8E8BFC433DA420E9E8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/usr/local/opt/qt5/lib);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)'","'vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)'","'vtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)'","'vtkRenderingFreeType_AUTOINIT=1(vtkRenderingFreeTypeFontConfig)'","'vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)'",EIGEN_USE_NEW_STDVECTOR,EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET,DISABLE_ENSENSO,DISABLE_DAVIDSDK,DISABLE_DSSDK,DISABLE_PCAP,DISABLE_PNG,DISABLE_LIBUSB_1_0,FLANN_STATIC,DISABLE_RSSDK,qh_QHpointer,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_NO_DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include,/usr/local/opt/qt5/lib/QtWidgets.framework/Headers,/usr/local/opt/qt5/lib/QtGui.framework/Headers,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers,/usr/local/opt/qt5/lib/QtCore.framework/Headers,"/usr/local/opt/qt5/./mkspecs/macx-clang");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = " /usr/local/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /usr/local/lib";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -march=native         -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/lib/libxml2.dylib /usr/local/lib/libpcl_io.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libqhull_p.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libqhull_p.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistryOpenGL2-7.0.1.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersFlowPaths-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneric-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHyperTree-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallelImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersProgrammable-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersPython-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingPython27Core-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSMP-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSelection-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersVerdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkverdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQtSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGeovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkproj4-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOAMR-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOEnSight-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExodus-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOInfovis-7.0.1.dylib /usr/lib/libxml2.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLSDyna-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMINC-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMovie-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkoggtheora-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOPLY-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkjsoncpp-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallelXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOVideo-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMorphological-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStencil-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisBoostGraphAlgorithms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkLocalExample-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContextOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeTypeFontConfig-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLOD-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolumeOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingGenericBridge-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingRendering-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsQt-7.0.1.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/lib/libpcl_io.dylib /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistry-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersAMR-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkexoIIc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIONetCDF-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF_cxx-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib -lm /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXMLParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkParallelCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLegacy-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersTexture-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksqlite-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkglew-7.0.1.dylib -framework Cocoa /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsInfovis-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkChartsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisLayout-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionWidgets-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDICOMParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkmetaio-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersModeling-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionStyle-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingAnnotation-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolume-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLabel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeType-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersExtraction-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingFourier-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkalglib-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonExecutionModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonComputationalGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonDataModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMisc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonTransforms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonSystem-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksys-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkfreetype-7.0.1.dylib /usr/lib/libz.dylib -framework ApplicationServices -framework CoreServices /usr/local/opt/qt5/lib/QtWidgets.framework/QtWidgets /usr/local/opt/qt5/lib/QtGui.framework/QtGui /usr/local/opt/qt5/lib/QtCore.framework/QtCore";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = register;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		DC7C46CCE5294C46A1BEBB20 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/dan/src/pclregister/build/build;
+			};
+			name = MinSizeRel;
+		};
+		F8C28C20DE814410A215BAE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/usr/local/opt/qt5/lib);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)'","'vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)'","'vtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)'","'vtkRenderingFreeType_AUTOINIT=1(vtkRenderingFreeTypeFontConfig)'","'vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)'",EIGEN_USE_NEW_STDVECTOR,EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET,DISABLE_ENSENSO,DISABLE_DAVIDSDK,DISABLE_DSSDK,DISABLE_PCAP,DISABLE_PNG,DISABLE_LIBUSB_1_0,FLANN_STATIC,DISABLE_RSSDK,qh_QHpointer,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_NO_DEBUG);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/usr/local/Cellar/vtk/7.0.0_4/include/vtk-7.0",/usr/local/include,/usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/include/python2.7,/usr/local/Cellar/hdf5/1.8.17/include,/usr/local/opt/szip/include,/usr/include/libxml2,"/usr/local/include/pcl-1.8",/usr/local/Cellar/eigen/3.2.10/include/eigen3,/usr/local/Cellar/openni/1.5.7.10/include/ni,/usr/local/include/ni2,/usr/local/Cellar/flann/1.9.1_1/include,/Users/dan/src/pclregister/include,/usr/local/opt/qt5/lib/QtWidgets.framework/Headers,/usr/local/opt/qt5/lib/QtGui.framework/Headers,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers,/usr/local/opt/qt5/lib/QtCore.framework/Headers,"/usr/local/opt/qt5/./mkspecs/macx-clang");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = " /usr/local/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /usr/local/lib";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -march=native      -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/lib/libxml2.dylib /usr/local/lib/libpcl_io.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libqhull_p.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_date_time-mt.dylib /usr/local/lib/libboost_iostreams-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_chrono-mt.dylib /usr/local/lib/libqhull_p.dylib /usr/local/Cellar/openni/1.5.7.10/lib/libOpenNI.dylib /usr/local/lib/ni2/libOpenNI2.dylib /usr/local/Cellar/flann/1.9.1_1/lib/libflann_cpp_s.a /usr/lib/libz.dylib /usr/lib/libexpat.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistryOpenGL2-7.0.1.dylib /usr/local/lib/libjpeg.dylib /usr/local/lib/libpng.dylib /usr/local/lib/libtiff.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersFlowPaths-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneric-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHyperTree-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallelImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersProgrammable-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersPython-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingPython27Core-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkWrappingTools-7.0.a /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSMP-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSelection-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersVerdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkverdict-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQtSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGeovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkproj4-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOAMR-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOEnSight-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExodus-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOExport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImport-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOInfovis-7.0.1.dylib /usr/lib/libxml2.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLSDyna-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMINC-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOMovie-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkoggtheora-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOPLY-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkjsoncpp-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOParallelXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOVideo-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingMorphological-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingStencil-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisBoostGraphAlgorithms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkLocalExample-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContextOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeTypeFontConfig-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLOD-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolumeOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingGenericBridge-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkTestingRendering-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsQt-7.0.1.dylib /usr/local/lib/libpcl_common.dylib /usr/local/lib/libpcl_octree.dylib /usr/local/lib/libpcl_io.dylib /usr/local/lib/libpcl_kdtree.dylib /usr/local/lib/libpcl_search.dylib /usr/local/lib/libpcl_sample_consensus.dylib /usr/local/lib/libpcl_filters.dylib /usr/local/lib/libpcl_features.dylib /usr/local/lib/libpcl_ml.dylib /usr/local/lib/libpcl_segmentation.dylib /usr/local/lib/libpcl_visualization.dylib /usr/local/lib/libpcl_surface.dylib /usr/local/lib/libpcl_registration.dylib /usr/local/lib/libpcl_keypoints.dylib /usr/local/lib/libpcl_tracking.dylib /usr/local/lib/libpcl_recognition.dylib /usr/local/lib/libpcl_stereo.dylib /usr/local/lib/libpcl_outofcore.dylib /usr/local/lib/libpcl_people.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDomainsChemistry-7.0.1.dylib /usr/local/Cellar/python/2.7.12/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersAMR-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersParallel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkexoIIc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIONetCDF-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF_cxx-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkNetCDF-7.0.1.dylib /usr/local/lib/libhdf5.dylib /usr/local/lib/libsz.dylib /usr/lib/libdl.dylib /usr/lib/libm.dylib -lm /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXML-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOXMLParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkParallelCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOLegacy-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersTexture-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOSQL-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksqlite-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkGUISupportQt-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingOpenGL2-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkglew-7.0.1.dylib -framework Cocoa /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsInfovis-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkChartsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingContext2D-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersImaging-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisLayout-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInfovisCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkViewsCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionWidgets-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOImage-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkDICOMParser-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkIOCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkmetaio-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersHybrid-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersModeling-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkInteractionStyle-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingAnnotation-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingVolume-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingLabel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingFreeType-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkRenderingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonColor-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersExtraction-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersStatistics-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingFourier-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkImagingCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkalglib-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersSources-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersGeneral-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkFiltersCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonExecutionModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonComputationalGeometry-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonDataModel-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMisc-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonTransforms-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonMath-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonSystem-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkCommonCore-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtksys-7.0.1.dylib /usr/local/Cellar/vtk/7.0.0_4/lib/libvtkfreetype-7.0.1.dylib /usr/lib/libz.dylib -framework ApplicationServices -framework CoreServices /usr/local/opt/qt5/lib/QtWidgets.framework/QtWidgets /usr/local/opt/qt5/lib/QtGui.framework/QtGui /usr/local/opt/qt5/lib/QtCore.framework/QtCore";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = register;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/dan/src/pclregister/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C5A5BD36B284D8E8D56D496 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C73B1B6744F4FB9A2335EF0 /* Debug */,
+				3729AB95790D4BEE879F0646 /* Release */,
+				48F7F21788764BCEA668B111 /* MinSizeRel */,
+				3A2C1D71304D42F8AF6BF0C6 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9C93297BF56646748D397A3E /* Build configuration list for PBXProject "register" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71FE96F91AC54199B5738F7C /* Debug */,
+				56B9D9BB90F14A14BEAB9B4C /* Release */,
+				DC7C46CCE5294C46A1BEBB20 /* MinSizeRel */,
+				21F2060385AE4004845E771B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF874559B50C4609A3471D28 /* Build configuration list for PBXNativeTarget "register" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30E90E72ED94560A150472C /* Debug */,
+				F8C28C20DE814410A215BAE8 /* Release */,
+				971FF5BFE85D4E9C9277CFD5 /* MinSizeRel */,
+				C8F1DD8E8BFC433DA420E9E8 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C5E48E04383048B8BB3F2F8C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0200B2944580429BB574FEC4 /* Debug */,
+				625F2444090C426D85083677 /* Release */,
+				90690B132F544EF8B9FCA4EC /* MinSizeRel */,
+				404169C53DA14391A4993F05 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87DB9803784F4E0D8DF71FCF /* Project object */;
+}
