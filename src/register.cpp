@@ -142,8 +142,8 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
     std::cout <<"transform is: " << std::endl << transform << std::endl;
 
     //downsample source and target cloud
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.01);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.01);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.02);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.02);
 
     if(useFPFH){
         //TODO: visualize features
@@ -155,8 +155,8 @@ Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::
 
         //compute fpfh features (descriptors)
         //TODO: ERROR HERE because features are with normals for each src and tgt
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.05);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.05);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.08);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.08);
 
         //get refined interest points
         pcl::Correspondences corr = estimateCorrespondences(ds_tgtCloud, ds_srcCloud, tgt_features, src_features);
@@ -304,6 +304,12 @@ int registration::initRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std
     Eigen::Affine3f transform = Eigen::Affine3f::Identity();
 
     transform.rotate(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitX()));
+    
+    //TODO: initial alignment guess
+    /*if(filename == "aligned/room2.pcd"){
+        std::cout<<"room2.pcd will be rotated"<<std::endl;
+        transform.rotate(Eigen::AngleAxisf(-0.80f, Eigen::Vector3f::UnitY()));
+    }*/
 
     pcl::transformPointCloud(*cloud, *outCloud, transform);
 
@@ -402,24 +408,29 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 
     //TODO: if uncommenting this line, the alignment is a little 'off'. investigate..
     // initial alignment
-    /*pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
+    pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
 
     scia.setInputSource(tgt);
     scia.setSourceFeatures(tgtfeat);
     scia.setInputTarget(src);
     scia.setTargetFeatures(srcfeat);
 
+    scia.setMinSampleDistance(0.5f);
     //set parameters for alignment and RANSAC
-    scia.setMaxCorrespondenceDistance(0.30);
+    scia.setMaxCorrespondenceDistance(0.02f * 0.02f);
 
     //scia.setNumberOfSamples(2);
-    
-    scia.setMinSampleDistance(0.08);
-    scia.setMaximumIterations(30);
+    scia.setMaximumIterations(3000);
 
     //align frame using fpfh features
-    scia.align(*tgt);*/
+    scia.align(*tgt);
+    
+    float fitness_score = scia.getFitnessScore(0.02f * 0.02f);
+    
+    Eigen::Matrix4f test_trans = scia.getFinalTransformation();
 
+    std::cout << "fitness score is: " << fitness_score << std::endl;
+    std::cout<<"final transformation is: " << std::endl << test_trans << std::endl;
     
     //TODO: estimate a (rigid) transformation between camera poses (motion estimate) and minimize error metric
     //estimate rigid transformation
