@@ -12,6 +12,7 @@
 
 #include <pcl/filters/filter.h>
 #include <pcl/registration/correspondence_rejection_sample_consensus.h>
+
 #include <pcl/filters/approximate_voxel_grid.h>
 
 #include <pcl/visualization/pcl_visualizer.h>
@@ -25,6 +26,7 @@
 
 #include <pcl/keypoints/sift_keypoint.h>
 #include <pcl/registration/correspondence_rejection_features.h>
+
 #include <pcl/registration/transformation_estimation.h>
 #include <pcl/registration/correspondence_rejection_features.h>
 #include <pcl/registration/transformation_estimation_svd.h>
@@ -304,12 +306,6 @@ int registration::initRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std
     Eigen::Affine3f transform = Eigen::Affine3f::Identity();
 
     transform.rotate(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitX()));
-    
-    //TODO: initial alignment guess
-    /*if(filename == "aligned/room2.pcd"){
-        std::cout<<"room2.pcd will be rotated"<<std::endl;
-        transform.rotate(Eigen::AngleAxisf(-0.80f, Eigen::Vector3f::UnitY()));
-    }*/
 
     pcl::transformPointCloud(*cloud, *outCloud, transform);
 
@@ -374,16 +370,26 @@ pcl::Correspondences registration::estimateCorrespondences(pcl::PointCloud<pcl::
     std::cout<<"initial correspondences between target and source are: " << corr->size() <<std::endl;
 
     //TODO: reject bad correspondences
-     pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB>::Ptr corr_reject
-             (new pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB>());
+     //pcl::registration::CorrespondenceRejectorFeatures::Ptr corr_reject
+       //      (new pcl::registration::CorrespondenceRejectorFeatures());
 
+    //pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB> corr_reject;
+    
+    pcl::registration::CorrespondenceRejectorFeatures::Ptr rejector (new pcl::registration::CorrespondenceRejectorFeatures());
+    
+    rejector->setInputCorrespondences(corr);
+    
+    //rejector->requiresSourcePoints();
+    //rejector->getBestTransformation();
 
     boost::shared_ptr<pcl::Correspondences> corr_remain (new pcl::Correspondences());
+    
+    //rejector->setSourceFeature(srcfeat, "srcfeat");
 
-    corr_reject->setMaximumIterations(50);
-    corr_reject->setInputSource(src);
-    corr_reject->setInputTarget(tgt);
-    corr_reject->getRemainingCorrespondences(*corr, *corr_remain);
+    //bool validFeatures = rejector->hasValidFeatures();
+    rejector->getRemainingCorrespondences(*corr, *corr_remain);
+    
+    //std::cout<< "has valid features: " << validFeatures <<std::endl;
 
     std::cout<<"correspondences after rejection are: " << corr_remain->size() <<std::endl;
 
@@ -404,11 +410,16 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 
     //TODO: evaluate some error metric based on correspondence
     double err_metric = 1e-3;
-
+    
+    Eigen::Affine3f temptrans = Eigen::Affine3f::Identity();
+    // initial alignment
+    temptrans.rotate(Eigen::AngleAxisf(-(M_PI/8), Eigen::Vector3f::UnitY()));
+    //temptrans.translation() << 0.0, 0 ,0;
+    
+    pcl::transformPointCloud(*tgt, *tgt, temptrans);
 
     //TODO: if uncommenting this line, the alignment is a little 'off'. investigate..
-    // initial alignment
-    pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
+    /*pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
 
     scia.setInputSource(tgt);
     scia.setSourceFeatures(tgtfeat);
@@ -417,15 +428,15 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 
     scia.setMinSampleDistance(0.5f);
     //set parameters for alignment and RANSAC
-    scia.setMaxCorrespondenceDistance(0.02f * 0.02f);
+    scia.setMaxCorrespondenceDistance(err_metric);
 
     //scia.setNumberOfSamples(2);
-    scia.setMaximumIterations(3000);
+    scia.setMaximumIterations(500);
 
     //align frame using fpfh features
     scia.align(*tgt);
     
-    float fitness_score = scia.getFitnessScore(0.02f * 0.02f);
+    float fitness_score = scia.getFitnessScore(err_metric);
     
     Eigen::Matrix4f test_trans = scia.getFinalTransformation();
 
@@ -436,14 +447,15 @@ Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr
     //estimate rigid transformation
     pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
             est_trans (new pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>());
-
+    
 
     Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
 
-    est_trans->estimateRigidTransformation(*src, *tgt, corr, transform);
+    //est_trans->estimateRigidTransformation(*src, *tgt, corr, transform);
+    est_trans->estimateRigidTransformation(*src, *tgt, corr, test_trans);*/
     //pcl::transformPointCloud(*src, *tgt, transform);
 
-    std::cout<< "transformation matrix is: " << std::endl << transform <<std::endl;
+    //std::cout<< "transformation matrix is: " << std::endl << temptrans <<std::endl;
 
 
     //TODO: optimize the structure of the points
