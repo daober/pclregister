@@ -10,7 +10,9 @@
 #include <pcl/search/kdtree.h>
 #include <pcl/impl/point_types.hpp>
 
+#include <pcl/keypoints/harris_3d.h>
 #include <pcl/filters/filter.h>
+#include <pcl/features/vfh.h>
 #include <pcl/registration/correspondence_rejection_sample_consensus.h>
 
 #include <pcl/filters/approximate_voxel_grid.h>
@@ -37,452 +39,169 @@
 #include <string.h>
 
 
-registration::registration(){
-    std::cout<< "created registration object!\n"<<std::endl;
+pcl::PointCloud<pcl::Normal>::Ptr
+registration::estimateSurfaceNormals(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputCloud, float radius) {
+
+    pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> normalEstimation;
+
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZRGB>);
+
+    normalEstimation.setSearchMethod(tree);
+    normalEstimation.setRadiusSearch(radius);
+    normalEstimation.setInputCloud(inputCloud);
+
+    pcl::PointCloud<pcl::Normal>::Ptr normals (new pcl::PointCloud<pcl::Normal>());
+
+    //compute estimated normals of point cloud and return them
+    normalEstimation.compute(*normals);
+
+    return (normals);
+
+
 }
 
-//use constructor initializer list
-registration::registration(float downSampleSize, float featureRadius, float maxIterationsSAC) : downSampleSize_(downSampleSize),
-                                                                                                featureRadius_(featureRadius),
-                                                                                                maxIterationsSAC_(maxIterationsSAC){
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+registration::detectKeypoints(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
+                              const pcl::PointCloud<pcl::Normal>::Ptr &normals, float min_scale, int nr_octaves,
+                              int nr_scales_per_octave, float min_contrast) {
 
-}
+    pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>::Ptr sift (new pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>());
 
-
-pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadPointClouds(const std::string filename) {
-
-    pcl::PCDReader reader;
-
-    //create new cloud object on heap
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-
-    int err = reader.read(filename, *cloud);
-
-    if(err){
-        PCL_ERROR("could not read *.pcd file\n");
-        exit(-1);
-    }
-
-    //filter outliers and return filtered cloud
-    //pcl::PointCloud<pcl::PointXYZRGB>::Ptr outcloud = filterOutliers(cloud);
-
-    return cloud;
-}
-
-
-pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::filterOutliers(pcl::PointCloud<pcl::PointXYZRGB>::Ptr rawCloud) {
-
-    PCL_INFO("filtering outliers from point cloud...\n");
-
-    //create new cloud object on heap
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-    //assign cloud
-    inCloud = rawCloud;
-
-    //remove outliers
-    pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB>::Ptr
-            sor = boost::make_shared<pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB>>();
-
-    //filter parameters
-    sor->setMeanK(50);
-    sor->setStddevMulThresh(1.0);
-    sor->setInputCloud(inCloud);
-    sor->filter(*outCloud);
-
-    PCL_INFO("filtering outliers from point cloud done!\n");
-
-    return outCloud;
-}
-
-
-
-pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::voxelize(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
-                                                              float downSampleSize) {
-
-    PCL_INFO("begin to voxelize (downsample) point cloud\n");
-
-    pcl::VoxelGrid<pcl::PointXYZRGB> voxGrid;
-
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-
-    //assign clouds
-    inCloud = cloud;
-
-    std::cout<<"point clouds before filtering: " << inCloud->width * inCloud->height << std::endl;
-
-    //leaf size for x, y, z pointcloud coordinates
-    voxGrid.setLeafSize(downSampleSize, downSampleSize, downSampleSize);
-
-    voxGrid.setInputCloud(inCloud);
-    voxGrid.filter(*outCloud);
-
-    std::cout<<"point clouds after filtering: " << outCloud->width * outCloud->height << std::endl;
-
-    PCL_INFO("voxelization of point cloud done!\n");
-
-    return outCloud;
-}
-
-
-
-Eigen::Matrix4f registration::registerClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
-                                             pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
-                                             bool useFPFH,
-                                             bool useICP) {
-
-    PCL_INFO("begin to register point clouds\n");
-
-    //declare transformation matrix
-    Eigen::Matrix4f transform = Eigen::Matrix4f::Identity();
-
-    //set random transformation matrix values
-    //TODO: CHANGE THIS VALUE BELOW to initial transformation guess!
-    //transform.setRandom();
-
-    std::cout <<"transform is: " << std::endl << transform << std::endl;
-
-    //downsample source and target cloud
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_srcCloud = voxelize(src, 0.02);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ds_tgtCloud = voxelize(tgt, 0.02);
-
-    if(useFPFH){
-        //TODO: visualize features
-        std::cout<< "FPFH estimation selected" << std::endl;
-
-        //compute normals
-        pcl::PointCloud<pcl::Normal>::Ptr src_normals = getNormals(ds_srcCloud, src);
-        pcl::PointCloud<pcl::Normal>::Ptr tgt_normals = getNormals(ds_tgtCloud, tgt);
-
-        //compute fpfh features (descriptors)
-        //TODO: ERROR HERE because features are with normals for each src and tgt
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr src_features = getFeaturesFPFH(ds_srcCloud, src_normals, 0.08);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgt_features = getFeaturesFPFH(ds_tgtCloud, tgt_normals, 0.08);
-
-        //get refined interest points
-        pcl::Correspondences corr = estimateCorrespondences(ds_tgtCloud, ds_srcCloud, tgt_features, src_features);
-
-        //merge point clouds into global model with transformation for alignment
-        //TODO: this function needs to be looped!!!
-        transform = mergeClouds(ds_tgtCloud, ds_srcCloud, transform, tgt_features, src_features, corr);
-
-    }
-
-    //TODO: ICP not used for now!!!
-    if(useICP){
-
-        std::cout<< "icp selected" << std::endl;
-
-        //icp algorithm
-        pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB> icp;
-        icp.setInputSource(ds_tgtCloud);
-        icp.setInputTarget(ds_srcCloud);
-
-        //set standard icp parameters
-        icp.setMaxCorrespondenceDistance(0.2);
-        icp.setMaximumIterations(50);
-        icp.setTransformationEpsilon(1e-6);
-        icp.setEuclideanFitnessEpsilon(1e-5);
-
-        icp.align(*ds_tgtCloud);
-
-        std::cout << "has converged: " << icp.hasConverged() << " score: " << icp.getFitnessScore() << std::endl;
-
-        transform = icp.getFinalTransformation() * transform;
-    }
-
-    std::cout << "found transformation: " <<std::endl << transform << std::endl;
-
-    //transform point cloud according to calculated transformation values
-    pcl::transformPointCloud(*ds_tgtCloud, *ds_tgtCloud, transform);
-
-    return transform;
-}
-
-
-pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::getFeaturesFPFH(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud,
-                                                                         pcl::PointCloud<pcl::Normal>::Ptr normals,
-                                                                         double radius) {
-
-    PCL_INFO("begin to detect features of point cloud...\n");
-
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-    pcl::PointCloud<pcl::Normal>::Ptr inNormals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
-
-    //assign pointclouds
-    inCloud = cloud;
-    inNormals = normals;
-
-    //create new feature signature for FPFH algorithm
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr features = boost::make_shared<pcl::PointCloud<pcl::FPFHSignature33>>();
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
-
-    pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33> fpfh_est;
-
-    fpfh_est.setInputCloud(inCloud);
-    fpfh_est.setInputNormals(inNormals);
-    fpfh_est.setSearchMethod(tree);
-    
-    //use all neighbors in a sphere of radius 5 cm
-    // IMPORTANT: the radius used here has to be larger than the radius used to estimate the surface normals!!!
-    fpfh_est.setRadiusSearch(radius);
-    
-    //compute the features
-    fpfh_est.compute(*features);
-
-    std::cout<< "number of interest points: "<< features->width * features->height <<std::endl;
-
-    PCL_INFO("feature detection of point cloud done!\n");
-
-    return features;
-}
-
-
-pcl::PointCloud<pcl::Normal>::Ptr registration::getNormals(pcl::PointCloud<pcl::PointXYZRGB>::Ptr inCloud,
-                                                           pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud) {
-
-    PCL_INFO("begin to determine normals of point cloud...\n");
-
-    pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> ne;
-
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr inputCloud = inCloud;
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outputCloud = outCloud;
-
-    ne.setInputCloud(inputCloud);
-    ne.setSearchSurface(outputCloud);
-
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
-    ne.setSearchMethod(tree);
-
-    pcl::PointCloud<pcl::Normal>::Ptr normals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
-
-    double radius = 0.03;        //radius of 2cm
-    ne.setRadiusSearch(radius);
-
-    //compute features
-    ne.compute(*normals);
-
-    PCL_INFO("detection of normals from point cloud done!\n");
-
-    return normals;
-}
-
-
-
-int registration::saveCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, const std::string filename) {
-
-    PCL_INFO("writing point cloud...\n");
-
-    pcl::PCDWriter writer;
-
-    int err = writer.write(filename, *cloud);
-
-    if(err){
-        PCL_ERROR("failed to write *.pcd file!\n");
-    }
-    else{
-        PCL_INFO("point cloud written successfully!\n");
-    }
-    return err;
-}
-
-
-
-int registration::visualizePointCloud(pcl::PointCloud<pcl::PointXYZRGB> cloud) {
-    //empty for now
-    return 0;
-}
-
-
-int registration::initRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, std::string filename) {
-
-    PCL_INFO("performing initial rotation on X-Axis (PITCH)\n");
-
-    int err = 0;
-
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-
-    Eigen::Affine3f transform = Eigen::Affine3f::Identity();
-
-    transform.rotate(Eigen::AngleAxisf(M_PI, Eigen::Vector3f::UnitX()));
-
-    pcl::transformPointCloud(*cloud, *outCloud, transform);
-
-    err = pcl::io::savePCDFile(filename, *outCloud);
-
-    PCL_INFO("rotated and written point cloud successfully!\n");
-
-    return err;
-}
-
-
-
-pcl::PointCloud<pcl::PointWithScale>::Ptr registration::getSIFTKeypoints(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud) {
-
-    pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>::Ptr
-            sift (new pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>());
-
-
-    pcl::PointCloud<pcl::PointWithScale>::Ptr result (new pcl::PointCloud<pcl::PointWithScale> ());
-
-    //use FLANN-based KdTree to perform neighborhood searches Format PointWithScale(x, y, z, scale)
     pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>());
 
     sift->setSearchMethod(tree);
-
-    const float min_scale = 0.1f;
-    const float min_contrast = 0.1f;
-    const int nr_octaves = 8;
-    const int scales_per_octave = 16;
-
-    //set sift input parameters
-    sift->setScales(min_scale, nr_octaves, scales_per_octave);
+    sift->setScales(min_scale, nr_octaves, nr_scales_per_octave);
     sift->setMinimumContrast(min_contrast);
-    sift->setInputCloud(cloud);
-    sift->compute(*result);
+    sift->setInputCloud(points);
 
-    std::cout<<"result of sift (size) source: " << result->points.size() << std::endl;
+    pcl::PointCloud<pcl::PointWithScale> tempKeypoints;
+    //compute the keypoints
+    sift->compute(tempKeypoints);
 
-    return result;
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr keypoints(new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::copyPointCloud(tempKeypoints, *keypoints);
+
+    return (keypoints);
+}
+
+pcl::PointCloud<pcl::FPFHSignature33>::Ptr
+registration::computeLocalDescriptors(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
+                                      const pcl::PointCloud<pcl::Normal>::Ptr &normals,
+                                      const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &keypoints, float feature_radius) {
+
+    pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>::Ptr fpfh_estimation
+            (new pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>());
+
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>());
+
+    fpfh_estimation->setSearchMethod(tree);
+    fpfh_estimation->setRadiusSearch(feature_radius);
+    fpfh_estimation->setSearchSurface(points);
+    fpfh_estimation->setInputNormals(normals);
+    fpfh_estimation->setInputCloud(keypoints);
+
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr localDesc (new pcl::PointCloud<pcl::FPFHSignature33>());
+
+    fpfh_estimation->compute(*localDesc);
+
+    return (localDesc);
+}
+
+pcl::PointCloud<pcl::VFHSignature308>::Ptr
+registration::computeGlobalDescriptor(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
+                                      const pcl::PointCloud<pcl::Normal>::Ptr &normals) {
+
+    pcl::VFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::VFHSignature308>::Ptr
+            vfh_estimation (new pcl::VFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::VFHSignature308>());
+
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>());
+
+    vfh_estimation->setSearchMethod(tree);
+    vfh_estimation->setInputCloud(points);
+    vfh_estimation->setInputNormals(normals);
+
+    pcl::PointCloud<pcl::VFHSignature308>::Ptr globalDesc (new pcl::PointCloud<pcl::VFHSignature308>());
+
+    return (globalDesc);
 }
 
 
 
-pcl::Correspondences registration::estimateCorrespondences(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
-                                                           pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
-                                                           pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
-                                                           pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat) {
+boost::shared_ptr<registration::ObjectFeatures>
+registration::computeFeatures(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input) {
 
+    boost::shared_ptr<ObjectFeatures> features = boost::make_shared<ObjectFeatures>();
 
-    pcl::registration::CorrespondenceEstimation<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr corr_est
-            (new pcl::registration::CorrespondenceEstimation<pcl::PointXYZRGB, pcl::PointXYZRGB>());
-
-    //holds correspondences between source and target clouds
-    boost::shared_ptr<pcl::Correspondences> corr (new pcl::Correspondences());
-
-    corr_est->setInputSource(src);
-    corr_est->setInputTarget(tgt);
-
-    //corr_est->determineReciprocalCorrespondences(*corr);
-    corr_est->determineCorrespondences(*corr, 0.03f);
-
-    std::cout<<"initial correspondences between target and source are: " << corr->size() <<std::endl;
-
-    //TODO: reject bad correspondences
-     //pcl::registration::CorrespondenceRejectorFeatures::Ptr corr_reject
-       //      (new pcl::registration::CorrespondenceRejectorFeatures());
-
-    //pcl::registration::CorrespondenceRejectorSampleConsensus<pcl::PointXYZRGB> corr_reject;
+    features->points = input;
+    features->normals = estimateSurfaceNormals(input, 0.05);
+    features->keypoints = detectKeypoints(input, features->normals, 0.005, 10, 8, 1.5);
+    features->local_descriptors = computeLocalDescriptors(input, features->normals, features->keypoints, 0.1);
+    features->global_descriptor = computeGlobalDescriptor(input, features->normals);
     
-    pcl::registration::CorrespondenceRejectorFeatures::Ptr rejector (new pcl::registration::CorrespondenceRejectorFeatures());
-    
-    rejector->setInputCorrespondences(corr);
-    
-    //rejector->requiresSourcePoints();
-    //rejector->getBestTransformation();
+    return features;
+}
 
-    boost::shared_ptr<pcl::Correspondences> corr_remain (new pcl::Correspondences());
-    
-    //rejector->setSourceFeature(srcfeat, "srcfeat");
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+registration::thresholdDepth(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float min_depth, float max_depth) {
+    return pcl::PointCloud<pcl::PointXYZRGB>::Ptr();
+}
 
-    //bool validFeatures = rejector->hasValidFeatures();
-    rejector->getRemainingCorrespondences(*corr, *corr_remain);
-    
-    //std::cout<< "has valid features: " << validFeatures <<std::endl;
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+registration::voxelize(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float leaf_size) {
+    return pcl::PointCloud<pcl::PointXYZRGB>::Ptr();
+}
 
-    std::cout<<"correspondences after rejection are: " << corr_remain->size() <<std::endl;
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+registration::removeOutliers(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float radius, int min_neighbors) {
+    return pcl::PointCloud<pcl::PointXYZRGB>::Ptr();
+}
 
-    return *corr_remain;
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+registration::applyFilters(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float min_depth, float max_depth,
+                           float leaf_size, float radius, float min_neighbors) {
+    return pcl::PointCloud<pcl::PointXYZRGB>::Ptr();
+}
+
+boost::shared_ptr<pcl::PointCloud<pcl::PointXYZRGB> >
+registration::loadPointCloud(std::string filename, std::string suffix) {
+    return boost::shared_ptr<pcl::PointCloud<pcl::PointXYZRGB>>();
+}
+
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadPoints(std::string filename) {
+    return pcl::PointCloud<pcl::PointXYZRGB>::Ptr();
+}
+
+pcl::PointCloud<pcl::VFHSignature308>::Ptr registration::loadGlobalDescriptors(std::string filename) {
+    return pcl::PointCloud<pcl::VFHSignature308>::Ptr();
+}
+
+pcl::PointCloud<pcl::Normal>::Ptr registration::loadSurfaceNormals(std::string filename) {
+    return pcl::PointCloud<pcl::Normal>::Ptr();
+}
+
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr registration::loadKeypoints(std::string filename) {
+    return pcl::PointCloud<pcl::PointXYZRGB>::Ptr();
+}
+
+pcl::PointCloud<pcl::FPFHSignature33>::Ptr registration::loadLocalDescriptors(std::string filename) {
+    return pcl::PointCloud<pcl::FPFHSignature33>::Ptr();
+}
+
+Eigen::Matrix4f registration::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
+                                                      const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &source_descriptors,
+                                                      const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
+                                                      const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &target_descriptors,
+                                                      float min_sample_distance, float max_correspondence_distance,
+                                                      int nr_iterations) {
+    return Eigen::Matrix4f();
+}
+
+Eigen::Matrix4f registration::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
+                                              const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
+                                              const Eigen::Matrix4f initial_alignment,
+                                              float max_correspondence_distance, float outlier_rejection_threshold,
+                                              float transformation_epsilon, float max_iterations) {
+    return Eigen::Matrix4f();
 }
 
 
-Eigen::Matrix4f registration::mergeClouds(pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt,
-                                          pcl::PointCloud<pcl::PointXYZRGB>::Ptr src,
-                                          Eigen::Matrix4f &transform,
-                                          pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtfeat,
-                                          pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcfeat,
-                                          pcl::Correspondences &corr) {
-
-
-
-    std::cout<< "begin to merge clouds..." <<std::endl;
-
-    //TODO: evaluate some error metric based on correspondence
-    double err_metric = 1e-3;
-    
-    Eigen::Affine3f temptrans = Eigen::Affine3f::Identity();
-    // initial alignment
-    temptrans.rotate(Eigen::AngleAxisf(-(M_PI/8), Eigen::Vector3f::UnitY()));
-    //temptrans.translation() << 0.0, 0 ,0;
-    
-    pcl::transformPointCloud(*tgt, *tgt, temptrans);
-
-    //TODO: if uncommenting this line, the alignment is a little 'off'. investigate..
-    /*pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33> scia;
-
-    scia.setInputSource(tgt);
-    scia.setSourceFeatures(tgtfeat);
-    scia.setInputTarget(src);
-    scia.setTargetFeatures(srcfeat);
-
-    scia.setMinSampleDistance(0.5f);
-    //set parameters for alignment and RANSAC
-    scia.setMaxCorrespondenceDistance(err_metric);
-
-    //scia.setNumberOfSamples(2);
-    scia.setMaximumIterations(500);
-
-    //align frame using fpfh features
-    scia.align(*tgt);
-    
-    float fitness_score = scia.getFitnessScore(err_metric);
-    
-    Eigen::Matrix4f test_trans = scia.getFinalTransformation();
-
-    std::cout << "fitness score is: " << fitness_score << std::endl;
-    std::cout<<"final transformation is: " << std::endl << test_trans << std::endl;
-    
-    //TODO: estimate a (rigid) transformation between camera poses (motion estimate) and minimize error metric
-    //estimate rigid transformation
-    pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
-            est_trans (new pcl::registration::TransformationEstimationSVD<pcl::PointXYZRGB, pcl::PointXYZRGB>());
-    
-
-    Eigen::Matrix4f current_transform = Eigen::Matrix4f::Identity();
-
-    //est_trans->estimateRigidTransformation(*src, *tgt, corr, transform);
-    est_trans->estimateRigidTransformation(*src, *tgt, corr, test_trans);*/
-    //pcl::transformPointCloud(*src, *tgt, transform);
-
-    //std::cout<< "transformation matrix is: " << std::endl << temptrans <<std::endl;
-
-
-    //TODO: optimize the structure of the points
-    //Examples: - SVD for motion estimate; - Levenberg-Marquardt with different kernels for motion estimate;
-
-
-    //TODO: use the rigid transformation to rotate/translate the source onto the target,
-    // and potentially run an internal ICP loop with either all points or a subset of points or the keypoints
-
-
-
-    //TODO: iterate until some convergence criterion is met
-
-
-
-    //get the new transformation for icp
-    //transform = scia.getFinalTransformation();
-
-    //current_transform = transform * current_transform;
-
-    //merge point clouds into global model
-    *src += *tgt;
-
-    //save merged point cloud as pcd file
-    pcl::io::savePCDFile("aligned/finalOutput.pcd", *src);
-
-    std::cout<< "end of merging..." <<std::endl;
-
-    return transform;
-}

@@ -31,22 +31,5 @@ int main(int argc, char **argv){
     }
 
 
-    //load point clouds
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src = reg->loadPointClouds("room1.pcd");
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt = reg->loadPointClouds("room2.pcd");
-
-    //initial (rotation)
-    reg->initRotation(src, "aligned/room1.pcd");
-    reg->initRotation(tgt, "aligned/room2.pcd");
-
-    //create temporary point clouds
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempSrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tempTgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr finalCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-
-    //do the registration and update the transformation
-    Eigen::Matrix4f transform = reg->registerClouds(tgt, src, true, false);
-
     return (0);
 }
