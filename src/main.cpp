@@ -13,23 +13,30 @@ int main(int argc, char **argv){
     //error code
     int err = 0;
 
-    //create new class object as smart pointer
-    boost::shared_ptr<registration> reg = boost::make_shared<registration>();
+    //initialize class object
+    boost::shared_ptr<registration> registrator = boost::make_shared<registration>();
 
-    //Create output directory
-    if(boost::filesystem::exists("aligned")) {
-        std::cout << "directory already exists, doing nothing." << std::endl;
-        err = -0;
-    }
-    else if(!boost::filesystem::create_directory("aligned")){
-        std::cout<<"Error! Could not create output directory."<<std::endl;
-        err = -1;
-    }
-    else{
-        std::cout<<"directory created"<<std::endl;
-        err = 0;
+    if (argc < 3) {
+        pcl::console::print_info ("Syntax is: %s source target <options>\n", argv[0]);
+        pcl::console::print_info ("  where options are:\n");
+        pcl::console::print_info ("    -i min_sample_dist,max_dist,nr_iters ................ Compute initial alignment\n");
+        pcl::console::print_info ("    -r max_dist,rejection_thresh,tform_eps,max_iters ............. Refine alignment\n");
+        pcl::console::print_info ("    -s output.pcd ........................... Save the registered and merged clouds\n");
+        pcl::console::print_info ("Note: The inputs (source and target) must be specified without the .pcd extension\n");
+
+        return (1);
     }
 
+    // Load the pointclouds
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = registrator->loadPoints (argv[1]);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = registrator->loadPoints (argv[2]);
 
+    // Compute the intial alignment
+    double min_sample_dist;
+    double max_correspondence_dist;
+    double nr_iters;
+
+
+    
     return (0);
 }

@@ -35,8 +35,7 @@ public:
  * Return: A pointer to a SurfaceNormals point cloud
  */
     pcl::PointCloud<pcl::Normal>::Ptr
-    estimateSurfaceNormals
-            (const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputCloud, float radius);
+    estimateSurfaceNormals (const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputCloud, float radius);
 
 /** Use SIFTKeypoint to detect a set of keypoints
  * Inputs:
