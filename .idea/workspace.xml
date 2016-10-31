@@ -12,9 +12,94 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80b605bf-f784-4461-ad6d-3abcf789eeea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/register.hpp" afterPath="$PROJECT_DIR$/include/register.hpp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeCache.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CMakeCCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CMakeCXXCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CMakeSystem.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-non-framework-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-generated-files.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-own-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-project-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CMakeCCompilerId.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CMakeCCompilerId.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CMakeCCompilerId.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC.LinkFileList" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC_dependency_info.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/dgph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdC/CompilerIdC.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-all-non-framework-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-all-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-generated-files.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-own-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-project-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CMakeCXXCompilerId.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CMakeCXXCompilerId.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CMakeCXXCompilerId.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CompilerIdCXX.LinkFileList" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CompilerIdCXX_dependency_info.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/dgph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.6.2/CompilerIdCXX/CompilerIdCXX.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/cmake.check_cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.cxx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeDebug" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeMinSizeRel" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelWithDebInfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelease" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ReRunCMake.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeDebug" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeMinSizeRel" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelWithDebInfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelease" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/Debug/aligned/finalOutput.pcd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/Debug/aligned/room1.pcd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/Debug/aligned/room2.pcd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/Debug/register" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/Debug/room1.pcd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/Debug/room2.pcd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/cmake_install.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/ALL_BUILD.build/Script-6A11E4A97D00407B8FB6A548.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/ALL_BUILD.build/dgph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/ZERO_CHECK.build/Script-C82306C43E314579A678EE02.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/ZERO_CHECK.build/dgph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/main.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/main.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/main.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/register.LinkFileList" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/register.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/register.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/register.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/Objects-normal/x86_64/register_dependency_info.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.build/Debug/register.build/dgph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/project.xcworkspace/xcuserdata/dan.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/project.xcworkspace/xcuserdata/dan.xcuserdatad/WorkspaceSettings.xcsettings" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/xcuserdata/dan.xcuserdatad/xcschemes/ALL_BUILD.xcscheme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/xcuserdata/dan.xcuserdatad/xcschemes/ZERO_CHECK.xcscheme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/xcuserdata/dan.xcuserdatad/xcschemes/register.xcscheme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/register.xcodeproj/xcuserdata/dan.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/temp.pcd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/register.hpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/register.cpp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/icp_register.iml" afterPath="$PROJECT_DIR$/.idea/icp_register.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/register.cpp" afterPath="$PROJECT_DIR$/src/register.cpp" />
     </list>
     <ignored path="icp_register.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,35 +119,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+            <state relative-caret-position="1439">
+              <caret line="122" column="7" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
               <folding>
-                <element signature="e#29#52#0" expanded="true" />
+                <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+                <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+                <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pcd_io.hpp" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
+      <file leaf-file-name="registrator.hpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/registrator.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="215">
+              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+              <folding>
+                <marker date="1477873500886" expanded="true" signature="23:260" ph="..." />
+                <marker date="1477873500886" expanded="true" signature="282:3287" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/register.hpp">
+      <file leaf-file-name="keypoints.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/keypoints.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
+            <state relative-caret-position="0">
+              <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
               <folding>
-                <element signature="e#14#33#0" expanded="true" />
+                <marker date="1477872494628" expanded="true" signature="15:39" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loader.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/loader.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <marker date="1477873560809" expanded="true" signature="9:64" ph="..." />
+                <marker date="1477873560809" expanded="true" signature="80:676" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="features.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/features.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1260">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+              <folding>
+                <marker date="1477873431591" expanded="true" signature="10:58" ph="..." />
+                <marker date="1477873431591" expanded="true" signature="76:3439" ph="{...}" />
+                <marker date="1477873431591" expanded="true" signature="181:492" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -71,41 +188,230 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            <state relative-caret-position="126">
+              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/register.cpp">
+      <file leaf-file-name="features.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/features.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="343" column="28" selection-start-line="343" selection-start-column="28" selection-end-line="343" selection-end-column="28" />
+            <state relative-caret-position="180">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
               <folding>
-                <element signature="e#88#125#0" expanded="true" />
+                <marker date="1477873500894" expanded="true" signature="9:331" ph="..." />
+                <marker date="1477873500894" expanded="true" signature="474:1003" ph="{...}" />
+                <marker date="1477873500894" expanded="true" signature="1311:2021" ph="{...}" />
+                <marker date="1477873500894" expanded="true" signature="2357:3066" ph="{...}" />
+                <marker date="1477873500894" expanded="true" signature="3286:3844" ph="{...}" />
+                <marker date="1477873500894" expanded="true" signature="3971:4460" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transformation_estimation_svd.hpp" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_svd.hpp">
+      <file leaf-file-name="point_types.hpp" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/include/pcl-1.8/pcl/impl/point_types.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="209">
+              <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+              <folding>
+                <marker date="1472738002000" expanded="false" signature="1913:1944" ph="..." />
+                <marker date="1472738002000" expanded="true" signature="5291:47892" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="9602:9759" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="10009:10427" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="10056:10112" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="10141:10194" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="10251:10310" ph="{...}" />
+                <marker date="1472738002000" expanded="false" signature="10442:10452" ph="..." />
+                <marker date="1472738002000" expanded="true" signature="10476:10498" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11110:11320" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11147:11175" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11199:11242" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11348:11376" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11671:11903" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11720:11758" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11788:11819" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="11933:11964" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="12267:12639" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="12320:12358" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="12390:12418" ph="{...}" />
+                <marker date="1472738002000" expanded="false" signature="12482:12548" ph="..." />
+                <marker date="1472738002000" expanded="true" signature="12667:12699" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13005:13244" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13060:13098" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13131:13159" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13408:13665" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13539:13624" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13560:13594" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13789:14241" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13838:13925" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="13955:14032" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="14077:14160" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="14283:14459" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="14583:14895" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="14632:14711" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="14741:14811" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="14992:15093" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="15136:15309" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="16015:16354" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="16070:16147" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="16180:16269" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="16396:16569" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="16611:16804" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="18088:18632" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="18141:18216" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="18248:18337" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="18402:18512" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="18780:19414" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="18835:18935" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="18968:19076" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="19159:19291" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="19442:19728" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="19576:19687" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="19597:19657" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="19886:20431" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="19939:20028" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="20060:20146" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="20205:20309" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="20635:20744" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="21005:21114" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="21386:21726" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="21517:21601" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="21538:21571" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="21762:22023" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="21897:21982" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="21918:21952" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="22281:22852" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="22324:22461" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="22488:22573" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="22631:22737" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="22887:22951" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="23201:23689" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="23240:23346" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="23371:23435" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="23491:23576" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="23731:24107" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="23981:24066" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="24002:24036" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="24421:24882" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="24474:24654" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="24686:24796" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="24930:25361" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="25180:25292" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="25201:25262" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="26706:27267" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="26771:26972" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="27010:27177" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="27312:27713" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="27562:27672" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="27583:27642" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="28037:28590" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="28098:28309" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="28345:28500" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="28642:29042" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="28892:29001" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="28913:28971" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="29362:29898" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="29423:29626" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="29662:29810" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="29952:30205" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="30083:30164" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="30104:30134" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="30478:30813" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="30537:30616" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="30651:30724" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="30862:31154" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="30993:31113" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="31014:31083" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="31470:32023" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="31537:31644" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="31823:31930" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="32243:32357" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="32620:32737" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="32984:33236" ph="{...}" />
+                <marker date="1472738002000" expanded="false" signature="33075:33146" ph="..." />
+                <marker date="1472738002000" expanded="true" signature="33480:33805" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="33496:33680" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="33553:33673" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="34029:34195" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="34440:34607" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="34825:34958" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="35179:35338" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="35571:35744" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="36011:36131" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="36339:36524" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="36751:36942" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="37188:37362" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="37612:37789" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="37940:39032" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="37956:38087" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="37996:38080" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="39185:39556" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="39244:39310" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="39345:39433" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="39787:39949" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="40177:40341" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="40583:40745" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="40994:41207" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="41435:41599" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="41825:41992" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="42184:42375" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="42643:42830" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="43071:43320" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="43087:43227" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="43133:43220" ph="{...}" />
+                <marker date="1472738002000" expanded="false" signature="43416:43432" ph="&lt;int N&gt;" />
+                <marker date="1472738002000" expanded="true" signature="43454:43530" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="43574:44169" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="43706:43821" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="44407:45401" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="44466:44622" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="44657:44792" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="44869:45024" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="45145:45312" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="45443:45922" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="45693:45853" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="45714:45823" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="46284:46813" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="46337:46503" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="46535:46727" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="46851:46991" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="47208:47666" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="47255:47434" ph="{...}" />
+                <marker date="1472738002000" expanded="true" signature="47463:47585" ph="{...}" />
+                <marker date="1472738002000" expanded="false" signature="47671:47687" ph="&lt;int N&gt;" />
+                <marker date="1472738002000" expanded="true" signature="47761:47890" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kdtree.h" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+      <file leaf-file-name="registrator.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/registrator.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-1311">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <marker date="1477873113948" expanded="true" signature="100:972" ph="..." />
+                <marker date="1477873113948" expanded="true" signature="2522:3284" ph="{...}" />
+                <marker date="1477873113948" expanded="true" signature="4992:5835" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filters.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/filters.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <folding>
+                <marker date="1477872967606" expanded="true" signature="9:64" ph="..." />
+                <marker date="1477872967606" expanded="true" signature="79:1259" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,10 +424,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/register.cpp" />
         <option value="$PROJECT_DIR$/include/register.hpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/keypoints.hpp" />
+        <option value="$PROJECT_DIR$/include/surface.hpp" />
+        <option value="$PROJECT_DIR$/src/keypoints.cpp" />
+        <option value="$PROJECT_DIR$/src/surface.cpp" />
+        <option value="$PROJECT_DIR$/src/loader.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/include/filters.hpp" />
+        <option value="$PROJECT_DIR$/src/filters.cpp" />
+        <option value="$PROJECT_DIR$/src/registrator.cpp" />
+        <option value="$PROJECT_DIR$/include/features.hpp" />
+        <option value="$PROJECT_DIR$/include/registrator.hpp" />
+        <option value="$PROJECT_DIR$/src/features.cpp" />
+        <option value="$PROJECT_DIR$/include/loader.hpp" />
       </list>
     </option>
   </component>
@@ -430,12 +748,14 @@
       <workItem from="1477842143234" duration="6542000" />
       <workItem from="1477860676444" duration="1531000" />
       <workItem from="1477862233000" duration="2000" />
-      <workItem from="1477862317443" duration="6895000" />
+      <workItem from="1477862317443" duration="9618000" />
+      <workItem from="1477872255333" duration="102000" />
+      <workItem from="1477872383327" duration="1331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71153000" />
+    <option name="totallyTimeSpent" value="75309000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,23 +772,23 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19095477" sideWeight="0.49472097" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.48869348" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28987068" sideWeight="0.52135676" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28987068" sideWeight="0.5012563" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.48806533" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28987068" sideWeight="0.4786432" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28987068" sideWeight="0.4987437" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.48869348" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29956895" sideWeight="0.62123114" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.48241207" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19104804" sideWeight="0.50527906" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978448" sideWeight="0.4924623" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29956895" sideWeight="0.60238695" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.7423581" order="12" side_tool="false" content_ui="tabs" x="288" y="567" width="1541" height="406" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.49497488" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978448" sideWeight="0.4924623" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -495,12 +815,193 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
+    <entry file="file://$PROJECT_DIR$/src/register.cpp" />
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#88#125#0" expanded="true" />
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8802">
+          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/register.hpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.cpp" />
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8802">
+          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/register.hpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.cpp" />
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8802">
+          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/register.hpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.cpp" />
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/register.hpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/register.hpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -521,16 +1022,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" column="112" selection-start-line="45" selection-start-column="112" selection-end-line="45" selection-end-column="112" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.cpp" />
+    <entry file="file://$PROJECT_DIR$/include/register.hpp" />
     <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8802">
@@ -539,412 +1032,319 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
+    <entry file="file://$PROJECT_DIR$/src/keypoints.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/filters.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/registrator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1311">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#14#33#0" expanded="true" />
+            <marker date="1477873113948" expanded="true" signature="100:972" ph="..." />
+            <marker date="1477873113948" expanded="true" signature="2522:3284" ph="{...}" />
+            <marker date="1477873113948" expanded="true" signature="4992:5835" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/include/pcl-1.8/pcl/impl/point_types.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+          <folding>
+            <marker date="1472738002000" expanded="false" signature="1913:1944" ph="..." />
+            <marker date="1472738002000" expanded="true" signature="5291:47892" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="9602:9759" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="10009:10427" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="10056:10112" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="10141:10194" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="10251:10310" ph="{...}" />
+            <marker date="1472738002000" expanded="false" signature="10442:10452" ph="..." />
+            <marker date="1472738002000" expanded="true" signature="10476:10498" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11110:11320" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11147:11175" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11199:11242" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11348:11376" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11671:11903" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11720:11758" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11788:11819" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="11933:11964" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="12267:12639" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="12320:12358" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="12390:12418" ph="{...}" />
+            <marker date="1472738002000" expanded="false" signature="12482:12548" ph="..." />
+            <marker date="1472738002000" expanded="true" signature="12667:12699" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13005:13244" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13060:13098" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13131:13159" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13408:13665" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13539:13624" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13560:13594" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13789:14241" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13838:13925" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="13955:14032" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="14077:14160" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="14283:14459" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="14583:14895" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="14632:14711" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="14741:14811" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="14992:15093" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="15136:15309" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="16015:16354" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="16070:16147" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="16180:16269" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="16396:16569" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="16611:16804" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="18088:18632" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="18141:18216" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="18248:18337" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="18402:18512" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="18780:19414" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="18835:18935" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="18968:19076" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="19159:19291" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="19442:19728" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="19576:19687" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="19597:19657" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="19886:20431" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="19939:20028" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="20060:20146" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="20205:20309" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="20635:20744" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="21005:21114" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="21386:21726" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="21517:21601" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="21538:21571" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="21762:22023" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="21897:21982" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="21918:21952" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="22281:22852" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="22324:22461" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="22488:22573" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="22631:22737" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="22887:22951" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="23201:23689" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="23240:23346" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="23371:23435" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="23491:23576" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="23731:24107" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="23981:24066" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="24002:24036" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="24421:24882" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="24474:24654" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="24686:24796" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="24930:25361" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="25180:25292" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="25201:25262" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="26706:27267" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="26771:26972" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="27010:27177" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="27312:27713" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="27562:27672" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="27583:27642" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="28037:28590" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="28098:28309" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="28345:28500" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="28642:29042" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="28892:29001" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="28913:28971" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="29362:29898" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="29423:29626" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="29662:29810" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="29952:30205" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="30083:30164" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="30104:30134" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="30478:30813" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="30537:30616" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="30651:30724" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="30862:31154" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="30993:31113" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="31014:31083" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="31470:32023" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="31537:31644" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="31823:31930" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="32243:32357" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="32620:32737" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="32984:33236" ph="{...}" />
+            <marker date="1472738002000" expanded="false" signature="33075:33146" ph="..." />
+            <marker date="1472738002000" expanded="true" signature="33480:33805" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="33496:33680" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="33553:33673" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="34029:34195" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="34440:34607" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="34825:34958" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="35179:35338" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="35571:35744" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="36011:36131" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="36339:36524" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="36751:36942" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="37188:37362" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="37612:37789" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="37940:39032" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="37956:38087" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="37996:38080" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="39185:39556" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="39244:39310" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="39345:39433" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="39787:39949" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="40177:40341" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="40583:40745" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="40994:41207" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="41435:41599" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="41825:41992" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="42184:42375" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="42643:42830" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="43071:43320" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="43087:43227" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="43133:43220" ph="{...}" />
+            <marker date="1472738002000" expanded="false" signature="43416:43432" ph="&lt;int N&gt;" />
+            <marker date="1472738002000" expanded="true" signature="43454:43530" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="43574:44169" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="43706:43821" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="44407:45401" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="44466:44622" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="44657:44792" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="44869:45024" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="45145:45312" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="45443:45922" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="45693:45853" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="45714:45823" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="46284:46813" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="46337:46503" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="46535:46727" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="46851:46991" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="47208:47666" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="47255:47434" ph="{...}" />
+            <marker date="1472738002000" expanded="true" signature="47463:47585" ph="{...}" />
+            <marker date="1472738002000" expanded="false" signature="47671:47687" ph="&lt;int N&gt;" />
+            <marker date="1472738002000" expanded="true" signature="47761:47890" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1439">
+          <caret line="122" column="7" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
+          <folding>
+            <marker date="1477872825716" expanded="false" signature="38:150" ph="..." />
+            <marker date="1477872825716" expanded="false" signature="196:290" ph="..." />
+            <marker date="1477872825716" expanded="true" signature="324:5224" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/features.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding>
+            <marker date="1477873500894" expanded="true" signature="9:331" ph="..." />
+            <marker date="1477873500894" expanded="true" signature="474:1003" ph="{...}" />
+            <marker date="1477873500894" expanded="true" signature="1311:2021" ph="{...}" />
+            <marker date="1477873500894" expanded="true" signature="2357:3066" ph="{...}" />
+            <marker date="1477873500894" expanded="true" signature="3286:3844" ph="{...}" />
+            <marker date="1477873500894" expanded="true" signature="3971:4460" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/keypoints.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding>
+            <marker date="1477872494628" expanded="true" signature="15:39" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/surface.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/surface.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/features.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1260">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding>
+            <marker date="1477873431591" expanded="true" signature="10:58" ph="..." />
+            <marker date="1477873431591" expanded="true" signature="76:3439" ph="{...}" />
+            <marker date="1477873431591" expanded="true" signature="181:492" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/filters.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding>
-            <element signature="e#88#125#0" expanded="true" />
+            <marker date="1477872967606" expanded="true" signature="9:64" ph="..." />
+            <marker date="1477872967606" expanded="true" signature="79:1259" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
+    <entry file="file://$PROJECT_DIR$/include/loader.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+        <state relative-caret-position="71">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#29#52#0" expanded="true" />
+            <marker date="1477873560809" expanded="true" signature="9:64" ph="..." />
+            <marker date="1477873560809" expanded="true" signature="80:676" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
+    <entry file="file://$PROJECT_DIR$/include/registrator.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8802">
-          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="142" selection-start-line="32" selection-start-column="142" selection-end-line="32" selection-end-column="142" />
+        <state relative-caret-position="215">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
           <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#88#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8802">
-          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="142" selection-start-line="32" selection-start-column="142" selection-end-line="32" selection-end-column="142" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="130" column="74" selection-start-line="130" selection-start-column="74" selection-end-line="130" selection-end-column="74" />
-          <folding>
-            <element signature="e#88#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8802">
-          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="142" selection-start-line="32" selection-start-column="142" selection-end-line="32" selection-end-column="142" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="130" column="74" selection-start-line="130" selection-start-column="74" selection-end-line="130" selection-end-column="74" />
-          <folding>
-            <element signature="e#88#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8802">
-          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="142" selection-start-line="32" selection-start-column="142" selection-end-line="32" selection-end-column="142" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="130" column="74" selection-start-line="130" selection-start-column="74" selection-end-line="130" selection-end-column="74" />
-          <folding>
-            <element signature="e#88#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#88#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#88#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="489" column="0" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_svd.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/pcl-1.8/pcl/search/kdtree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/register.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="343" column="28" selection-start-line="343" selection-start-column="28" selection-end-line="343" selection-end-column="28" />
-          <folding>
-            <element signature="e#88#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/register.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
+            <marker date="1477873500886" expanded="true" signature="23:260" ph="..." />
+            <marker date="1477873500886" expanded="true" signature="282:3287" ph="{...}" />
           </folding>
         </state>
       </provider>
