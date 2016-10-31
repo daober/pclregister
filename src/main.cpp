@@ -23,6 +23,7 @@ int main(int argc, char **argv){
     boost::shared_ptr<Registrator> registrator = boost::make_shared<Registrator>();
     boost::shared_ptr<Filters> filter = boost::make_shared<Filters>();
     boost::shared_ptr<Loader> loader = boost::make_shared<Loader>();
+    boost::shared_ptr<Saver> saver = boost::make_shared<Saver>();
     boost::shared_ptr<Features> feature = boost::make_shared<Features>();
 
     // load the pointclouds
@@ -37,17 +38,27 @@ int main(int argc, char **argv){
     srcFeatures = feature->computeFeatures(src_points);
     tgtFeatures = feature->computeFeatures(tgt_points);
 
+    saver->savePoints("room1", srcFeatures->points);
+    saver->saveKeypoints("room1", srcFeatures->keypoints);
+    saver->saveSurfaceNormals("room1", srcFeatures->normals);
+    saver->saveLocalDescriptors("room1", srcFeatures->local_descriptors);
 
-    // compute the intial alignment
+    saver->savePoints("room2", tgtFeatures->points);
+    saver->saveKeypoints("room2", tgtFeatures->keypoints);
+    saver->saveSurfaceNormals("room2", tgtFeatures->normals);
+    saver->saveLocalDescriptors("room2", tgtFeatures->local_descriptors);
+
+
+    // compute the initial alignment
     double min_sample_dist = 0.0001;
     double max_correspondence_dist = 0.05f;
     double nr_iters = 1000;
 
     // load the keypoints and local descriptors
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints("room1");
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = loader->loadLocalDescriptors("room2");
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = loader->loadLocalDescriptors("room1");
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints("room1");
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints("room2");
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = loader->loadLocalDescriptors("room2");
 
     // find the transform that roughly aligns the points

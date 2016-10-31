@@ -59,11 +59,10 @@
 
 Eigen::Matrix4f
 Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
-                                                      const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &source_descriptors,
-                                                      const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
-                                                      const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &target_descriptors,
-                                                      float min_sample_distance, float max_correspondence_distance,
-                                                      int nr_iterations) {
+                                     const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &source_descriptors,
+                                     const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
+                                     const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &target_descriptors,
+                                     float min_sample_distance, float max_correspondence_distance, int nr_iterations) {
 
 
     pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33>::Ptr
@@ -107,12 +106,17 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
  * Return: A transformation matrix that will precisely align the points in source to the points in target
  */
 
+
+//TODO: METHOD IS FAULTY (Process finished with exit code 139 (interrupted by signal 11: SIGSEGV))
 Eigen::Matrix4f
 Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
                                               const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
                                               const Eigen::Matrix4f initial_alignment,
                                               float max_correspondence_distance, float outlier_rejection_threshold,
                                               float transformation_epsilon, float max_iterations) {
+
+
+    std::cout<<"using icp for better accuracy" << std::endl;
 
     pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr icp (new pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>());
 

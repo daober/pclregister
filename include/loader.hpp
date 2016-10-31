@@ -39,6 +39,8 @@ class Saver{
 
 public:
 
+    int saveObjectFeatures(std::string filename, boost::shared_ptr<Features::ObjectFeatures> &objFeatures);
+
     int savePoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points);
 
     int saveSurfaceNormals(std::string filename, pcl::PointCloud<pcl::Normal>::Ptr &normals);
