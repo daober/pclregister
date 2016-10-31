@@ -553,6 +553,7 @@ CMakeFiles/register.dir/src/filters.cpp.o
  /usr/local/include/pcl-1.8/pcl/search/pcl_search.h
  /usr/local/include/pcl-1.8/pcl/search/search.h
 CMakeFiles/register.dir/src/loader.cpp.o
+ ../include/features.hpp
  ../include/loader.hpp
  /home/danbuntu/src/3dfeatures/registerpcl/src/loader.cpp
  /usr/include/eigen3/Eigen/Cholesky

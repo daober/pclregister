@@ -552,6 +552,7 @@ CMakeFiles/register.dir/src/filters.cpp.o: /usr/local/include/pcl-1.8/pcl/search
 CMakeFiles/register.dir/src/filters.cpp.o: /usr/local/include/pcl-1.8/pcl/search/pcl_search.h
 CMakeFiles/register.dir/src/filters.cpp.o: /usr/local/include/pcl-1.8/pcl/search/search.h
 
+CMakeFiles/register.dir/src/loader.cpp.o: ../include/features.hpp
 CMakeFiles/register.dir/src/loader.cpp.o: ../include/loader.hpp
 CMakeFiles/register.dir/src/loader.cpp.o: ../src/loader.cpp
 CMakeFiles/register.dir/src/loader.cpp.o: /usr/include/eigen3/Eigen/Cholesky

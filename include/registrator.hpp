@@ -70,7 +70,7 @@ public:
     refineAlignment (const pcl::PointCloud<pcl::PointXYZRGB>::Ptr & source_points,
                      const pcl::PointCloud<pcl::PointXYZRGB>::Ptr & target_points,
                      const Eigen::Matrix4f initial_alignment, float max_correspondence_distance,
-                     float outlier_rejection_threshold, float transformation_epsilon, float max_iterations);
+                     float outlier_rejection_threshold, float transformation_epsilon, int max_iterations);
 
 
 private:

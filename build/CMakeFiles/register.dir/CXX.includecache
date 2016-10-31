@@ -19,10 +19,14 @@ pcl/point_cloud.h
 -
 
 ../include/loader.hpp
-pcl/impl/point_types.hpp
+pcl/point_types.h
 -
 pcl/point_cloud.h
 -
+string.h
+-
+features.hpp
+../include/features.hpp
 
 ../include/registrator.hpp
 string.h
@@ -75,12 +79,12 @@ filters.hpp
 /home/danbuntu/src/3dfeatures/registerpcl/src/filters.hpp
 
 /home/danbuntu/src/3dfeatures/registerpcl/src/loader.cpp
+loader.hpp
+/home/danbuntu/src/3dfeatures/registerpcl/src/loader.hpp
 pcl/console/print.h
 -
 pcl/io/pcd_io.h
 -
-loader.hpp
-/home/danbuntu/src/3dfeatures/registerpcl/src/loader.hpp
 
 /home/danbuntu/src/3dfeatures/registerpcl/src/main.cpp
 registrator.hpp

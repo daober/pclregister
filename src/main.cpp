@@ -50,9 +50,9 @@ int main(int argc, char **argv){
 
 
     // compute the initial alignment
-    double min_sample_dist = 0.0001;
-    double max_correspondence_dist = 0.05f;
-    double nr_iters = 1000;
+    double min_sample_dist = 1e-6;
+    double max_correspondence_dist = 0.03f;
+    double nr_iters = 10000;
 
     // load the keypoints and local descriptors
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints("room1");
@@ -68,16 +68,15 @@ int main(int argc, char **argv){
     pcl::console::print_info ("computed initial alignment!\n");
 
 
-    float max_correspondence_distance = 0.01f;
-    float outlier_rejection_threshold = 10.0f;
-    float transformation_epsilon = 1e-6;
-    int max_iterations = 500;
+    //float max_correspondence_distance = 0.01f;
+    //float outlier_rejection_threshold = 0.50f;
+    //float transformation_epsilon = 1e-6;
+    //int max_iterations = 50;
 
-    transform = registrator->refineAlignment (src_points, tgt_points, transform, max_correspondence_distance,
-                                              outlier_rejection_threshold, transformation_epsilon, max_iterations);
+    //transform = registrator->refineAlignment (src_points, tgt_points, transform, max_correspondence_distance,
+    //                                          outlier_rejection_threshold, transformation_epsilon, max_iterations);
 
-    pcl::console::print_info ("refined alignment!\n");
-
+    //pcl::console::print_info ("refined alignment!\n");
 
     // transform the source point to align them with the target points
     pcl::transformPointCloud (*src_points, *src_points, transform);
@@ -92,20 +91,23 @@ int main(int argc, char **argv){
     pcl::io::savePCDFile (filename, *src_points);
     pcl::console::print_info ("saved registered clouds as %s\n", filename.c_str ());
 
-    // or visualize "on the fly" via visualizer (vtk)
-    /*else{
-        pcl::console::print_info ("starting visualizer... close window to exit\n");
-        pcl::visualization::PCLVisualizer vis;
+    //and visualize the result via vtk
 
-        pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZRGB> red (src_points, 255, 0, 0);
-        vis.addPointCloud (src_points, red, "src_points");
+    /*pcl::console::print_info ("starting visualizer... close window to exit\n");
+    pcl::visualization::PCLVisualizer vis;
 
-        pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZRGB> yellow (tgt_points, 255, 255, 0);
-        vis.addPointCloud (tgt_points, yellow, "tgt_points");
+    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZRGB> red (src_points, 255, 0, 0);
+    vis.addPointCloud (src_points, red, "src_points");
 
-        vis.resetCamera ();
-        vis.spin ();
+    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZRGB> yellow (tgt_points, 255, 255, 0);
+    vis.addPointCloud (tgt_points, yellow, "tgt_points");
+
+    vis.resetCamera ();
+
+    while(!vis.wasStopped()){
+        vis.spinOnce();
     }*/
+
 
     return (0);
 }

@@ -11,6 +11,8 @@
 #include <pcl/search/kdtree.h>
 #include <pcl/impl/point_types.hpp>
 
+#include <pcl/registration/sample_consensus_prerejective.h>
+
 #include <pcl/keypoints/harris_3d.h>
 #include <pcl/features/vfh.h>
 #include <pcl/registration/correspondence_rejection_sample_consensus.h>
@@ -108,34 +110,68 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
 
 
 //TODO: METHOD IS FAULTY (Process finished with exit code 139 (interrupted by signal 11: SIGSEGV))
+//SIGSEGV = segmentation fault | which in turn means that you tried to access memory that you shouldn't have
+
 Eigen::Matrix4f
 Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
-                                              const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
-                                              const Eigen::Matrix4f initial_alignment,
-                                              float max_correspondence_distance, float outlier_rejection_threshold,
-                                              float transformation_epsilon, float max_iterations) {
+                             const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
+                             const Eigen::Matrix4f initial_alignment,
+                             float max_correspondence_distance, float outlier_rejection_threshold,
+                             float transformation_epsilon, int max_iterations) {
 
 
-    std::cout<<"using icp for better accuracy" << std::endl;
+    pcl::console::print_highlight ("Starting alignment...\n");
 
-    pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr icp (new pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>());
 
-    icp->setMaxCorrespondenceDistance(max_correspondence_distance);
-    icp->setRANSACOutlierRejectionThreshold(outlier_rejection_threshold);
-    icp->setTransformationEpsilon(transformation_epsilon);
-    icp->setMaximumIterations(max_iterations);
+    /*pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB> icp;
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outSource (new pcl::PointCloud<pcl::PointXYZRGB>());
-    pcl::transformPointCloud(*source_points, *outSource, initial_alignment);
+    icp.setTransformationEpsilon(transformation_epsilon);
+    icp.setMaxCorrespondenceDistance(0.1);
 
-    icp->setInputCloud(outSource);
-    icp->setInputTarget(target_points);
+    icp.setInputSource(source_points);
+    icp.setInputTarget(target_points);
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outRefined(new pcl::PointCloud<pcl::PointXYZRGB>());
+    //
+    // Run the same optimization in a loop and visualize the results
+    Eigen::Matrix4f Ti = Eigen::Matrix4f::Identity (), prev, targetToSource;
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr reg_result = source_points;
+    icp.setMaximumIterations(2);
 
-    icp->align(*outRefined);
+    for (int i = 0; i < 30; ++i){
+        PCL_INFO ("Iteration Nr. %d.\n", i);
 
-    return (icp->getFinalTransformation() * initial_alignment);
+        //estimation
+        icp.setInputSource(source_points);
+        icp.align(*reg_result);
+
+        //accumulate transformation between each iteration
+        Ti = icp.getFinalTransformation () * Ti;
+
+        //if the difference between this transformation and the previous one
+        //is smaller than the threshold, refine the process by reducing
+        //the maximal correspondence distance
+        if(fabs ((icp.getLastIncrementalTransformation() - prev).sum()) < icp.getTransformationEpsilon()){
+            icp.setMaxCorrespondenceDistance(icp.getMaxCorrespondenceDistance() - 0.001);
+        }
+
+        prev = icp.getLastIncrementalTransformation();
+    }
+
+    //get the transformation from target to source
+    targetToSource = Ti.inverse();
+
+    //
+    // transform target back in source frame
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outRefined (new pcl::PointCloud<pcl::PointXYZRGB>());
+
+    pcl::transformPointCloud(*target_points, *outRefined, targetToSource);
+
+    //add the source to the transformed target
+    *outRefined += *source_points;
+
+    //initial_alignment = targetToSource;
+
+    return (icp.getFinalTransformation() * initial_alignment);*/
 }
 
 
