@@ -2,10 +2,13 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 project(register C CXX)
 
-SET(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Debug)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+#with this option, GCC automatically optimizes for local computer
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+
+#set(CMAKE_CXX_FLAGS "-fno-limit-debug-info")
 
 find_package(PCL 1.7 REQUIRED)
 find_package(Boost REQUIRED)

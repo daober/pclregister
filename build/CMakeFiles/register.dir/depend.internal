@@ -1531,6 +1531,7 @@ CMakeFiles/register.dir/src/registrator.cpp.o
  /usr/local/include/pcl-1.8/pcl/registration/correspondence_estimation.h
  /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection.h
  /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection_features.h
+ /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection_poly.h
  /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection_sample_consensus.h
  /usr/local/include/pcl-1.8/pcl/registration/correspondence_sorting.h
  /usr/local/include/pcl-1.8/pcl/registration/correspondence_types.h
@@ -1543,6 +1544,7 @@ CMakeFiles/register.dir/src/registrator.cpp.o
  /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_estimation.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection_features.hpp
+ /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection_poly.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection_sample_consensus.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_types.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/default_convergence_criteria.hpp
@@ -1550,15 +1552,18 @@ CMakeFiles/register.dir/src/registrator.cpp.o
  /usr/local/include/pcl-1.8/pcl/registration/impl/icp.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/ndt.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/registration.hpp
+ /usr/local/include/pcl-1.8/pcl/registration/impl/sample_consensus_prerejective.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_lm.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_point_to_plane_lls.hpp
  /usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_svd.hpp
  /usr/local/include/pcl-1.8/pcl/registration/ndt.h
  /usr/local/include/pcl-1.8/pcl/registration/registration.h
+ /usr/local/include/pcl-1.8/pcl/registration/sample_consensus_prerejective.h
  /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation.h
  /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_lm.h
  /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_point_to_plane_lls.h
  /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_svd.h
+ /usr/local/include/pcl-1.8/pcl/registration/transformation_validation.h
  /usr/local/include/pcl-1.8/pcl/registration/warp_point_rigid.h
  /usr/local/include/pcl-1.8/pcl/registration/warp_point_rigid_6d.h
  /usr/local/include/pcl-1.8/pcl/sample_consensus/boost.h

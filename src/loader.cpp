@@ -4,7 +4,7 @@
 #include <pcl/io/pcd_io.h>
 
 
-boost::shared_ptr<pcl::PointCloud<pcl::PointXYZRGB>>
+boost::shared_ptr<pcl::PointCloud<pcl::PointXYZRGB> >
 Loader::loadPointCloud(std::string filename, std::string suffix) {
 
     boost::shared_ptr<pcl::PointCloud<pcl::PointXYZRGB> > output (new pcl::PointCloud<pcl::PointXYZRGB>);

@@ -1530,6 +1530,7 @@ CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/re
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/correspondence_estimation.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection_features.h
+CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection_poly.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/correspondence_rejection_sample_consensus.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/correspondence_sorting.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/correspondence_types.h
@@ -1542,6 +1543,7 @@ CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/re
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_estimation.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection_features.hpp
+CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection_poly.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_rejection_sample_consensus.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/correspondence_types.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/default_convergence_criteria.hpp
@@ -1549,15 +1551,18 @@ CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/re
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/icp.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/ndt.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/registration.hpp
+CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/sample_consensus_prerejective.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_lm.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_point_to_plane_lls.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/impl/transformation_estimation_svd.hpp
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/ndt.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/registration.h
+CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/sample_consensus_prerejective.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_lm.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_point_to_plane_lls.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/transformation_estimation_svd.h
+CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/transformation_validation.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/warp_point_rigid.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/registration/warp_point_rigid_6d.h
 CMakeFiles/register.dir/src/registrator.cpp.o: /usr/local/include/pcl-1.8/pcl/sample_consensus/boost.h
