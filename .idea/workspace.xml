@@ -14,6 +14,7 @@
     <list default="true" id="80b605bf-f784-4461-ad6d-3abcf789eeea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/loader.hpp" afterPath="$PROJECT_DIR$/include/loader.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loader.cpp" afterPath="$PROJECT_DIR$/src/loader.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="icp_register.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +37,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+            <state relative-caret-position="359">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#28#54#0" expanded="true" />
                 <element signature="e#255#285#0" expanded="true" />
@@ -83,8 +84,8 @@
       <file leaf-file-name="loader.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/loader.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+            <state relative-caret-position="360">
+              <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -95,8 +96,8 @@
       <file leaf-file-name="loader.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/loader.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="75" column="40" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
+            <state relative-caret-position="449">
+              <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -170,9 +171,9 @@
         <option value="$PROJECT_DIR$/src/keypoints.cpp" />
         <option value="$PROJECT_DIR$/include/filters.hpp" />
         <option value="$PROJECT_DIR$/src/features.cpp" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/include/features.hpp" />
         <option value="$PROJECT_DIR$/include/loader.hpp" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/loader.cpp" />
       </list>
     </option>
@@ -486,12 +487,12 @@
       <workItem from="1477872255333" duration="102000" />
       <workItem from="1477872383327" duration="1902000" />
       <workItem from="1477874308314" duration="5471000" />
-      <workItem from="1477884393445" duration="1949000" />
+      <workItem from="1477884393445" duration="2389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83300000" />
+    <option name="totallyTimeSpent" value="83740000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -780,17 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#28#54#0" expanded="true" />
-            <element signature="e#255#285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/filters.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
@@ -839,10 +829,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#28#54#0" expanded="true" />
+            <element signature="e#255#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/loader.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+        <state relative-caret-position="360">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
           <folding>
             <element signature="e#14#42#0" expanded="true" />
           </folding>
@@ -851,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/loader.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="75" column="40" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
+        <state relative-caret-position="449">
+          <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

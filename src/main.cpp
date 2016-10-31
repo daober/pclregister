@@ -31,11 +31,11 @@ int main(int argc, char **argv){
 
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity ();
 
-   // boost::shared_ptr<Features::ObjectFeatures> srcFeatures = boost::make_shared<Features::ObjectFeatures>();
-   // boost::shared_ptr<Features::ObjectFeatures> tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
+    boost::shared_ptr<Features::ObjectFeatures> srcFeatures = boost::make_shared<Features::ObjectFeatures>();
+    boost::shared_ptr<Features::ObjectFeatures> tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
 
-   // srcFeatures = feature->computeFeatures(src_points);
-   // tgtFeatures = feature->computeFeatures(tgt_points);
+    srcFeatures = feature->computeFeatures(src_points);
+    tgtFeatures = feature->computeFeatures(tgt_points);
 
 
     // compute the intial alignment

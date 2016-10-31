@@ -38,7 +38,6 @@ private:
 class Saver{
 
 public:
-    int savePointCloud(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud);
 
     int savePoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points);
 

@@ -79,6 +79,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadKeypoints(std::string filenam
 
 int Saver::saveGlobalDescriptors(std::string filename, pcl::PointCloud<pcl::VFHSignature308>::Ptr &signature) {
     int err = 0;
+    filename.append ("_globaldesc.pcd");
 
     return (err);
 }
@@ -86,6 +87,7 @@ int Saver::saveGlobalDescriptors(std::string filename, pcl::PointCloud<pcl::VFHS
 
 int Saver::saveLocalDescriptors(std::string filename, pcl::PointCloud<pcl::FPFHSignature33>::Ptr &signature) {
     int err = 0;
+    filename.append ("_localdesc.pcd");
 
     return (err);
 }
@@ -93,6 +95,7 @@ int Saver::saveLocalDescriptors(std::string filename, pcl::PointCloud<pcl::FPFHS
 
 int Saver::saveKeypoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &keypoints) {
     int err = 0;
+    filename.append ("_keypoints.pcd");
 
     return (err);
 }
@@ -100,6 +103,7 @@ int Saver::saveKeypoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>
 
 int Saver::saveSurfaceNormals(std::string filename, pcl::PointCloud<pcl::Normal>::Ptr &normals) {
     int err = 0;
+    filename.append ("_normals.pcd");
 
     return (err);
 }
@@ -107,13 +111,9 @@ int Saver::saveSurfaceNormals(std::string filename, pcl::PointCloud<pcl::Normal>
 
 int Saver::savePoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points) {
     int err = 0;
+    filename.append ("_points.pcd");
 
     return (err);
 }
 
 
-int Saver::savePointCloud(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud) {
-    int err = 0;
-
-    return (err);
-}
