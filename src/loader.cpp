@@ -10,7 +10,6 @@ Loader::loadPointCloud(std::string filename, std::string suffix) {
     boost::shared_ptr<pcl::PointCloud<pcl::PointXYZRGB> > output (new pcl::PointCloud<pcl::PointXYZRGB>);
     filename.append (suffix);
 
-    //pcl::io::savePCDFile(filename, *output);
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
 
@@ -22,7 +21,6 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadPoints(std::string filename) 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr output (new pcl::PointCloud<pcl::PointXYZRGB>());
     filename.append ("_points.pcd");
 
-    //pcl::io::savePCDFile(filename, *output);
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
 
@@ -34,7 +32,6 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr Loader::loadLocalDescriptors(std::str
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr output (new pcl::PointCloud<pcl::FPFHSignature33>());
     filename.append ("_localdesc.pcd");
 
-    //pcl::io::savePCDFile(filename, *output);
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
 
@@ -46,7 +43,6 @@ pcl::PointCloud<pcl::VFHSignature308>::Ptr Loader::loadGlobalDescriptors(std::st
     pcl::PointCloud<pcl::VFHSignature308>::Ptr output (new pcl::PointCloud<pcl::VFHSignature308>());
     filename.append ("_globaldesc.pcd");
 
-    //pcl::io::savePCDFile(filename, *output);
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
 
@@ -58,7 +54,6 @@ pcl::PointCloud<pcl::Normal>::Ptr Loader::loadSurfaceNormals(std::string filenam
     pcl::PointCloud<pcl::Normal>::Ptr output (new pcl::PointCloud<pcl::Normal>());
     filename.append ("_normals.pcd");
 
-    //pcl::io::savePCDFile(filename, *output);
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
 
@@ -70,7 +65,6 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadKeypoints(std::string filenam
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr output (new pcl::PointCloud<pcl::PointXYZRGB>());
     filename.append ("_keypoints.pcd");
 
-    //pcl::io::savePCDFile(filename, *output);
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
 
@@ -78,12 +72,48 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadKeypoints(std::string filenam
 }
 
 
+/***************************************************************************************************************/
+/************************************************SEPERATOR******************************************************/
+/***************************************************************************************************************/
 
-int Loader::saveObjectFeatures(boost::shared_ptr<Features::ObjectFeatures> &input) {
+
+int Saver::saveGlobalDescriptors(std::string filename, pcl::PointCloud<pcl::VFHSignature308>::Ptr &signature) {
     int err = 0;
 
+    return (err);
+}
 
 
+int Saver::saveLocalDescriptors(std::string filename, pcl::PointCloud<pcl::FPFHSignature33>::Ptr &signature) {
+    int err = 0;
+
+    return (err);
+}
+
+
+int Saver::saveKeypoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &keypoints) {
+    int err = 0;
+
+    return (err);
+}
+
+
+int Saver::saveSurfaceNormals(std::string filename, pcl::PointCloud<pcl::Normal>::Ptr &normals) {
+    int err = 0;
+
+    return (err);
+}
+
+
+int Saver::savePoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points) {
+    int err = 0;
+
+    return (err);
+}
+
+
+int Saver::savePointCloud(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud) {
+    int err = 0;
 
     return (err);
 }

@@ -29,9 +29,30 @@ public:
     pcl::PointCloud<pcl::VFHSignature308>::Ptr
     loadGlobalDescriptors (std::string filename);
 
-    int saveObjectFeatures(boost::shared_ptr<Features::ObjectFeatures> &input);
+
+private:
+
+};
+
+
+class Saver{
+
+public:
+    int savePointCloud(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &cloud);
+
+    int savePoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points);
+
+    int saveSurfaceNormals(std::string filename, pcl::PointCloud<pcl::Normal>::Ptr &normals);
+
+    int saveKeypoints(std::string filename, pcl::PointCloud<pcl::PointXYZRGB>::Ptr &keypoints);
+
+    int saveLocalDescriptors(std::string filename, pcl::PointCloud<pcl::FPFHSignature33>::Ptr &signature);
+
+    int saveGlobalDescriptors(std::string filename, pcl::PointCloud<pcl::VFHSignature308>::Ptr &signature);
 
 
 private:
+
+
 
 };
