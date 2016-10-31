@@ -1,4 +1,3 @@
-
 //include own headers first
 #include "registrator.hpp"
 #include "filters.hpp"
@@ -26,95 +25,64 @@ int main(int argc, char **argv){
     boost::shared_ptr<Loader> loader = boost::make_shared<Loader>();
     boost::shared_ptr<Features> feature = boost::make_shared<Features>();
 
-    if (argc < 3) {
-        pcl::console::print_info ("Syntax is: %s source target <options>\n", argv[0]);
-        pcl::console::print_info ("  where options are:\n");
-        pcl::console::print_info ("    -i min_sample_dist,max_dist,nr_iters ................ Compute initial alignment\n");
-        pcl::console::print_info ("    -r max_dist,rejection_thresh,tform_eps,max_iters ............. Refine alignment\n");
-        pcl::console::print_info ("    -s output.pcd ........................... Save the registered and merged clouds\n");
-        pcl::console::print_info ("Note: The inputs (source and target) must be specified without the .pcd extension\n");
-
-        return (1);
-    }
-
     // load the pointclouds
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints (argv[1]);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints (argv[2]);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints ("room1");
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints ("room2");
 
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity ();
 
+   // boost::shared_ptr<Features::ObjectFeatures> srcFeatures = boost::make_shared<Features::ObjectFeatures>();
+   // boost::shared_ptr<Features::ObjectFeatures> tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
+
+   // srcFeatures = feature->computeFeatures(src_points);
+   // tgtFeatures = feature->computeFeatures(tgt_points);
+
+
     // compute the intial alignment
-    double min_sample_dist;
-    double max_correspondence_dist;
-    double nr_iters;
+    double min_sample_dist = 0.0001;
+    double max_correspondence_dist = 0.05f;
+    double nr_iters = 1000;
 
-    bool initialAlignment = pcl::console::parse_3x_arguments
-                                    ( argc, argv, "-i", min_sample_dist,  max_correspondence_dist, nr_iters) > 0;
+    // load the keypoints and local descriptors
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints("room1");
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = loader->loadLocalDescriptors("room2");
 
-    if(initialAlignment){
-        // load the keypoints and local descriptors
-        pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints(argv[1]);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = loader->loadLocalDescriptors(argv[1]);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints("room1");
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = loader->loadLocalDescriptors("room2");
 
-        pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints(argv[2]);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = loader->loadLocalDescriptors(argv[2]);
+    // find the transform that roughly aligns the points
+    transform = registrator->computeInitialAlignment(srcKeypoints, srcDescriptor, tgtKeypoints, tgtDescriptor,
+                                                     min_sample_dist, max_correspondence_dist, nr_iters);
 
-        // find the transform that roughly aligns the points
-        transform = registrator->computeInitialAlignment(srcKeypoints,
-                                                         srcDescriptor,
-                                                         tgtKeypoints,
-                                                         tgtDescriptor,
-                                                         min_sample_dist,
-                                                         max_correspondence_dist,
-                                                         nr_iters);
+    pcl::console::print_info ("computed initial alignment!\n");
 
-        pcl::console::print_info ("computed initial alignment!\n");
-    }
 
-    //refine the result of initial alignment
-    std::string params_string;
+    float max_correspondence_distance = 0.01f;
+    float outlier_rejection_threshold = 10.0f;
+    float transformation_epsilon = 1e-6;
+    int max_iterations = 500;
 
-    bool refineAlignment = pcl::console::parse_argument (argc, argv, "-r", params_string) > 0;
+    transform = registrator->refineAlignment (src_points, tgt_points, transform, max_correspondence_distance,
+                                              outlier_rejection_threshold, transformation_epsilon, max_iterations);
 
-    if (refineAlignment){
-        std::vector<std::string> tokens;
+    pcl::console::print_info ("refined alignment!\n");
 
-        boost::split (tokens, params_string, boost::is_any_of (","), boost::token_compress_on);
-
-        assert (tokens.size () == 4);
-        float max_correspondence_distance = atof(tokens[0].c_str ());
-        float outlier_rejection_threshold = atof(tokens[1].c_str ());
-        float transformation_epsilon = atoi(tokens[2].c_str ());
-        int max_iterations = atoi(tokens[3].c_str ());
-
-        transform = registrator->refineAlignment (src_points,
-                                                  tgt_points,
-                                                  transform,
-                                                  max_correspondence_distance,
-                                                  outlier_rejection_threshold,
-                                                  transformation_epsilon,
-                                                  max_iterations);
-
-        pcl::console::print_info ("refined alignment!\n");
-    }
 
     // transform the source point to align them with the target points
     pcl::transformPointCloud (*src_points, *src_points, transform);
 
     // save output
-    std::string filename;
-    bool saveOutput = pcl::console::parse_argument (argc, argv, "-s", filename) > 0;
+    std::string filename("output.pcd");
 
-    if (saveOutput){
-        // merge the two clouds
-        (*src_points) += (*tgt_points);
+    // merge the two clouds
+    (*src_points) += (*tgt_points);
 
-        // save the result
-        pcl::io::savePCDFile (filename, *src_points);
-        pcl::console::print_info ("saved registered clouds as %s\n", filename.c_str ());
-    }
+    // save the result
+    pcl::io::savePCDFile (filename, *src_points);
+    pcl::console::print_info ("saved registered clouds as %s\n", filename.c_str ());
+
     // or visualize "on the fly" via visualizer (vtk)
-    else{
+    /*else{
         pcl::console::print_info ("starting visualizer... close window to exit\n");
         pcl::visualization::PCLVisualizer vis;
 
@@ -126,7 +94,7 @@ int main(int argc, char **argv){
 
         vis.resetCamera ();
         vis.spin ();
-    }
+    }*/
 
     return (0);
 }

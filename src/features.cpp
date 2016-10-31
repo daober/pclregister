@@ -9,8 +9,6 @@
 #include <pcl/features/vfh.h>
 
 #include <pcl/search/impl/search.hpp>
-
-
 #include <boost/shared_ptr.hpp>
 
 
@@ -32,8 +30,6 @@ Features::estimateSurfaceNormals(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &i
     normalEstimation.compute(*normals);
 
     return (normals);
-
-
 }
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr

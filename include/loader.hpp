@@ -1,6 +1,10 @@
-#include <pcl/impl/point_types.hpp>
+#pragma once
+
+#include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 
+#include <string.h>
+#include "features.hpp"
 
 
 class Loader{
@@ -25,6 +29,7 @@ public:
     pcl::PointCloud<pcl::VFHSignature308>::Ptr
     loadGlobalDescriptors (std::string filename);
 
+    int saveObjectFeatures(boost::shared_ptr<Features::ObjectFeatures> &input);
 
 
 private:

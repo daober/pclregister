@@ -1,11 +1,10 @@
+#pragma once
 
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 
 
-
 class Features{
-
 
 public:
 
@@ -93,9 +92,9 @@ public:
 /** Estimate normals, detect keypoints, and compute local and global descriptors
  * Return: An ObjectFeatures struct containing all the features
  */
-
     boost::shared_ptr<Features::ObjectFeatures>
     computeFeatures (const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input);
+
 
 
 

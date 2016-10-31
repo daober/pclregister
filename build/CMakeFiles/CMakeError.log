@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bf920/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bf920.dir/build.make CMakeFiles/cmTC_bf920.dir/build
+make[1]: Entering directory '/home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf920.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_bf920.dir/CheckSymbolExists.c.o   -c /home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bf920
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf920.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_bf920.dir/CheckSymbolExists.c.o  -o cmTC_bf920 -rdynamic 
+CMakeFiles/cmTC_bf920.dir/CheckSymbolExists.c.o: In function `main':
+/home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:(.text+0x19): undefined reference to `pthread_create'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+CMakeFiles/cmTC_bf920.dir/build.make:97: recipe for target 'cmTC_bf920' failed
+make[1]: *** [cmTC_bf920] Error 1
+make[1]: Leaving directory '/home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bf920/fast' failed
+make: *** [cmTC_bf920/fast] Error 2
+
+File /home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4becf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4becf.dir/build.make CMakeFiles/cmTC_4becf.dir/build
+make[1]: Entering directory '/home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4becf.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4becf.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4becf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4becf.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_4becf.dir/CheckFunctionExists.c.o  -o cmTC_4becf -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+CMakeFiles/cmTC_4becf.dir/build.make:97: recipe for target 'cmTC_4becf' failed
+make[1]: *** [cmTC_4becf] Error 1
+make[1]: Leaving directory '/home/danbuntu/src/3dfeatures/registerpcl/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_4becf/fast' failed
+make: *** [cmTC_4becf/fast] Error 2
+
+
