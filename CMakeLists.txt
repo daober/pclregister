@@ -18,7 +18,7 @@ add_definitions(${PCL_DEFINITIONS})
 #headers are in include directory
 include_directories(include)
 
-set(SOURCES src/main.cpp src/registrator.cpp src/features.cpp src/keypoints.cpp src/loader.cpp src/filters.cpp)
+set(SOURCES src/main.cpp src/registrator.cpp src/features.cpp src/loader.cpp src/filters.cpp)
 
-add_executable(register ${SOURCES} include/registrator.hpp include/features.hpp include/keypoints.hpp include/loader.hpp include/filters.hpp)
+add_executable(register ${SOURCES} include/registrator.hpp include/features.hpp include/loader.hpp include/filters.hpp)
 target_link_libraries (register ${PCL_LIBRARIES} )

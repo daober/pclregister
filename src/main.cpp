@@ -1,6 +1,9 @@
 
 //include own headers first
 #include "registrator.hpp"
+#include "filters.hpp"
+#include "features.hpp"
+#include "loader.hpp"
 
 #include <pcl/io/boost.h>
 #include <boost/make_shared.hpp>
@@ -19,6 +22,9 @@ int main(int argc, char **argv){
 
     //initialize class object
     boost::shared_ptr<Registrator> registrator = boost::make_shared<Registrator>();
+    boost::shared_ptr<Filters> filter = boost::make_shared<Filters>();
+    boost::shared_ptr<Loader> loader = boost::make_shared<Loader>();
+    boost::shared_ptr<Features> feature = boost::make_shared<Features>();
 
     if (argc < 3) {
         pcl::console::print_info ("Syntax is: %s source target <options>\n", argv[0]);
@@ -32,8 +38,8 @@ int main(int argc, char **argv){
     }
 
     // load the pointclouds
-    /*pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = registrator->loadPoints (argv[1]);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = registrator->loadPoints (argv[2]);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints (argv[1]);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints (argv[2]);
 
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity ();
 
@@ -47,11 +53,11 @@ int main(int argc, char **argv){
 
     if(initialAlignment){
         // load the keypoints and local descriptors
-        pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = registrator->loadKeypoints(argv[1]);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = registrator->loadLocalDescriptors(argv[1]);
+        pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints(argv[1]);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = loader->loadLocalDescriptors(argv[1]);
 
-        pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = registrator->loadKeypoints(argv[2]);
-        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = registrator->loadLocalDescriptors(argv[2]);
+        pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints(argv[2]);
+        pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = loader->loadLocalDescriptors(argv[2]);
 
         // find the transform that roughly aligns the points
         transform = registrator->computeInitialAlignment(srcKeypoints,
@@ -120,7 +126,7 @@ int main(int argc, char **argv){
 
         vis.resetCamera ();
         vis.spin ();
-    }*/
+    }
 
     return (0);
 }
