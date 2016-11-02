@@ -16,15 +16,16 @@
 pcl::PointCloud<pcl::Normal>::Ptr
 Features::estimateSurfaceNormals(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputCloud, float radius) {
 
+
     pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> normalEstimation;
 
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZRGB>);
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
 
     normalEstimation.setSearchMethod(tree);
     normalEstimation.setRadiusSearch(radius);
     normalEstimation.setInputCloud(inputCloud);
 
-    pcl::PointCloud<pcl::Normal>::Ptr normals (new pcl::PointCloud<pcl::Normal>());
+    pcl::PointCloud<pcl::Normal>::Ptr normals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
 
     //compute estimated normals of point cloud and return them
     normalEstimation.compute(*normals);
@@ -32,14 +33,19 @@ Features::estimateSurfaceNormals(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &i
     return (normals);
 }
 
+
+
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 Features::detectKeypoints(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
                              const pcl::PointCloud<pcl::Normal>::Ptr &normals, float min_scale, int nr_octaves,
                              int nr_scales_per_octave, float min_contrast) {
 
-    pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>::Ptr sift (new pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>());
 
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>());
+    pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>::Ptr
+            sift = boost::make_shared<pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>>();
+
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr
+            tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
 
     sift->setSearchMethod(tree);
     sift->setScales(min_scale, nr_octaves, nr_scales_per_octave);
@@ -50,21 +56,28 @@ Features::detectKeypoints(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
     //compute the keypoints
     sift->compute(tempKeypoints);
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr keypoints(new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            keypoints = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
     pcl::copyPointCloud(tempKeypoints, *keypoints);
 
     return (keypoints);
 }
+
+
 
 pcl::PointCloud<pcl::FPFHSignature33>::Ptr
 Features::computeLocalDescriptors(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
                                      const pcl::PointCloud<pcl::Normal>::Ptr &normals,
                                      const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &keypoints, float feature_radius) {
 
-    pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>::Ptr fpfh_estimation
-            (new pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>());
 
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>());
+    pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>::Ptr
+            fpfh_estimation = boost::make_shared<pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>>();
+
+
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr
+            tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
 
     fpfh_estimation->setSearchMethod(tree);
     fpfh_estimation->setRadiusSearch(feature_radius);
@@ -72,27 +85,33 @@ Features::computeLocalDescriptors(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &
     fpfh_estimation->setInputNormals(normals);
     fpfh_estimation->setInputCloud(keypoints);
 
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr localDesc (new pcl::PointCloud<pcl::FPFHSignature33>());
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr
+            localDesc = boost::make_shared<pcl::PointCloud<pcl::FPFHSignature33>>();
 
     fpfh_estimation->compute(*localDesc);
 
     return (localDesc);
 }
 
+
+
 pcl::PointCloud<pcl::VFHSignature308>::Ptr
 Features::computeGlobalDescriptor(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
-                                     const pcl::PointCloud<pcl::Normal>::Ptr &normals) {
+                                  const pcl::PointCloud<pcl::Normal>::Ptr &normals) {
+
 
     pcl::VFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::VFHSignature308>::Ptr
-            vfh_estimation (new pcl::VFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::VFHSignature308>());
+            vfh_estimation = boost::make_shared<pcl::VFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::VFHSignature308>>();
 
-    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZRGB>());
+    pcl::search::KdTree<pcl::PointXYZRGB>::Ptr
+            tree = boost::make_shared<pcl::search::KdTree<pcl::PointXYZRGB>>();
 
     vfh_estimation->setSearchMethod(tree);
     vfh_estimation->setInputCloud(points);
     vfh_estimation->setInputNormals(normals);
 
-    pcl::PointCloud<pcl::VFHSignature308>::Ptr globalDesc (new pcl::PointCloud<pcl::VFHSignature308>());
+    pcl::PointCloud<pcl::VFHSignature308>::Ptr
+            globalDesc = boost::make_shared<pcl::PointCloud<pcl::VFHSignature308>>();
 
     return (globalDesc);
 }

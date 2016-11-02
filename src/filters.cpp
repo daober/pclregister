@@ -15,17 +15,24 @@
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 Filters::thresholdDepth(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float min_depth, float max_depth) {
 
-    pcl::PassThrough<pcl::PointXYZRGB>::Ptr passThrough (new pcl::PassThrough<pcl::PointXYZRGB>());
+
+    pcl::PassThrough<pcl::PointXYZRGB>::Ptr
+            passThrough = boost::make_shared<pcl::PassThrough<pcl::PointXYZRGB>>();
+
 
     passThrough->setInputCloud(input);
     passThrough->setFilterFieldName("z");
     passThrough->setFilterLimits(min_depth, max_depth);
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr threshold (new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            threshold = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
     passThrough->filter(*threshold);
 
     return (threshold);
 }
+
+
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 Filters::voxelize(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float leaf_size) {
@@ -33,11 +40,16 @@ Filters::voxelize(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float lea
     pcl::VoxelGrid<pcl::PointXYZRGB> voxel_grid;
     voxel_grid.setInputCloud (input);
     voxel_grid.setLeafSize (leaf_size, leaf_size, leaf_size);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr downsampled (new pcl::PointCloud<pcl::PointXYZRGB>());
+
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            downsampled = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
     voxel_grid.filter (*downsampled);
 
     return (downsampled);
 }
+
+
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 Filters::removeOutliers(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float radius, int min_neighbors) {
@@ -46,17 +58,23 @@ Filters::removeOutliers(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, flo
     radius_outlier_removal.setInputCloud (input);
     radius_outlier_removal.setRadiusSearch (radius);
     radius_outlier_removal.setMinNeighborsInRadius (min_neighbors);
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr inliers (new pcl::PointCloud<pcl::PointXYZRGB>());
+
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            inliers = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
     radius_outlier_removal.filter (*inliers);
 
     return (inliers);
 }
 
+
+
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr
 Filters::applyFilters(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float min_depth, float max_depth,
                           float leaf_size, float radius, float min_neighbors) {
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr filter (new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            filter = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
     filter = thresholdDepth(input, min_depth, max_depth);
     filter = voxelize(filter, leaf_size);
@@ -72,7 +90,8 @@ Filters::removeNaNPoints(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputClou
 
     pcl::console::print_highlight ("removing NaN values from cloud...\n");
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr filteredCloud (new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            filteredCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
     pcl::PointCloud<pcl::PointXYZRGB>::PointType p_nan;
     pcl::PointCloud<pcl::PointXYZRGB>::PointType p_valid;
@@ -103,7 +122,8 @@ Filters::removeNaNNormals(const pcl::PointCloud<pcl::PointNormal>::Ptr &inputNor
 
     pcl::console::print_highlight ("removing NaN values from normals...\n");
 
-    pcl::PointCloud<pcl::PointNormal>::Ptr filteredNormal (new pcl::PointCloud<pcl::PointNormal>());
+    pcl::PointCloud<pcl::PointNormal>::Ptr
+            filteredNormal = boost::make_shared<pcl::PointCloud<pcl::PointNormal>>();
 
     pcl::PointCloud<pcl::PointNormal>::PointType p_nan;
     pcl::PointCloud<pcl::PointNormal>::PointType p_valid;

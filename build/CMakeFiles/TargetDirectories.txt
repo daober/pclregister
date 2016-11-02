@@ -1,3 +1,0 @@
-/home/dan/src/pclregister/build/CMakeFiles/edit_cache.dir
-/home/dan/src/pclregister/build/CMakeFiles/rebuild_cache.dir
-/home/dan/src/pclregister/build/CMakeFiles/register.dir

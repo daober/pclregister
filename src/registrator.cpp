@@ -70,7 +70,8 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
     pcl::console::print_highlight ("starting initial alignment...\n");
 
     pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33>::Ptr
-    sac_ia(new pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33>());
+    sac_ia (new pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33>());
+
 
     sac_ia->setMinSampleDistance(min_sample_distance);
     sac_ia->setMaxCorrespondenceDistance(max_correspondence_distance);
@@ -82,7 +83,9 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
     sac_ia->setInputTarget(target_points);
     sac_ia->setTargetFeatures(target_descriptors);
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr outCloud (new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            outCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
     sac_ia->align(*outCloud);
 
     return (sac_ia->getFinalTransformation());
@@ -121,7 +124,6 @@ Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &sourc
 
     pcl::console::print_highlight ("starting refined alignment...\n");
 
-
     pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
             icp (new pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>());
 
@@ -131,7 +133,8 @@ Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &sourc
     icp->setTransformationEpsilon(transformation_epsilon);
     icp->setMaximumIterations(max_iterations);
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr sourcePointsTransformed(new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            sourcePointsTransformed = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
     pcl::transformPointCloud(*source_points, *sourcePointsTransformed, initial_alignment);
 

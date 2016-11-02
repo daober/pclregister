@@ -77,8 +77,13 @@ int main(int argc, char **argv){
 
 
     //filter NAN out of clouds
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr fsrcCloud (new pcl::PointCloud<pcl::PointXYZRGB>());
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ftgtCloud (new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            fsrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
+
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+            ftgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
 
     fsrcCloud = filter->removeNaNPoints(src_points, "source cloud");
     ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
@@ -92,7 +97,7 @@ int main(int argc, char **argv){
     pcl::transformPointCloud (*src_points, *src_points, transform);
 
     // save output
-    std::string filename("postoutput.pcd");
+    std::string filename("output.pcd");
 
     // merge the two clouds
     (*src_points) += (*tgt_points);
@@ -101,7 +106,8 @@ int main(int argc, char **argv){
     pcl::io::savePCDFile (filename, *src_points);
     pcl::console::print_info ("saved registered clouds as %s\n", filename.c_str ());
 
-    //and visualize the result via vtk
+
+    /**and visualize the result via vtk*/
 
     /*pcl::console::print_info ("starting visualizer... close window to exit\n");
     pcl::visualization::PCLVisualizer vis;
