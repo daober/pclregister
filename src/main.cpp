@@ -53,7 +53,7 @@ int main(int argc, char **argv){
     // compute the initial alignment
     double min_sample_dist = 1e-6;
     double max_correspondence_dist = 0.03f;
-    double nr_iters = 5000;
+    double nr_iters = 10000;
 
     // load the keypoints and local descriptors
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints("room1");
@@ -69,11 +69,10 @@ int main(int argc, char **argv){
     pcl::console::print_info ("computed initial alignment!\n");
 
 
-    float max_correspondence_distance = 0.01f;
-    float outlier_rejection_threshold = 0.50f;
+    float max_correspondence_distance = 0.20f;
+    float outlier_rejection_threshold = 0.70f;
     float transformation_epsilon = 1e-6;
-    int max_iterations = 50;
-    Eigen::Matrix4f tempTrans = Eigen::Matrix4f::Identity();
+    int max_iterations = 100;
 
 
     //filter NAN out of clouds
