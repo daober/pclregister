@@ -52,7 +52,7 @@ int main(int argc, char **argv){
     // compute the initial alignment
     double min_sample_dist = 1e-6;
     double max_correspondence_dist = 0.03f;
-    double nr_iters = 1000;
+    double nr_iters = 5000;
 
     // load the keypoints and local descriptors
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints("room1");

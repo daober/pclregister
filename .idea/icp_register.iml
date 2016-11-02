@@ -8,24 +8,26 @@
       <sourceFolder url="file://$MODULE_DIR$/src/filters.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/loader.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/filters.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/include/loader.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/registrator.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/features.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/include/loader.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file:///usr/lib/openmpi/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include-fixed" />
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/llvm-3.8/lib/clang/3.8.0/include" />
-          <root url="file:///usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
+          <root url="file:///usr/lib/openmpi/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include-fixed" />
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/llvm-3.8/lib/clang/3.8.0/include" />
-          <root url="file:///usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
           <root url="file:///usr/local/include" />
         </SOURCES>
       </library>
