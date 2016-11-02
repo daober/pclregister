@@ -112,7 +112,7 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
 Eigen::Matrix4f
 Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
                              const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
-                             Eigen::Matrix4f &initial_alignment,
+                             const Eigen::Matrix4f &initial_alignment,
                              float max_correspondence_distance, float outlier_rejection_threshold,
                              float transformation_epsilon, int max_iterations) {
 
@@ -120,16 +120,27 @@ Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &sourc
     pcl::console::print_highlight ("Starting alignment...\n");
 
 
-    //pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
-    //        icp (new pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>());
+    pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
+            icp (new pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>());
 
-    /*icp->setMaxCorrespondenceDistance(max_correspondence_distance);
+
+    icp->setMaxCorrespondenceDistance(max_correspondence_distance);
     icp->setRANSACOutlierRejectionThreshold(outlier_rejection_threshold);
     icp->setTransformationEpsilon(transformation_epsilon);
-    icp->setMaximumIterations(max_iterations);*/
+    icp->setMaximumIterations(max_iterations);
 
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr sourcePointsTransformed(new pcl::PointCloud<pcl::PointXYZRGB>());
 
+    pcl::transformPointCloud(*source_points, *sourcePointsTransformed, initial_alignment);
 
+    icp->setInputSource(sourcePointsTransformed);
+    icp->setInputTarget(target_points);
+
+    pcl::PointCloud<pcl::PointXYZRGB> register_output;
+
+    icp->align(register_output);
+
+    return (icp->getFinalTransformation() * initial_alignment);
 }
 
 

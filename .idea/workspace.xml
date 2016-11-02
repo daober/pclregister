@@ -12,49 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80b605bf-f784-4461-ad6d-3abcf789eeea" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CMakeCCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CMakeSystem.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CompilerIdC/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/CMakeFiles/3.5.1/CompilerIdCXX/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/templog.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/valgrindlog.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/features.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/features.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/filters.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/filters.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/loader.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/loader.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/main.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/main.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/registrator.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/src/registrator.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/register" afterPath="$PROJECT_DIR$/build/register" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/icp_register.iml" afterPath="$PROJECT_DIR$/.idea/icp_register.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeCache.txt" afterPath="$PROJECT_DIR$/build/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeError.log" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeError.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.c" afterPath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.cxx" afterPath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.cxx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/CXX.includecache" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/build.make" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/depend.internal" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/depend.make" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/flags.make" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/register.dir/link.txt" afterPath="$PROJECT_DIR$/build/CMakeFiles/register.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Makefile" afterPath="$PROJECT_DIR$/build/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cmake_install.cmake" afterPath="$PROJECT_DIR$/build/cmake_install.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/room1_localdesc.pcd" afterPath="$PROJECT_DIR$/build/room1_localdesc.pcd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/room1_normals.pcd" afterPath="$PROJECT_DIR$/build/room1_normals.pcd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/room2_localdesc.pcd" afterPath="$PROJECT_DIR$/build/room2_localdesc.pcd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/room2_normals.pcd" afterPath="$PROJECT_DIR$/build/room2_normals.pcd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/registrator.hpp" afterPath="$PROJECT_DIR$/include/registrator.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/registrator.cpp" afterPath="$PROJECT_DIR$/src/registrator.cpp" />
     </list>
     <ignored path="icp_register.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,8 +37,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+            <state relative-caret-position="97">
+              <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
               <folding>
                 <element signature="e#28#54#0" expanded="true" />
                 <element signature="e#255#285#0" expanded="true" />
@@ -100,8 +60,8 @@
       <file leaf-file-name="registrator.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/registrator.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="547">
+              <caret line="79" column="2" selection-start-line="79" selection-start-column="2" selection-end-line="79" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -110,8 +70,8 @@
       <file leaf-file-name="registrator.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/registrator.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+            <state relative-caret-position="496">
+              <caret line="142" column="63" selection-start-line="142" selection-start-column="63" selection-end-line="142" selection-end-column="63" />
               <folding>
                 <element signature="e#91#128#0" expanded="true" />
               </folding>
@@ -507,12 +467,12 @@
       <workItem from="1477884393445" duration="17874000" />
       <workItem from="1477906175723" duration="4681000" />
       <workItem from="1477912934838" duration="1121000" />
-      <workItem from="1478080257016" duration="2766000" />
+      <workItem from="1478080257016" duration="4102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107793000" />
+    <option name="totallyTimeSpent" value="109129000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -529,11 +489,11 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19071208" sideWeight="0.49472097" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.48869348" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28916928" sideWeight="0.36842105" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28916928" sideWeight="0.3647059" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23869611" sideWeight="0.48297215" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.298633" sideWeight="0.5139319" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.298633" sideWeight="0.51888543" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.4861809" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.298633" sideWeight="0.4860681" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.298633" sideWeight="0.48111454" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.4798995" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19104804" sideWeight="0.50527906" order="2" side_tool="true" content_ui="tabs" />
@@ -831,14 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/registrator.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/eigen3/Eigen/src/Core/util/Memory.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4560">
@@ -863,10 +815,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/registrator.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="79" column="2" selection-start-line="79" selection-start-column="2" selection-end-line="79" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/registrator.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="496">
+          <caret line="142" column="63" selection-start-line="142" selection-start-column="63" selection-end-line="142" selection-end-column="63" />
           <folding>
             <element signature="e#91#128#0" expanded="true" />
           </folding>
@@ -875,8 +835,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+        <state relative-caret-position="97">
+          <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
           <folding>
             <element signature="e#28#54#0" expanded="true" />
             <element signature="e#255#285#0" expanded="true" />

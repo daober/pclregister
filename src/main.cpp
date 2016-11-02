@@ -79,7 +79,7 @@ int main(int argc, char **argv){
     //transform = registrator->refineAlignment (src_points, tgt_points, transform, max_correspondence_distance,
     //                                          outlier_rejection_threshold, transformation_epsilon, max_iterations);
 
-    //pcl::console::print_info ("refined alignment!\n");
+    pcl::console::print_info ("refined alignment!\n");
 
     // transform the source point to align them with the target points
     pcl::transformPointCloud (*src_points, *src_points, transform);
