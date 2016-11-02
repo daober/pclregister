@@ -13,7 +13,7 @@ pcl/point_cloud.h
 -
 
 ../include/filters.hpp
-pcl/impl/point_types.hpp
+pcl/point_types.h
 -
 pcl/point_cloud.h
 -
@@ -69,14 +69,20 @@ boost/shared_ptr.hpp
 -
 
 /home/dan/src/pclregister/src/filters.cpp
+filters.hpp
+/home/dan/src/pclregister/src/filters.hpp
 pcl/filters/radius_outlier_removal.h
 -
 pcl/filters/voxel_grid.h
 -
 pcl/filters/passthrough.h
 -
-filters.hpp
-/home/dan/src/pclregister/src/filters.hpp
+pcl/filters/filter.h
+-
+iostream
+-
+limits
+-
 
 /home/dan/src/pclregister/src/loader.cpp
 loader.hpp

@@ -14,6 +14,7 @@
 #include <pcl/visualization/pcl_visualizer.h>
 
 
+
 int main(int argc, char **argv){
 
     //error code
@@ -75,9 +76,15 @@ int main(int argc, char **argv){
     Eigen::Matrix4f tempTrans = Eigen::Matrix4f::Identity();
 
 
-    //TODO: this method is faulty SIGILL (4)
-    //transform = registrator->refineAlignment (src_points, tgt_points, transform, max_correspondence_distance,
-    //                                          outlier_rejection_threshold, transformation_epsilon, max_iterations);
+    //filter NAN out of clouds
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr fsrcCloud (new pcl::PointCloud<pcl::PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ftgtCloud (new pcl::PointCloud<pcl::PointXYZRGB>());
+
+    fsrcCloud = filter->removeNaNPoints(src_points, "source cloud");
+    ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
+
+    transform = registrator->refineAlignment (fsrcCloud, ftgtCloud, transform, max_correspondence_distance,
+                                              outlier_rejection_threshold, transformation_epsilon, max_iterations);
 
     pcl::console::print_info ("refined alignment!\n");
 
@@ -85,7 +92,7 @@ int main(int argc, char **argv){
     pcl::transformPointCloud (*src_points, *src_points, transform);
 
     // save output
-    std::string filename("output.pcd");
+    std::string filename("postoutput.pcd");
 
     // merge the two clouds
     (*src_points) += (*tgt_points);

@@ -1,7 +1,15 @@
+#include "filters.hpp"
+
 #include <pcl/filters/radius_outlier_removal.h>
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/filters/passthrough.h>
-#include "filters.hpp"
+
+#include <pcl/filters/filter.h>
+
+#include <iostream>
+#include <limits>
+
+
 
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr
@@ -56,3 +64,66 @@ Filters::applyFilters(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float
 
     return (filter);
 }
+
+
+
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+Filters::removeNaNPoints(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputCloud, const std::string filename) {
+
+    pcl::console::print_highlight ("removing NaN values from cloud...\n");
+
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr filteredCloud (new pcl::PointCloud<pcl::PointXYZRGB>());
+
+    pcl::PointCloud<pcl::PointXYZRGB>::PointType p_nan;
+    pcl::PointCloud<pcl::PointXYZRGB>::PointType p_valid;
+
+    p_nan.x = std::numeric_limits<float>::quiet_NaN();
+    p_nan.y = std::numeric_limits<float>::quiet_NaN();
+    p_nan.z = std::numeric_limits<float>::quiet_NaN();
+
+    filteredCloud->push_back(p_nan);
+
+    p_valid.x = 1.0f;
+    filteredCloud->push_back(p_valid);
+
+    std::cout<<"previous size of "<< filename <<" is: " << inputCloud->points.size() << std::endl;
+
+    std::vector<int> indices;
+    pcl::removeNaNFromPointCloud(*inputCloud, *filteredCloud, indices);
+
+    std::cout<<"filtered size of "<< filename <<" is: " << filteredCloud->points.size() << std::endl;
+
+    return filteredCloud;
+}
+
+
+
+pcl::PointCloud<pcl::PointNormal>::Ptr
+Filters::removeNaNNormals(const pcl::PointCloud<pcl::PointNormal>::Ptr &inputNormal, const std::string filename) {
+
+    pcl::console::print_highlight ("removing NaN values from normals...\n");
+
+    pcl::PointCloud<pcl::PointNormal>::Ptr filteredNormal (new pcl::PointCloud<pcl::PointNormal>());
+
+    pcl::PointCloud<pcl::PointNormal>::PointType p_nan;
+    pcl::PointCloud<pcl::PointNormal>::PointType p_valid;
+
+    p_nan.x = std::numeric_limits<float>::quiet_NaN();
+    p_nan.y = std::numeric_limits<float>::quiet_NaN();
+    p_nan.z = std::numeric_limits<float>::quiet_NaN();
+
+    filteredNormal->push_back(p_nan);
+
+    p_valid.x = 1.0f;
+    filteredNormal->push_back(p_valid);
+
+    std::cout<<"previous size of "<< filename <<" is: " << inputNormal->points.size() << std::endl;
+
+    std::vector<int> indices;
+    pcl::removeNaNFromPointCloud(*inputNormal, *filteredNormal, indices);
+
+    std::cout<<"filtered size of "<< filename <<" is: " << filteredNormal->points.size() << std::endl;
+
+    return filteredNormal;
+}
+

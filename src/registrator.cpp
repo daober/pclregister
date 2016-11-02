@@ -67,6 +67,8 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
                                      float min_sample_distance, float max_correspondence_distance, int nr_iterations) {
 
 
+    pcl::console::print_highlight ("starting initial alignment...\n");
+
     pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33>::Ptr
     sac_ia(new pcl::SampleConsensusInitialAlignment<pcl::PointXYZRGB, pcl::PointXYZRGB, pcl::FPFHSignature33>());
 
@@ -74,7 +76,7 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
     sac_ia->setMaxCorrespondenceDistance(max_correspondence_distance);
     sac_ia->setMaximumIterations(nr_iterations);
 
-    sac_ia->setInputCloud(source_points);
+    sac_ia->setInputSource(source_points);
     sac_ia->setSourceFeatures(source_descriptors);
 
     sac_ia->setInputTarget(target_points);
@@ -117,7 +119,7 @@ Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &sourc
                              float transformation_epsilon, int max_iterations) {
 
 
-    pcl::console::print_highlight ("Starting alignment...\n");
+    pcl::console::print_highlight ("starting refined alignment...\n");
 
 
     pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr

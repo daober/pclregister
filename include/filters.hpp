@@ -1,6 +1,6 @@
 #pragma once
 
-#include <pcl/impl/point_types.hpp>
+#include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 
 
@@ -26,6 +26,13 @@ public:
     applyFilters (const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input, float min_depth, float max_depth,
                   float leaf_size, float radius, float min_neighbors);
 
+/** remove all NaN point cloud values */
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
+    removeNaNPoints (const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputCloud, const std::string filename);
+
+/** remove all NaN values from Normals */
+    pcl::PointCloud<pcl::PointNormal>::Ptr
+    removeNaNNormals (const pcl::PointCloud<pcl::PointNormal>::Ptr &inputNormal, const std::string filename);
 
 private:
 
