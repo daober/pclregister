@@ -61,10 +61,12 @@
 
 Eigen::Matrix4f
 Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
-                                     const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &source_descriptors,
-                                     const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
-                                     const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &target_descriptors,
-                                     float min_sample_distance, float max_correspondence_distance, int nr_iterations) {
+                                    const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &source_descriptors,
+                                    const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
+                                    const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &target_descriptors,
+                                    float min_sample_distance,
+                                    float max_correspondence_distance,
+                                    int nr_iterations) {
 
 
     pcl::console::print_highlight ("starting initial alignment...\n");
@@ -118,8 +120,10 @@ Eigen::Matrix4f
 Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
                              const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
                              const Eigen::Matrix4f &initial_alignment,
-                             float max_correspondence_distance, float outlier_rejection_threshold,
-                             float transformation_epsilon, int max_iterations) {
+                             float max_correspondence_distance,
+                             float outlier_rejection_threshold,
+                             float transformation_epsilon,
+                             int max_iterations) {
 
 
     pcl::console::print_highlight ("starting refined alignment...\n");

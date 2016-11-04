@@ -30,11 +30,16 @@ int main(int argc, char **argv){
     // load the pointclouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints ("room1");
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints ("room2");
+    
 
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity ();
 
-    boost::shared_ptr<Features::ObjectFeatures> srcFeatures = boost::make_shared<Features::ObjectFeatures>();
-    boost::shared_ptr<Features::ObjectFeatures> tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
+    boost::shared_ptr<Features::ObjectFeatures>
+    srcFeatures = boost::make_shared<Features::ObjectFeatures>();
+    
+    boost::shared_ptr<Features::ObjectFeatures>
+    tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
+    
 
     srcFeatures = feature->computeFeatures(src_points);
     tgtFeatures = feature->computeFeatures(tgt_points);
@@ -50,7 +55,7 @@ int main(int argc, char **argv){
     saver->saveLocalDescriptors("room2", tgtFeatures->local_descriptors);
 
 
-    // compute the initial alignment
+    //initial alignment parameters
     double min_sample_dist = 1e-6;
     double max_correspondence_dist = 0.03f;
     double nr_iters = 10000;
@@ -61,34 +66,45 @@ int main(int argc, char **argv){
 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints("room2");
     pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = loader->loadLocalDescriptors("room2");
+    
 
     // find the transform that roughly aligns the points
-    transform = registrator->computeInitialAlignment(srcKeypoints, srcDescriptor, tgtKeypoints, tgtDescriptor,
-                                                     min_sample_dist, max_correspondence_dist, nr_iters);
+    transform = registrator->computeInitialAlignment(srcKeypoints,
+                                                     srcDescriptor,
+                                                     tgtKeypoints,
+                                                     tgtDescriptor,
+                                                     min_sample_dist,
+                                                     max_correspondence_dist,
+                                                     nr_iters);
 
     pcl::console::print_info ("computed initial alignment!\n");
 
-
+    //refined alignment parameters
     float max_correspondence_distance = 0.20f;
-    float outlier_rejection_threshold = 0.70f;
-    float transformation_epsilon = 1e-6;
+    float outlier_rejection_threshold = 0.40f;
+    float transformation_epsilon = 1e-8;
     int max_iterations = 100;
 
 
     //filter NAN out of clouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr
-            fsrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-
+    fsrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr
-            ftgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+    ftgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
 
     fsrcCloud = filter->removeNaNPoints(src_points, "source cloud");
     ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
 
-    transform = registrator->refineAlignment (fsrcCloud, ftgtCloud, transform, max_correspondence_distance,
-                                              outlier_rejection_threshold, transformation_epsilon, max_iterations);
+
+    transform = registrator->refineAlignment (fsrcCloud,
+                                              ftgtCloud,
+                                              transform,
+                                              max_correspondence_distance,
+                                              outlier_rejection_threshold,
+                                              transformation_epsilon,
+                                              max_iterations);
 
     pcl::console::print_info ("refined alignment!\n");
 
@@ -105,24 +121,7 @@ int main(int argc, char **argv){
     pcl::io::savePCDFile (filename, *src_points);
     pcl::console::print_info ("saved registered clouds as %s\n", filename.c_str ());
 
-
-    /**and visualize the result via vtk*/
-
-    /*pcl::console::print_info ("starting visualizer... close window to exit\n");
-    pcl::visualization::PCLVisualizer vis;
-
-    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZRGB> red (src_points, 255, 0, 0);
-    vis.addPointCloud (src_points, red, "src_points");
-
-    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZRGB> yellow (tgt_points, 255, 255, 0);
-    vis.addPointCloud (tgt_points, yellow, "tgt_points");
-
-    vis.resetCamera ();
-
-    while(!vis.wasStopped()){
-        vis.spinOnce();
-    }*/
-
+    //TODO: register room3 as well!
 
     return (0);
 }
