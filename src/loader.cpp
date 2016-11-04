@@ -29,6 +29,9 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadPoints(std::string filename) 
 
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
+    
+    //iterate
+    datacnt++;
 
     return (output);
 }
@@ -87,6 +90,10 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadKeypoints(std::string filenam
     pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
 
     return (output);
+}
+
+int Loader::getSize(){
+    return datacnt;
 }
 
 

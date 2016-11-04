@@ -13,12 +13,19 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
 
-
+#include <boost/program_options.hpp>
 
 int main(int argc, char **argv){
 
     //error code
     int err = 0;
+    
+    if(argc < 3){
+        PCL_ERROR ("Syntax is: %s <source> <target> [*] (without file ending .pcd!)", argv[0]);
+        PCL_ERROR ("[*] - multiple files can be added. The registration results of (i, i+1) will be registered against (i+2), etc");
+        return (-1);
+    }
+
 
     //initialize class object
     boost::shared_ptr<Registrator> registrator = boost::make_shared<Registrator>();
@@ -26,11 +33,9 @@ int main(int argc, char **argv){
     boost::shared_ptr<Loader> loader = boost::make_shared<Loader>();
     boost::shared_ptr<Saver> saver = boost::make_shared<Saver>();
     boost::shared_ptr<Features> feature = boost::make_shared<Features>();
-
-    // load the pointclouds
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints ("room1");
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints ("room2");
     
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints (argv[1]);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints (argv[2]);
 
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity ();
 
@@ -43,16 +48,17 @@ int main(int argc, char **argv){
 
     srcFeatures = feature->computeFeatures(src_points);
     tgtFeatures = feature->computeFeatures(tgt_points);
-
-    saver->savePoints("room1", srcFeatures->points);
-    saver->saveKeypoints("room1", srcFeatures->keypoints);
-    saver->saveSurfaceNormals("room1", srcFeatures->normals);
-    saver->saveLocalDescriptors("room1", srcFeatures->local_descriptors);
-
-    saver->savePoints("room2", tgtFeatures->points);
-    saver->saveKeypoints("room2", tgtFeatures->keypoints);
-    saver->saveSurfaceNormals("room2", tgtFeatures->normals);
-    saver->saveLocalDescriptors("room2", tgtFeatures->local_descriptors);
+    
+    
+    saver->savePoints(argv[1], srcFeatures->points);
+    saver->saveKeypoints(argv[1], srcFeatures->keypoints);
+    saver->saveSurfaceNormals(argv[1], srcFeatures->normals);
+    saver->saveLocalDescriptors(argv[1], srcFeatures->local_descriptors);
+    
+    saver->savePoints(argv[2], tgtFeatures->points);
+    saver->saveKeypoints(argv[2], tgtFeatures->keypoints);
+    saver->saveSurfaceNormals(argv[2], tgtFeatures->normals);
+    saver->saveLocalDescriptors(argv[2], tgtFeatures->local_descriptors);
 
 
     //initial alignment parameters
@@ -61,11 +67,11 @@ int main(int argc, char **argv){
     double nr_iters = 10000;
 
     // load the keypoints and local descriptors
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints("room1");
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = loader->loadLocalDescriptors("room1");
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr srcKeypoints = loader->loadKeypoints(argv[1]);
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr srcDescriptor = loader->loadLocalDescriptors(argv[1]);
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints("room2");
-    pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = loader->loadLocalDescriptors("room2");
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgtKeypoints = loader->loadKeypoints(argv[2]);
+    pcl::PointCloud<pcl::FPFHSignature33>::Ptr tgtDescriptor = loader->loadLocalDescriptors(argv[2]);
     
 
     // find the transform that roughly aligns the points

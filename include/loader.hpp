@@ -28,9 +28,13 @@ public:
 
     pcl::PointCloud<pcl::VFHSignature308>::Ptr
     loadGlobalDescriptors (std::string filename);
+    
+    int getSize();
 
 
 private:
+    
+    int datacnt = 0;
 
 };
 
@@ -53,7 +57,6 @@ public:
 
 
 private:
-
 
 
 };
