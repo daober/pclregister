@@ -62,8 +62,8 @@ int main(int argc, char **argv){
 
 
     //initial alignment parameters
-    double min_sample_dist = 1e-6;
-    double max_correspondence_dist = 0.03f;
+    double min_sample_dist = 1e-8;
+    double max_correspondence_dist = 0.01f;
     double nr_iters = 10000;
 
     // load the keypoints and local descriptors
@@ -75,21 +75,16 @@ int main(int argc, char **argv){
     
 
     // find the transform that roughly aligns the points
-    transform = registrator->computeInitialAlignment(srcKeypoints,
-                                                     srcDescriptor,
-                                                     tgtKeypoints,
-                                                     tgtDescriptor,
-                                                     min_sample_dist,
-                                                     max_correspondence_dist,
-                                                     nr_iters);
+    transform = registrator->computeInitialAlignment(srcKeypoints, srcDescriptor, tgtKeypoints, tgtDescriptor,
+                                                     min_sample_dist, max_correspondence_dist, nr_iters);
 
     pcl::console::print_info ("computed initial alignment!\n");
 
     //refined alignment parameters
-    float max_correspondence_distance = 0.20f;
-    float outlier_rejection_threshold = 0.40f;
+    float max_correspondence_distance = 0.03f;  /*determines maximum of allowed offset (0.05 = 5cm*/
+    float outlier_rejection_threshold = 0.30f;  /*determines of which distance the the pointcloud will rejected*/
     float transformation_epsilon = 1e-8;
-    int max_iterations = 300;
+    int max_iterations = 100;
 
 
     //filter NAN out of clouds
@@ -104,13 +99,8 @@ int main(int argc, char **argv){
     ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
 
 
-    transform = registrator->refineAlignment (fsrcCloud,
-                                              ftgtCloud,
-                                              transform,
-                                              max_correspondence_distance,
-                                              outlier_rejection_threshold,
-                                              transformation_epsilon,
-                                              max_iterations);
+    transform = registrator->refineAlignment (fsrcCloud, ftgtCloud, transform, max_correspondence_distance,
+                                              outlier_rejection_threshold, transformation_epsilon, max_iterations);
 
     pcl::console::print_info ("refined alignment!\n");
 

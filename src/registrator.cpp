@@ -58,7 +58,6 @@
  *     The number of RANSAC iterations to perform
  * Return: A transformation matrix that will roughly align the points in source to the points in target
  */
-
 Eigen::Matrix4f
 Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
                                     const pcl::PointCloud<pcl::FPFHSignature33>::Ptr &source_descriptors,
@@ -114,8 +113,6 @@ Registrator::computeInitialAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Pt
  *     The maximum number of ICP iterations to perform
  * Return: A transformation matrix that will precisely align the points in source to the points in target
  */
-
-
 Eigen::Matrix4f
 Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &source_points,
                              const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &target_points,
@@ -127,6 +124,8 @@ Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &sourc
 
 
     pcl::console::print_highlight ("starting refined alignment...\n");
+
+    pcl::PointCloud<pcl::PointXYZRGB> register_output;
 
     pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
             icp (new pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>());
@@ -144,8 +143,6 @@ Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &sourc
 
     icp->setInputSource(sourcePointsTransformed);
     icp->setInputTarget(target_points);
-
-    pcl::PointCloud<pcl::PointXYZRGB> register_output;
 
     icp->align(register_output);
 

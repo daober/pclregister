@@ -13,7 +13,7 @@ Loader::loadPointCloud(std::string filename, std::string suffix) {
     filename.append (suffix);
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
 
     return (output);
 }
@@ -28,7 +28,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadPoints(std::string filename) 
     filename.append ("_points.pcd");
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
     
     //iterate
     datacnt++;
@@ -45,7 +45,7 @@ pcl::PointCloud<pcl::FPFHSignature33>::Ptr Loader::loadLocalDescriptors(std::str
     filename.append ("_localdesc.pcd");
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
 
     return (output);
 }
@@ -59,7 +59,7 @@ pcl::PointCloud<pcl::VFHSignature308>::Ptr Loader::loadGlobalDescriptors(std::st
     filename.append ("_globaldesc.pcd");
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
 
     return (output);
 }
@@ -73,7 +73,7 @@ pcl::PointCloud<pcl::Normal>::Ptr Loader::loadSurfaceNormals(std::string filenam
     filename.append ("_normals.pcd");
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
 
     return (output);
 }
@@ -87,7 +87,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadKeypoints(std::string filenam
     filename.append ("_keypoints.pcd");
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
 
     return (output);
 }
