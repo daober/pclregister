@@ -89,7 +89,7 @@ int main(int argc, char **argv){
     float max_correspondence_distance = 0.20f;
     float outlier_rejection_threshold = 0.40f;
     float transformation_epsilon = 1e-8;
-    int max_iterations = 100;
+    int max_iterations = 300;
 
 
     //filter NAN out of clouds
@@ -126,8 +126,6 @@ int main(int argc, char **argv){
     // save the result
     pcl::io::savePCDFile (filename, *src_points);
     pcl::console::print_info ("saved registered clouds as %s\n", filename.c_str ());
-
-    //TODO: register room3 as well!
 
     return (0);
 }
