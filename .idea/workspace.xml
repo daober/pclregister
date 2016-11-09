@@ -11,11 +11,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b605bf-f784-4461-ad6d-3abcf789eeea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loader.cpp" afterPath="$PROJECT_DIR$/src/loader.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/registrator.cpp" afterPath="$PROJECT_DIR$/src/registrator.cpp" />
-    </list>
+    <list default="true" id="80b605bf-f784-4461-ad6d-3abcf789eeea" name="Default" comment="" />
     <ignored path="icp_register.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +33,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+            <state relative-caret-position="527">
+              <caret line="80" column="63" selection-start-line="80" selection-start-column="63" selection-end-line="80" selection-end-column="63" />
               <folding>
                 <element signature="e#28#54#0" expanded="true" />
                 <element signature="e#255#285#0" expanded="true" />
@@ -472,12 +468,12 @@
       <workItem from="1477912934838" duration="1121000" />
       <workItem from="1478080257016" duration="5543000" />
       <workItem from="1478096632458" duration="9423000" />
-      <workItem from="1478530832066" duration="9486000" />
+      <workItem from="1478530832066" duration="10224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129479000" />
+    <option name="totallyTimeSpent" value="130217000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -490,7 +486,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1615" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19133127" sideWeight="0.49472097" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.48869348" order="6" side_tool="false" content_ui="tabs" />
@@ -847,8 +843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+        <state relative-caret-position="527">
+          <caret line="80" column="63" selection-start-line="80" selection-start-column="63" selection-end-line="80" selection-end-column="63" />
           <folding>
             <element signature="e#28#54#0" expanded="true" />
             <element signature="e#255#285#0" expanded="true" />
