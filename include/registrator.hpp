@@ -13,7 +13,9 @@
 #include <pcl/search/impl/search.hpp>
 
 
-
+/**
+ * this class computes the initial alignment and refines the alignment using the iterative closest point algorithm
+ */
 class Registrator {
 
 public:

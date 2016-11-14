@@ -4,7 +4,10 @@
 #include <pcl/point_cloud.h>
 
 
-
+/**
+ * This class includes various methods for filtering the point cloud
+ * such as reducing number of points in cloud (voxelgrid...)
+ */
 class Filters{
 
 public:

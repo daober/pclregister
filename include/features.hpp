@@ -3,7 +3,11 @@
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 
-
+/**
+ *
+ * This class is used solely for feature detection of various point clouds (e.g. interest points)
+ *
+ * */
 class Features{
 
 public:

@@ -15,11 +15,14 @@
 
 #include <boost/program_options.hpp>
 
+
+
 int main(int argc, char **argv){
 
     //error code
     int err = 0;
-    
+
+    /*checks if command line program is used correctly*/
     if(argc < 3){
         PCL_ERROR ("Syntax is: %s <source> <target> [*] (without file ending .pcd!)", argv[0]);
         PCL_ERROR ("[*] - multiple files can be added. The registration results of (i, i+1) will be registered against (i+2), etc");
@@ -33,23 +36,28 @@ int main(int argc, char **argv){
     boost::shared_ptr<Loader> loader = boost::make_shared<Loader>();
     boost::shared_ptr<Saver> saver = boost::make_shared<Saver>();
     boost::shared_ptr<Features> feature = boost::make_shared<Features>();
-    
+
+    //load pointcloud1 & pointcloud2
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints (argv[1]);
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints (argv[2]);
 
+    //initialize transformation matrix
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity ();
 
+    //create new object for ObjectFeature detection
     boost::shared_ptr<Features::ObjectFeatures>
     srcFeatures = boost::make_shared<Features::ObjectFeatures>();
-    
+
+    //create new object for ObjectFeature detection
     boost::shared_ptr<Features::ObjectFeatures>
     tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
     
-
+    //compute features for target and source cloud
     srcFeatures = feature->computeFeatures(src_points);
     tgtFeatures = feature->computeFeatures(tgt_points);
     
-    
+    //this block uses the saver-helper class to store the computed interest-points, normals and descriptors for
+    //each target and source cloud
     saver->savePoints(argv[1], srcFeatures->points);
     saver->saveKeypoints(argv[1], srcFeatures->keypoints);
     saver->saveSurfaceNormals(argv[1], srcFeatures->normals);
@@ -117,5 +125,5 @@ int main(int argc, char **argv){
     pcl::io::savePCDFile (filename, *src_points);
     pcl::console::print_info ("saved registered clouds as %s\n", filename.c_str ());
 
-    return (0);
+    return (err);
 }

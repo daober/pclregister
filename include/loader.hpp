@@ -7,6 +7,10 @@
 #include "features.hpp"
 
 
+/**
+ * convenient helper class to load the point clouds from disk
+ */
+
 class Loader{
 
 
@@ -37,6 +41,11 @@ private:
     int datacnt = 0;
 
 };
+
+
+/**
+ * convenient helper class to save the point clouds to disk
+ */
 
 
 class Saver{
