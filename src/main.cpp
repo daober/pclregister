@@ -25,7 +25,6 @@ int main(int argc, char **argv){
     /*checks if command line program is used correctly*/
     if(argc < 3){
         PCL_ERROR ("Syntax is: %s <source> <target> [*] (without file ending .pcd!)", argv[0]);
-        PCL_ERROR ("[*] - multiple files can be added. The registration results of (i, i+1) will be registered against (i+2), etc");
         return (-1);
     }
 
@@ -37,12 +36,16 @@ int main(int argc, char **argv){
     boost::shared_ptr<Saver> saver = boost::make_shared<Saver>();
     boost::shared_ptr<Features> feature = boost::make_shared<Features>();
 
-    //load pointcloud1 & pointcloud2
+    //load pointcloud source & pointcloud target
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints (argv[1]);
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_points = loader->loadPoints (argv[2]);
 
     //initialize transformation matrix
     Eigen::Matrix4f transform = Eigen::Matrix4f::Identity ();
+
+    //filters can be used to remove outliers, or reducing the number of points in cloud for faster processing
+    //pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_filterpoints = filter->applyFilters(src_points, 0.05, 3, 0.04, 0.02, 30);
+    //pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_filterpoints = filter->applyFilters(tgt_points, 0.05, 3, 0.04, 0.02, 30);
 
     //create new object for ObjectFeature detection
     boost::shared_ptr<Features::ObjectFeatures>

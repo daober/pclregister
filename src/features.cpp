@@ -16,6 +16,7 @@
 pcl::PointCloud<pcl::Normal>::Ptr
 Features::estimateSurfaceNormals(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &inputCloud, float radius) {
 
+    pcl::console::print_info ("estimating surface normals...\n");
 
     pcl::NormalEstimation<pcl::PointXYZRGB, pcl::Normal> normalEstimation;
 
@@ -28,7 +29,12 @@ Features::estimateSurfaceNormals(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &i
     pcl::PointCloud<pcl::Normal>::Ptr normals = boost::make_shared<pcl::PointCloud<pcl::Normal>>();
 
     //compute estimated normals of point cloud and return them
+
+    pcl::console::print_info ("starting to compute surface normals, this process could take a while...\n");
+
     normalEstimation.compute(*normals);
+
+    pcl::console::print_info ("computing of surface normals done...\n");
 
     return (normals);
 }
@@ -40,6 +46,7 @@ Features::detectKeypoints(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &points,
                              const pcl::PointCloud<pcl::Normal>::Ptr &normals, float min_scale, int nr_octaves,
                              int nr_scales_per_octave, float min_contrast) {
 
+    pcl::console::print_info ("detecting keypoints...\n");
 
     pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>::Ptr
             sift = boost::make_shared<pcl::SIFTKeypoint<pcl::PointXYZRGB, pcl::PointWithScale>>();
@@ -72,6 +79,8 @@ Features::computeLocalDescriptors(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &
                                      const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &keypoints, float feature_radius) {
 
 
+    pcl::console::print_info ("computing local descriptors...\n");
+
     pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>::Ptr
             fpfh_estimation = boost::make_shared<pcl::FPFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::FPFHSignature33>>();
 
@@ -100,6 +109,8 @@ Features::computeGlobalDescriptor(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &
                                   const pcl::PointCloud<pcl::Normal>::Ptr &normals) {
 
 
+    pcl::console::print_info ("computing global descriptors...\n");
+
     pcl::VFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::VFHSignature308>::Ptr
             vfh_estimation = boost::make_shared<pcl::VFHEstimation<pcl::PointXYZRGB, pcl::Normal, pcl::VFHSignature308>>();
 
@@ -121,10 +132,13 @@ Features::computeGlobalDescriptor(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &
 boost::shared_ptr<Features::ObjectFeatures>
 Features::computeFeatures(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &input) {
 
+    pcl::console::print_info ("computing pointcloud features...\n");
+
     boost::shared_ptr<ObjectFeatures> features = boost::make_shared<ObjectFeatures>();
 
     features->points = input;
-    features->normals = estimateSurfaceNormals(input, 0.05);
+    //features->normals = estimateSurfaceNormals(input, 0.05);  //these parameters work for kinectv1
+    features->normals = estimateSurfaceNormals(input, 0.25);
     features->keypoints = detectKeypoints(input, features->normals, 0.005, 10, 8, 1.5);
     features->local_descriptors = computeLocalDescriptors(input, features->normals, features->keypoints, 0.1);
     features->global_descriptor = computeGlobalDescriptor(input, features->normals);

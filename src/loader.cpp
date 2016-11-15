@@ -13,7 +13,7 @@ Loader::loadPointCloud(std::string filename, std::string suffix) {
     filename.append (suffix);
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s \n", filename.c_str (), output->size ());
 
     return (output);
 }
@@ -28,7 +28,7 @@ pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadPoints(std::string filename) 
     filename.append ("_points.pcd");
 
     pcl::io::loadPCDFile (filename, *output);
-    pcl::console::print_info ("loaded %s and generated (%zu points)\n", filename.c_str (), output->size ());
+    pcl::console::print_info ("loaded %s \n", filename.c_str (), output->size ());
     
     //iterate
     datacnt++;

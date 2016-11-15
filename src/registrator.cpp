@@ -1,8 +1,8 @@
 #include "registrator.hpp"
 
 
-//this file is needed for succesful linking on *unix machines
-#include <pcl/search/impl/search.hpp>
+
+#include <pcl/search/impl/search.hpp> //this header is needed for succesful linking on *unix machines
 
 #include <pcl/registration/icp.h>
 #include <pcl/features/normal_3d.h>
