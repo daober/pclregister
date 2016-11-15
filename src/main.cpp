@@ -82,7 +82,8 @@ int main(int argc, char **argv){
     saver->saveSurfaceNormals(argv[2], tgtFeatures->normals);
     saver->saveLocalDescriptors(argv[2], tgtFeatures->local_descriptors);
 
-
+    //TODO: paramters need to be refined for kinectv1 devices
+    //e.g: if kinectv1 command line registration mode choosen -> use other parameters
     //initial alignment parameters
     double min_sample_dist = 1e-8;
     double max_correspondence_dist = 0.01f;

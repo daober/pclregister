@@ -130,7 +130,7 @@ Registrator::refineAlignment(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr &sourc
     pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>::Ptr
             icp (new pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB>());
 
-
+    //specify icp parameters (needed)
     icp->setMaxCorrespondenceDistance(max_correspondence_distance);
     icp->setRANSACOutlierRejectionThreshold(outlier_rejection_threshold);
     icp->setTransformationEpsilon(transformation_epsilon);
