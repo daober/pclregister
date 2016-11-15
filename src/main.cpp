@@ -54,10 +54,21 @@ int main(int argc, char **argv){
     //create new object for ObjectFeature detection
     boost::shared_ptr<Features::ObjectFeatures>
     tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
+
+    //filter NAN out of clouds
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr fsrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr ftgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+
+
+    fsrcCloud = filter->removeNaNPoints(src_points, "source cloud");
+    ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
     
     //compute features for target and source cloud
-    srcFeatures = feature->computeFeatures(src_points);
-    tgtFeatures = feature->computeFeatures(tgt_points);
+    //srcFeatures = feature->computeFeatures(src_points);
+    //tgtFeatures = feature->computeFeatures(tgt_points);
+
+    srcFeatures = feature->computeFeatures(fsrcCloud);
+    tgtFeatures = feature->computeFeatures(ftgtCloud);
     
     //this block uses the saver-helper class to store the computed interest-points, normals and descriptors for
     //each target and source cloud
@@ -98,16 +109,7 @@ int main(int argc, char **argv){
     int max_iterations = 100;
 
 
-    //filter NAN out of clouds
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
-    fsrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr
-    ftgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-
-
-    fsrcCloud = filter->removeNaNPoints(src_points, "source cloud");
-    ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
 
 
     transform = registrator->refineAlignment (fsrcCloud, ftgtCloud, transform, max_correspondence_distance,
