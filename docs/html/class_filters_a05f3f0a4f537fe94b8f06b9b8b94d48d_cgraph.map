@@ -1,0 +1,5 @@
+<map id="Filters::applyFilters" name="Filters::applyFilters">
+<area shape="rect" id="node2" href="$class_filters.html#afc0f89a25b158ea0c11025f60fbd9afb" title="Filters::thresholdDepth" alt="" coords="198,5,367,32"/>
+<area shape="rect" id="node3" href="$class_filters.html#a0435083e1ecca7c1a3d8883f241c4225" title="Filters::voxelize" alt="" coords="221,56,345,83"/>
+<area shape="rect" id="node4" href="$class_filters.html#aade8ae78e3f5490db23213b8fc63215b" title="Filters::removeOutliers" alt="" coords="197,107,368,133"/>
+</map>

@@ -1,0 +1,97 @@
+\hypertarget{class_saver}{}\section{Saver Class Reference}
+\label{class_saver}\index{Saver@{Saver}}
+
+
+{\ttfamily \#include $<$loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_saver_a9d4eb8f7475a1392995cdb24d5b1df12}{save\+Object\+Features} (std\+::string filename, boost\+::shared\+\_\+ptr$<$ \hyperlink{struct_features_1_1_object_features}{Features\+::\+Object\+Features} $>$ \&obj\+Features)
+\item 
+int \hyperlink{class_saver_a7cb13afc54e63deccb5592a9cafcf023}{save\+Points} (std\+::string filename, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&points)
+\item 
+int \hyperlink{class_saver_ae495a4a2592cd981a4085b35f9645d32}{save\+Surface\+Normals} (std\+::string filename, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&normals)
+\item 
+int \hyperlink{class_saver_a11cd83568c660254febecb5cdbeca9e6}{save\+Keypoints} (std\+::string filename, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&keypoints)
+\item 
+int \hyperlink{class_saver_a40c302f75d3721d2861a8e93685415ce}{save\+Local\+Descriptors} (std\+::string filename, pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \&signature)
+\item 
+int \hyperlink{class_saver_a19a78a945fdc1da9193d46054a6ad80a}{save\+Global\+Descriptors} (std\+::string filename, pcl\+::\+Point\+Cloud$<$ pcl\+::\+V\+F\+H\+Signature308 $>$\+::Ptr \&signature)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+convenient helper class to save the point clouds to disk 
+
+Definition at line 51 of file loader.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_saver_a19a78a945fdc1da9193d46054a6ad80a}{}\label{class_saver_a19a78a945fdc1da9193d46054a6ad80a} 
+\index{Saver@{Saver}!save\+Global\+Descriptors@{save\+Global\+Descriptors}}
+\index{save\+Global\+Descriptors@{save\+Global\+Descriptors}!Saver@{Saver}}
+\subsubsection{\texorpdfstring{save\+Global\+Descriptors()}{saveGlobalDescriptors()}}
+{\footnotesize\ttfamily int Saver\+::save\+Global\+Descriptors (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+V\+F\+H\+Signature308 $>$\+::Ptr \&}]{signature }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file loader.\+cpp.
+
+\hypertarget{class_saver_a11cd83568c660254febecb5cdbeca9e6}{}\label{class_saver_a11cd83568c660254febecb5cdbeca9e6} 
+\index{Saver@{Saver}!save\+Keypoints@{save\+Keypoints}}
+\index{save\+Keypoints@{save\+Keypoints}!Saver@{Saver}}
+\subsubsection{\texorpdfstring{save\+Keypoints()}{saveKeypoints()}}
+{\footnotesize\ttfamily int Saver\+::save\+Keypoints (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{keypoints }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file loader.\+cpp.
+
+\hypertarget{class_saver_a40c302f75d3721d2861a8e93685415ce}{}\label{class_saver_a40c302f75d3721d2861a8e93685415ce} 
+\index{Saver@{Saver}!save\+Local\+Descriptors@{save\+Local\+Descriptors}}
+\index{save\+Local\+Descriptors@{save\+Local\+Descriptors}!Saver@{Saver}}
+\subsubsection{\texorpdfstring{save\+Local\+Descriptors()}{saveLocalDescriptors()}}
+{\footnotesize\ttfamily int Saver\+::save\+Local\+Descriptors (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \&}]{signature }\end{DoxyParamCaption})}
+
+
+
+Definition at line 116 of file loader.\+cpp.
+
+\hypertarget{class_saver_a9d4eb8f7475a1392995cdb24d5b1df12}{}\label{class_saver_a9d4eb8f7475a1392995cdb24d5b1df12} 
+\index{Saver@{Saver}!save\+Object\+Features@{save\+Object\+Features}}
+\index{save\+Object\+Features@{save\+Object\+Features}!Saver@{Saver}}
+\subsubsection{\texorpdfstring{save\+Object\+Features()}{saveObjectFeatures()}}
+{\footnotesize\ttfamily int Saver\+::save\+Object\+Features (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{boost\+::shared\+\_\+ptr$<$ \hyperlink{struct_features_1_1_object_features}{Features\+::\+Object\+Features} $>$ \&}]{obj\+Features }\end{DoxyParamCaption})}
+
+
+
+Definition at line 159 of file loader.\+cpp.
+
+\hypertarget{class_saver_a7cb13afc54e63deccb5592a9cafcf023}{}\label{class_saver_a7cb13afc54e63deccb5592a9cafcf023} 
+\index{Saver@{Saver}!save\+Points@{save\+Points}}
+\index{save\+Points@{save\+Points}!Saver@{Saver}}
+\subsubsection{\texorpdfstring{save\+Points()}{savePoints()}}
+{\footnotesize\ttfamily int Saver\+::save\+Points (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{points }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file loader.\+cpp.
+
+\hypertarget{class_saver_ae495a4a2592cd981a4085b35f9645d32}{}\label{class_saver_ae495a4a2592cd981a4085b35f9645d32} 
+\index{Saver@{Saver}!save\+Surface\+Normals@{save\+Surface\+Normals}}
+\index{save\+Surface\+Normals@{save\+Surface\+Normals}!Saver@{Saver}}
+\subsubsection{\texorpdfstring{save\+Surface\+Normals()}{saveSurfaceNormals()}}
+{\footnotesize\ttfamily int Saver\+::save\+Surface\+Normals (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&}]{normals }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file loader.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{loader_8hpp}{loader.\+hpp}\item 
+src/\hyperlink{loader_8cpp}{loader.\+cpp}\end{DoxyCompactItemize}

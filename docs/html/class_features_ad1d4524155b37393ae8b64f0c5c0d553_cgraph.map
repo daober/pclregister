@@ -1,0 +1,6 @@
+<map id="Features::computeFeatures" name="Features::computeFeatures">
+<area shape="rect" id="node2" href="$class_features.html#a925cf73afb0607d0fe74a47347ec670d" title="Features::estimateSurface\lNormals" alt="" coords="280,5,472,47"/>
+<area shape="rect" id="node3" href="$class_features.html#a5c6f5430e675a9216da80875e700f32e" title="Features::detectKeypoints" alt="" coords="281,71,471,98"/>
+<area shape="rect" id="node4" href="$class_features.html#a9a35a8508f21553be97a868a167ac2de" title="Features::computeLocalDescriptors" alt="" coords="251,122,501,149"/>
+<area shape="rect" id="node5" href="$class_features.html#a6e7efba994adbfa03682e796ed932a99" title="Features::computeGlobalDescriptor" alt="" coords="251,173,501,199"/>
+</map>

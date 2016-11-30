@@ -1,0 +1,51 @@
+\hypertarget{class_registrator}{}\section{Registrator Class Reference}
+\label{class_registrator}\index{Registrator@{Registrator}}
+
+
+{\ttfamily \#include $<$registrator.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix4f \hyperlink{class_registrator_a0430c7ceee244327e61b4c71c0b7c0bd}{compute\+Initial\+Alignment} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&source\+\_\+points, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \&source\+\_\+descriptors, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&target\+\_\+points, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \&target\+\_\+descriptors, float min\+\_\+sample\+\_\+distance, float max\+\_\+correspondence\+\_\+distance, int nr\+\_\+iterations)
+\item 
+Eigen\+::\+Matrix4f \hyperlink{class_registrator_af9074af8efbd597162ccfa45b8970656}{refine\+Alignment} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&source\+\_\+points, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&target\+\_\+points, const Eigen\+::\+Matrix4f \&initial\+\_\+alignment, float max\+\_\+correspondence\+\_\+distance, float outlier\+\_\+rejection\+\_\+threshold, float transformation\+\_\+epsilon, int max\+\_\+iterations)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class computes the initial alignment and refines the alignment using the iterative closest point algorithm 
+
+Definition at line 19 of file registrator.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_registrator_a0430c7ceee244327e61b4c71c0b7c0bd}{}\label{class_registrator_a0430c7ceee244327e61b4c71c0b7c0bd} 
+\index{Registrator@{Registrator}!compute\+Initial\+Alignment@{compute\+Initial\+Alignment}}
+\index{compute\+Initial\+Alignment@{compute\+Initial\+Alignment}!Registrator@{Registrator}}
+\subsubsection{\texorpdfstring{compute\+Initial\+Alignment()}{computeInitialAlignment()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f Registrator\+::compute\+Initial\+Alignment (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{source\+\_\+points,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \&}]{source\+\_\+descriptors,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{target\+\_\+points,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \&}]{target\+\_\+descriptors,  }\item[{float}]{min\+\_\+sample\+\_\+distance,  }\item[{float}]{max\+\_\+correspondence\+\_\+distance,  }\item[{int}]{nr\+\_\+iterations }\end{DoxyParamCaption})}
+
+Use Sample\+Consensus\+Initial\+Alignment to find a rough alignment from the source cloud to the target cloud by finding correspondences between two sets of local features Inputs\+: source\+\_\+points The \char`\"{}source\char`\"{} points, i.\+e., the points that must be transformed to align with the target point cloud source\+\_\+descriptors The local descriptors for each source point target\+\_\+points The \char`\"{}target\char`\"{} points, i.\+e., the points to which the source point cloud will be aligned target\+\_\+descriptors The local descriptors for each target point min\+\_\+sample\+\_\+distance The minimum distance between any two random samples max\+\_\+correspondence\+\_\+distance The nr\+\_\+interations The number of R\+A\+N\+S\+AC iterations to perform Return\+: A transformation matrix that will roughly align the points in source to the points in target 
+
+Definition at line 62 of file registrator.\+cpp.
+
+\hypertarget{class_registrator_af9074af8efbd597162ccfa45b8970656}{}\label{class_registrator_af9074af8efbd597162ccfa45b8970656} 
+\index{Registrator@{Registrator}!refine\+Alignment@{refine\+Alignment}}
+\index{refine\+Alignment@{refine\+Alignment}!Registrator@{Registrator}}
+\subsubsection{\texorpdfstring{refine\+Alignment()}{refineAlignment()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f Registrator\+::refine\+Alignment (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{source\+\_\+points,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{target\+\_\+points,  }\item[{const Eigen\+::\+Matrix4f \&}]{initial\+\_\+alignment,  }\item[{float}]{max\+\_\+correspondence\+\_\+distance,  }\item[{float}]{outlier\+\_\+rejection\+\_\+threshold,  }\item[{float}]{transformation\+\_\+epsilon,  }\item[{int}]{max\+\_\+iterations }\end{DoxyParamCaption})}
+
+Use Iterative\+Closest\+Point to find a precise alignment from the source cloud to the target cloud, starting with an intial guess Inputs\+: source\+\_\+points The \char`\"{}source\char`\"{} points, i.\+e., the points that must be transformed to align with the target point cloud target\+\_\+points The \char`\"{}target\char`\"{} points, i.\+e., the points to which the source point cloud will be aligned intial\+\_\+alignment An initial estimate of the transformation matrix that aligns the source points to the target points max\+\_\+correspondence\+\_\+distance A threshold on the distance between any two corresponding points. Any corresponding points that are further apart than this threshold will be ignored when computing the source-\/to-\/target transformation outlier\+\_\+rejection\+\_\+threshold A threshold used to define outliers during R\+A\+N\+S\+AC outlier rejection transformation\+\_\+epsilon The smallest iterative transformation allowed before the algorithm is considered to have converged max\+\_\+iterations The maximum number of I\+CP iterations to perform Return\+: A transformation matrix that will precisely align the points in source to the points in target
+
+Use Iterative\+Closest\+Point to find a precise alignment from the source cloud to the target cloud, starting with an initial guess Inputs\+: source\+\_\+points The \char`\"{}source\char`\"{} points, i.\+e., the points that must be transformed to align with the target point cloud target\+\_\+points The \char`\"{}target\char`\"{} points, i.\+e., the points to which the source point cloud will be aligned initial\+\_\+alignment An initial estimate of the transformation matrix that aligns the source points to the target points max\+\_\+correspondence\+\_\+distance A threshold on the distance between any two corresponding points. Any corresponding points that are further apart than this threshold will be ignored when computing the source-\/to-\/target transformation outlier\+\_\+rejection\+\_\+threshold A threshold used to define outliers during R\+A\+N\+S\+AC outlier rejection transformation\+\_\+epsilon The smallest iterative transformation allowed before the algorithm is considered to have converged max\+\_\+iterations The maximum number of I\+CP iterations to perform Return\+: A transformation matrix that will precisely align the points in source to the points in target 
+
+Definition at line 117 of file registrator.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{registrator_8hpp}{registrator.\+hpp}\item 
+src/\hyperlink{registrator_8cpp}{registrator.\+cpp}\end{DoxyCompactItemize}

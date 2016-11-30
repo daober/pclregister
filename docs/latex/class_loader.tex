@@ -1,0 +1,109 @@
+\hypertarget{class_loader}{}\section{Loader Class Reference}
+\label{class_loader}\index{Loader@{Loader}}
+
+
+{\ttfamily \#include $<$loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::shared\+\_\+ptr$<$ pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$ $>$ \hyperlink{class_loader_a4a51dc0120d524c010fa2d61c96ffda0}{load\+Point\+Cloud} (std\+::string filename, std\+::string suffix)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_loader_ae74793144de5bbc0148c257b1f83e0eb}{load\+Points} (std\+::string filename)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \hyperlink{class_loader_a13951e27d82737d95c9ad7b67146f433}{load\+Surface\+Normals} (std\+::string filename)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_loader_a8cddb9239ed991e33efab83edd7280f7}{load\+Keypoints} (std\+::string filename)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \hyperlink{class_loader_ac8938fa9e01e40c2ff21574df60b003a}{load\+Local\+Descriptors} (std\+::string filename)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+V\+F\+H\+Signature308 $>$\+::Ptr \hyperlink{class_loader_acb76649e253a06ab8c5a475d3fbc74a3}{load\+Global\+Descriptors} (std\+::string filename)
+\item 
+int \hyperlink{class_loader_ac515e4a910ff4db1e3c1173793bb1bba}{get\+Size} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+convenient helper class to load the point clouds from disk 
+
+Definition at line 14 of file loader.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_loader_ac515e4a910ff4db1e3c1173793bb1bba}{}\label{class_loader_ac515e4a910ff4db1e3c1173793bb1bba} 
+\index{Loader@{Loader}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!Loader@{Loader}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily int Loader\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file loader.\+cpp.
+
+\hypertarget{class_loader_acb76649e253a06ab8c5a475d3fbc74a3}{}\label{class_loader_acb76649e253a06ab8c5a475d3fbc74a3} 
+\index{Loader@{Loader}!load\+Global\+Descriptors@{load\+Global\+Descriptors}}
+\index{load\+Global\+Descriptors@{load\+Global\+Descriptors}!Loader@{Loader}}
+\subsubsection{\texorpdfstring{load\+Global\+Descriptors()}{loadGlobalDescriptors()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+V\+F\+H\+Signature308 $>$\+::Ptr Loader\+::load\+Global\+Descriptors (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file loader.\+cpp.
+
+\hypertarget{class_loader_a8cddb9239ed991e33efab83edd7280f7}{}\label{class_loader_a8cddb9239ed991e33efab83edd7280f7} 
+\index{Loader@{Loader}!load\+Keypoints@{load\+Keypoints}}
+\index{load\+Keypoints@{load\+Keypoints}!Loader@{Loader}}
+\subsubsection{\texorpdfstring{load\+Keypoints()}{loadKeypoints()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Loader\+::load\+Keypoints (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line 82 of file loader.\+cpp.
+
+\hypertarget{class_loader_ac8938fa9e01e40c2ff21574df60b003a}{}\label{class_loader_ac8938fa9e01e40c2ff21574df60b003a} 
+\index{Loader@{Loader}!load\+Local\+Descriptors@{load\+Local\+Descriptors}}
+\index{load\+Local\+Descriptors@{load\+Local\+Descriptors}!Loader@{Loader}}
+\subsubsection{\texorpdfstring{load\+Local\+Descriptors()}{loadLocalDescriptors()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr Loader\+::load\+Local\+Descriptors (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file loader.\+cpp.
+
+\hypertarget{class_loader_a4a51dc0120d524c010fa2d61c96ffda0}{}\label{class_loader_a4a51dc0120d524c010fa2d61c96ffda0} 
+\index{Loader@{Loader}!load\+Point\+Cloud@{load\+Point\+Cloud}}
+\index{load\+Point\+Cloud@{load\+Point\+Cloud}!Loader@{Loader}}
+\subsubsection{\texorpdfstring{load\+Point\+Cloud()}{loadPointCloud()}}
+{\footnotesize\ttfamily boost\+::shared\+\_\+ptr$<$ pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$ $>$ Loader\+::load\+Point\+Cloud (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{suffix }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file loader.\+cpp.
+
+\hypertarget{class_loader_ae74793144de5bbc0148c257b1f83e0eb}{}\label{class_loader_ae74793144de5bbc0148c257b1f83e0eb} 
+\index{Loader@{Loader}!load\+Points@{load\+Points}}
+\index{load\+Points@{load\+Points}!Loader@{Loader}}
+\subsubsection{\texorpdfstring{load\+Points()}{loadPoints()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Loader\+::load\+Points (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file loader.\+cpp.
+
+\hypertarget{class_loader_a13951e27d82737d95c9ad7b67146f433}{}\label{class_loader_a13951e27d82737d95c9ad7b67146f433} 
+\index{Loader@{Loader}!load\+Surface\+Normals@{load\+Surface\+Normals}}
+\index{load\+Surface\+Normals@{load\+Surface\+Normals}!Loader@{Loader}}
+\subsubsection{\texorpdfstring{load\+Surface\+Normals()}{loadSurfaceNormals()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr Loader\+::load\+Surface\+Normals (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file loader.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{loader_8hpp}{loader.\+hpp}\item 
+src/\hyperlink{loader_8cpp}{loader.\+cpp}\end{DoxyCompactItemize}

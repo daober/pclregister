@@ -1,0 +1,130 @@
+\hypertarget{class_features}{}\section{Features Class Reference}
+\label{class_features}\index{Features@{Features}}
+
+
+{\ttfamily \#include $<$features.\+hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_features_1_1_object_features}{Object\+Features}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \hyperlink{class_features_a925cf73afb0607d0fe74a47347ec670d}{estimate\+Surface\+Normals} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&input\+Cloud, float radius)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_features_a5c6f5430e675a9216da80875e700f32e}{detect\+Keypoints} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&points, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&normals, float min\+\_\+scale, int nr\+\_\+octaves, int nr\+\_\+scales\+\_\+per\+\_\+octave, float min\+\_\+contrast)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr \hyperlink{class_features_a9a35a8508f21553be97a868a167ac2de}{compute\+Local\+Descriptors} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&points, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&normals, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&keypoints, float feature\+\_\+radius)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+V\+F\+H\+Signature308 $>$\+::Ptr \hyperlink{class_features_a6e7efba994adbfa03682e796ed932a99}{compute\+Global\+Descriptor} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&points, const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&normals)
+\item 
+boost\+::shared\+\_\+ptr$<$ \hyperlink{struct_features_1_1_object_features}{Features\+::\+Object\+Features} $>$ \hyperlink{class_features_ad1d4524155b37393ae8b64f0c5c0d553}{compute\+Features} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&input)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used solely for feature detection of various point clouds (e.\+g. interest points) 
+
+Definition at line 11 of file features.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_features_ad1d4524155b37393ae8b64f0c5c0d553}{}\label{class_features_ad1d4524155b37393ae8b64f0c5c0d553} 
+\index{Features@{Features}!compute\+Features@{compute\+Features}}
+\index{compute\+Features@{compute\+Features}!Features@{Features}}
+\subsubsection{\texorpdfstring{compute\+Features()}{computeFeatures()}}
+{\footnotesize\ttfamily boost\+::shared\+\_\+ptr$<$ \hyperlink{struct_features_1_1_object_features}{Features\+::\+Object\+Features} $>$ Features\+::compute\+Features (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{input }\end{DoxyParamCaption})}
+
+Estimate normals, detect keypoints, and compute local and global descriptors Return\+: An \hyperlink{struct_features_1_1_object_features}{Object\+Features} struct containing all the features 
+
+Definition at line 133 of file features.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_features_ad1d4524155b37393ae8b64f0c5c0d553_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_features_a6e7efba994adbfa03682e796ed932a99}{}\label{class_features_a6e7efba994adbfa03682e796ed932a99} 
+\index{Features@{Features}!compute\+Global\+Descriptor@{compute\+Global\+Descriptor}}
+\index{compute\+Global\+Descriptor@{compute\+Global\+Descriptor}!Features@{Features}}
+\subsubsection{\texorpdfstring{compute\+Global\+Descriptor()}{computeGlobalDescriptor()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+V\+F\+H\+Signature308 $>$\+::Ptr Features\+::compute\+Global\+Descriptor (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{points,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&}]{normals }\end{DoxyParamCaption})}
+
+Use V\+F\+H\+Estimation to compute a single global descriptor for the entire input cloud Inputs\+: points The input point cloud normals The input surface normals Return\+: A pointer to a Global\+Descriptors point cloud (a cloud containing a single Global\+DescriptorT point) 
+
+Definition at line 108 of file features.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_features_a6e7efba994adbfa03682e796ed932a99_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_features_a9a35a8508f21553be97a868a167ac2de}{}\label{class_features_a9a35a8508f21553be97a868a167ac2de} 
+\index{Features@{Features}!compute\+Local\+Descriptors@{compute\+Local\+Descriptors}}
+\index{compute\+Local\+Descriptors@{compute\+Local\+Descriptors}!Features@{Features}}
+\subsubsection{\texorpdfstring{compute\+Local\+Descriptors()}{computeLocalDescriptors()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+F\+P\+F\+H\+Signature33 $>$\+::Ptr Features\+::compute\+Local\+Descriptors (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{points,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&}]{normals,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{keypoints,  }\item[{float}]{feature\+\_\+radius }\end{DoxyParamCaption})}
+
+Use F\+P\+F\+H\+Estimation to compute local feature descriptors around each keypoint Inputs\+: points The input point cloud normals The input surface normals keypoints A cloud of keypoints specifying the positions at which the descriptors should be computed feature\+\_\+radius The size of the neighborhood from which the local descriptors will be computed Return\+: A pointer to a Local\+Descriptors (a cloud of Local\+DescriptorT points) 
+
+Definition at line 77 of file features.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_features_a9a35a8508f21553be97a868a167ac2de_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_features_a5c6f5430e675a9216da80875e700f32e}{}\label{class_features_a5c6f5430e675a9216da80875e700f32e} 
+\index{Features@{Features}!detect\+Keypoints@{detect\+Keypoints}}
+\index{detect\+Keypoints@{detect\+Keypoints}!Features@{Features}}
+\subsubsection{\texorpdfstring{detect\+Keypoints()}{detectKeypoints()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Features\+::detect\+Keypoints (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{points,  }\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr \&}]{normals,  }\item[{float}]{min\+\_\+scale,  }\item[{int}]{nr\+\_\+octaves,  }\item[{int}]{nr\+\_\+scales\+\_\+per\+\_\+octave,  }\item[{float}]{min\+\_\+contrast }\end{DoxyParamCaption})}
+
+Use S\+I\+F\+T\+Keypoint to detect a set of keypoints Inputs\+: points The input point cloud normals The input surface normals min\+\_\+scale The smallest scale in the difference-\/of-\/\+Gaussians (DoG) scale-\/space nr\+\_\+octaves The number of times the scale doubles in the DoG scale-\/space nr\+\_\+scales\+\_\+per\+\_\+octave The number of scales computed for each doubling min\+\_\+contrast The minimum local contrast that must be present for a keypoint to be detected Return\+: A pointer to a point cloud of keypoints 
+
+Definition at line 45 of file features.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_features_a5c6f5430e675a9216da80875e700f32e_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_features_a925cf73afb0607d0fe74a47347ec670d}{}\label{class_features_a925cf73afb0607d0fe74a47347ec670d} 
+\index{Features@{Features}!estimate\+Surface\+Normals@{estimate\+Surface\+Normals}}
+\index{estimate\+Surface\+Normals@{estimate\+Surface\+Normals}!Features@{Features}}
+\subsubsection{\texorpdfstring{estimate\+Surface\+Normals()}{estimateSurfaceNormals()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr Features\+::estimate\+Surface\+Normals (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{input\+Cloud,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+Use Normal\+Estimation to estimate a cloud\textquotesingle{}s surface normals Inputs\+: input The input point cloud radius The size of the local neighborhood used to estimate the surface Return\+: A pointer to a Surface\+Normals point cloud 
+
+Definition at line 17 of file features.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_features_a925cf73afb0607d0fe74a47347ec670d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{features_8hpp}{features.\+hpp}\item 
+src/\hyperlink{features_8cpp}{features.\+cpp}\end{DoxyCompactItemize}

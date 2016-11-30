@@ -48,12 +48,8 @@ int main(int argc, char **argv){
     //pcl::PointCloud<pcl::PointXYZRGB>::Ptr tgt_filterpoints = filter->applyFilters(tgt_points, 0.05, 3, 0.04, 0.02, 30);
 
     //create new object for ObjectFeature detection
-    boost::shared_ptr<Features::ObjectFeatures>
-    srcFeatures = boost::make_shared<Features::ObjectFeatures>();
-
-    //create new object for ObjectFeature detection
-    boost::shared_ptr<Features::ObjectFeatures>
-    tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
+    boost::shared_ptr<Features::ObjectFeatures> srcFeatures = boost::make_shared<Features::ObjectFeatures>();
+    boost::shared_ptr<Features::ObjectFeatures> tgtFeatures = boost::make_shared<Features::ObjectFeatures>();
 
     //filter NAN out of clouds
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr fsrcCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
@@ -111,11 +107,8 @@ int main(int argc, char **argv){
 
 
 
-
-
     transform = registrator->refineAlignment (fsrcCloud, ftgtCloud, transform, max_correspondence_distance,
                                               outlier_rejection_threshold, transformation_epsilon, max_iterations);
-
     pcl::console::print_info ("refined alignment!\n");
 
     // transform the source point to align them with the target points

@@ -1,0 +1,129 @@
+\hypertarget{class_filters}{}\section{Filters Class Reference}
+\label{class_filters}\index{Filters@{Filters}}
+
+
+{\ttfamily \#include $<$filters.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_filters_afc0f89a25b158ea0c11025f60fbd9afb}{threshold\+Depth} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&input, float min\+\_\+depth, float max\+\_\+depth)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_filters_a0435083e1ecca7c1a3d8883f241c4225}{voxelize} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&input, float leaf\+\_\+size)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_filters_aade8ae78e3f5490db23213b8fc63215b}{remove\+Outliers} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&input, float radius, int min\+\_\+neighbors)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_filters_a05f3f0a4f537fe94b8f06b9b8b94d48d}{apply\+Filters} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&input, float min\+\_\+depth, float max\+\_\+depth, float leaf\+\_\+size, float radius, float min\+\_\+neighbors)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \hyperlink{class_filters_a478cc3062b2a6fff3c2430cb10c86aba}{remove\+Na\+N\+Points} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&input\+Cloud, const std\+::string filename)
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{class_filters_a67a7521cd9568277a9285f214e282a7f}{remove\+Na\+N\+Normals} (const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \&input\+Normal, const std\+::string filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class includes various methods for filtering the point cloud such as reducing number of points in cloud (voxelgrid...) 
+
+Definition at line 11 of file filters.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_filters_a05f3f0a4f537fe94b8f06b9b8b94d48d}{}\label{class_filters_a05f3f0a4f537fe94b8f06b9b8b94d48d} 
+\index{Filters@{Filters}!apply\+Filters@{apply\+Filters}}
+\index{apply\+Filters@{apply\+Filters}!Filters@{Filters}}
+\subsubsection{\texorpdfstring{apply\+Filters()}{applyFilters()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Filters\+::apply\+Filters (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{input,  }\item[{float}]{min\+\_\+depth,  }\item[{float}]{max\+\_\+depth,  }\item[{float}]{leaf\+\_\+size,  }\item[{float}]{radius,  }\item[{float}]{min\+\_\+neighbors }\end{DoxyParamCaption})}
+
+Apply a series of filters (threshold depth, downsample, and remove outliers) 
+
+Definition at line 73 of file filters.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_filters_a05f3f0a4f537fe94b8f06b9b8b94d48d_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_filters_a67a7521cd9568277a9285f214e282a7f}{}\label{class_filters_a67a7521cd9568277a9285f214e282a7f} 
+\index{Filters@{Filters}!remove\+Na\+N\+Normals@{remove\+Na\+N\+Normals}}
+\index{remove\+Na\+N\+Normals@{remove\+Na\+N\+Normals}!Filters@{Filters}}
+\subsubsection{\texorpdfstring{remove\+Na\+N\+Normals()}{removeNaNNormals()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr Filters\+::remove\+Na\+N\+Normals (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \&}]{input\+Normal,  }\item[{const std\+::string}]{filename }\end{DoxyParamCaption})}
+
+remove all NaN values from Normals 
+
+Definition at line 121 of file filters.\+cpp.
+
+\hypertarget{class_filters_a478cc3062b2a6fff3c2430cb10c86aba}{}\label{class_filters_a478cc3062b2a6fff3c2430cb10c86aba} 
+\index{Filters@{Filters}!remove\+Na\+N\+Points@{remove\+Na\+N\+Points}}
+\index{remove\+Na\+N\+Points@{remove\+Na\+N\+Points}!Filters@{Filters}}
+\subsubsection{\texorpdfstring{remove\+Na\+N\+Points()}{removeNaNPoints()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Filters\+::remove\+Na\+N\+Points (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{input\+Cloud,  }\item[{const std\+::string}]{filename }\end{DoxyParamCaption})}
+
+remove all NaN point cloud values 
+
+Definition at line 89 of file filters.\+cpp.
+
+\hypertarget{class_filters_aade8ae78e3f5490db23213b8fc63215b}{}\label{class_filters_aade8ae78e3f5490db23213b8fc63215b} 
+\index{Filters@{Filters}!remove\+Outliers@{remove\+Outliers}}
+\index{remove\+Outliers@{remove\+Outliers}!Filters@{Filters}}
+\subsubsection{\texorpdfstring{remove\+Outliers()}{removeOutliers()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Filters\+::remove\+Outliers (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{input,  }\item[{float}]{radius,  }\item[{int}]{min\+\_\+neighbors }\end{DoxyParamCaption})}
+
+Use a Radius\+Outlier\+Removal filter to remove all points with too few local neighbors 
+
+Definition at line 55 of file filters.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_filters_aade8ae78e3f5490db23213b8fc63215b_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_filters_afc0f89a25b158ea0c11025f60fbd9afb}{}\label{class_filters_afc0f89a25b158ea0c11025f60fbd9afb} 
+\index{Filters@{Filters}!threshold\+Depth@{threshold\+Depth}}
+\index{threshold\+Depth@{threshold\+Depth}!Filters@{Filters}}
+\subsubsection{\texorpdfstring{threshold\+Depth()}{thresholdDepth()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Filters\+::threshold\+Depth (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{input,  }\item[{float}]{min\+\_\+depth,  }\item[{float}]{max\+\_\+depth }\end{DoxyParamCaption})}
+
+Use a Pass\+Through filter to remove points with depth values that are too large or too small 
+
+Definition at line 16 of file filters.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_filters_afc0f89a25b158ea0c11025f60fbd9afb_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_filters_a0435083e1ecca7c1a3d8883f241c4225}{}\label{class_filters_a0435083e1ecca7c1a3d8883f241c4225} 
+\index{Filters@{Filters}!voxelize@{voxelize}}
+\index{voxelize@{voxelize}!Filters@{Filters}}
+\subsubsection{\texorpdfstring{voxelize()}{voxelize()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr Filters\+::voxelize (\begin{DoxyParamCaption}\item[{const pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr \&}]{input,  }\item[{float}]{leaf\+\_\+size }\end{DoxyParamCaption})}
+
+Use a Voxel\+Grid filter to reduce the number of points 
+
+Definition at line 38 of file filters.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_filters_a0435083e1ecca7c1a3d8883f241c4225_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{filters_8hpp}{filters.\+hpp}\item 
+src/\hyperlink{filters_8cpp}{filters.\+cpp}\end{DoxyCompactItemize}
