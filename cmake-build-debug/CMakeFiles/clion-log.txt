@@ -1,0 +1,202 @@
+/home/dan/Clion/clion-2016.3.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dan/src/pclregister
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:16 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:16 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:16 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:16 (find_package)
+
+
+-- Boost version: 1.62.0
+-- Found the following Boost libraries:
+--   system
+--   thread
+--   regex
+--   program_options
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:124 (find_package)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:638 (find_boost)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:851 (find_external_library)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:124 (find_package)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:638 (find_boost)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:851 (find_external_library)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:124 (find_package)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:638 (find_boost)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:851 (find_external_library)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:124 (find_package)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:638 (find_boost)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:851 (find_external_library)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:124 (find_package)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:638 (find_boost)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:851 (find_external_library)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:124 (find_package)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:638 (find_boost)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:851 (find_external_library)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 106200
+Call Stack (most recent call first):
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /home/dan/Clion/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:124 (find_package)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:638 (find_boost)
+  /usr/local/share/pcl-1.8/PCLConfig.cmake:851 (find_external_library)
+  CMakeLists.txt:18 (find_package)
+
+
+-- Boost version: 1.62.0
+-- Found the following Boost libraries:
+--   system
+--   filesystem
+--   thread
+--   date_time
+--   iostreams
+--   serialization
+--   chrono
+-- Checking for module 'libopenni'
+--   No package 'libopenni' found
+-- Could NOT find ensenso (missing:  ENSENSO_LIBRARY ENSENSO_INCLUDE_DIR) 
+** WARNING ** io features related to ensenso will be disabled
+-- Could NOT find DAVIDSDK (missing:  DAVIDSDK_LIBRARY DAVIDSDK_INCLUDE_DIR) 
+** WARNING ** io features related to davidSDK will be disabled
+-- Could NOT find DSSDK (missing:  _DSSDK_LIBRARIES) 
+** WARNING ** io features related to dssdk will be disabled
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+** WARNING ** io features related to libusb-1.0 will be disabled
+-- Checking for module 'flann'
+--   No package 'flann' found
+-- Checking for module 'flann'
+--   No package 'flann' found
+-- Checking for module 'libopenni'
+--   No package 'libopenni' found
+-- Could NOT find ensenso (missing:  ENSENSO_LIBRARY ENSENSO_INCLUDE_DIR) 
+** WARNING ** visualization features related to ensenso will be disabled
+-- Could NOT find DAVIDSDK (missing:  DAVIDSDK_LIBRARY DAVIDSDK_INCLUDE_DIR) 
+** WARNING ** visualization features related to davidSDK will be disabled
+-- Could NOT find DSSDK (missing:  _DSSDK_LIBRARIES) 
+** WARNING ** visualization features related to dssdk will be disabled
+-- Could NOT find RSSDK (missing:  _RSSDK_LIBRARIES) 
+** WARNING ** visualization features related to rssdk will be disabled
+-- Checking for module 'libopenni'
+--   No package 'libopenni' found
+-- Found Glew: /usr/lib64/libGLEW.so
+-- looking for PCL_COMMON
+-- looking for PCL_OCTREE
+-- looking for PCL_IO
+-- looking for PCL_KDTREE
+-- looking for PCL_SEARCH
+-- looking for PCL_SAMPLE_CONSENSUS
+-- looking for PCL_FILTERS
+-- looking for PCL_2D
+-- looking for PCL_GEOMETRY
+-- looking for PCL_FEATURES
+-- looking for PCL_ML
+-- looking for PCL_SEGMENTATION
+-- looking for PCL_VISUALIZATION
+-- looking for PCL_SURFACE
+-- looking for PCL_REGISTRATION
+-- looking for PCL_KEYPOINTS
+-- looking for PCL_TRACKING
+-- looking for PCL_RECOGNITION
+-- looking for PCL_STEREO
+-- looking for PCL_APPS
+-- looking for PCL_OUTOFCORE
+-- looking for PCL_PEOPLE
+-- looking for PCL_SIMULATION
+-- Boost version: 1.62.0
+-- Configuring done
+CMake Warning at CMakeLists.txt:37 (add_executable):
+  Cannot generate a safe linker search path for target register because files
+  in some directories may conflict with libraries in implicit directories:
+
+    link library [libboost_system.so] in /usr/lib64 may be hidden by files in:
+      /usr/local/lib
+    link library [libboost_filesystem.so] in /usr/lib64 may be hidden by files in:
+      /usr/local/lib
+    link library [libboost_thread.so] in /usr/lib64 may be hidden by files in:
+      /usr/local/lib
+    link library [libboost_date_time.so] in /usr/lib64 may be hidden by files in:
+      /usr/local/lib
+    link library [libboost_iostreams.so] in /usr/lib64 may be hidden by files in:
+      /usr/local/lib
+    link library [libboost_serialization.so] in /usr/lib64 may be hidden by files in:
+      /usr/local/lib
+    link library [libboost_chrono.so] in /usr/lib64 may be hidden by files in:
+      /usr/local/lib
+
+  Some of these libraries may not be found correctly.
+
+
+-- Generating done
+-- Build files have been written to: /home/dan/src/pclregister/cmake-build-debug

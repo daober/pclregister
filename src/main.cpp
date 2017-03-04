@@ -56,15 +56,15 @@ int main(int argc, char **argv){
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr ftgtCloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
 
-    fsrcCloud = filter->removeNaNPoints(src_points, "source cloud");
-    ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
+    //fsrcCloud = filter->removeNaNPoints(src_points, "source cloud");
+    //ftgtCloud = filter->removeNaNPoints(tgt_points, "target cloud");
     
     //compute features for target and source cloud
-    //srcFeatures = feature->computeFeatures(src_points);
-    //tgtFeatures = feature->computeFeatures(tgt_points);
+    srcFeatures = feature->computeFeatures(src_points);
+    tgtFeatures = feature->computeFeatures(tgt_points);
 
-    srcFeatures = feature->computeFeatures(fsrcCloud);
-    tgtFeatures = feature->computeFeatures(ftgtCloud);
+    //srcFeatures = feature->computeFeatures(fsrcCloud);
+    //tgtFeatures = feature->computeFeatures(ftgtCloud);
     
     //this block uses the saver-helper class to store the computed interest-points, normals and descriptors for
     //each target and source cloud
@@ -78,7 +78,7 @@ int main(int argc, char **argv){
     saver->saveSurfaceNormals(argv[2], tgtFeatures->normals);
     saver->saveLocalDescriptors(argv[2], tgtFeatures->local_descriptors);
 
-    //TODO: paramters need to be refined for kinectv1 devices
+    //TODO: parameters need to be refined for kinectv1 devices
     //e.g: if kinectv1 command line registration mode choosen -> use other parameters
     //initial alignment parameters
     double min_sample_dist = 1e-8;

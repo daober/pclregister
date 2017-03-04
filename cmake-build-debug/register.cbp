@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="register"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\pcl-1.8\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\eigen3\;CMake Files\..\..\..\..\usr\share\eigen3\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/dan/src/pclregister/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/dan/src/pclregister/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/dan/src/pclregister/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="register">
+				<Option output="/home/dan/src/pclregister/cmake-build-debug/register" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dan/src/pclregister/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"/>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)"/>
+					<Add option="-DEIGEN_USE_NEW_STDVECTOR"/>
+					<Add option="-DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET"/>
+					<Add option="-DDISABLE_ENSENSO"/>
+					<Add option="-DDISABLE_DAVIDSDK"/>
+					<Add option="-DDISABLE_DSSDK"/>
+					<Add option="-DDISABLE_PCAP"/>
+					<Add option="-DDISABLE_PNG"/>
+					<Add option="-DDISABLE_LIBUSB_1_0"/>
+					<Add option="-DFLANN_STATIC"/>
+					<Add option="-DDISABLE_RSSDK"/>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/local/include/vtk-7.0"/>
+					<Add directory="/home/dan/src/pclregister/include"/>
+					<Add directory="/usr/local/include/pcl-1.8"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/ni"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/../../../../include/c++/6.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/../../../../include/c++/6.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/../../../../include/c++/6.2.1/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 register"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="register/fast">
+				<Option output="/home/dan/src/pclregister/cmake-build-debug/register" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dan/src/pclregister/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"/>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)"/>
+					<Add option="-DEIGEN_USE_NEW_STDVECTOR"/>
+					<Add option="-DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET"/>
+					<Add option="-DDISABLE_ENSENSO"/>
+					<Add option="-DDISABLE_DAVIDSDK"/>
+					<Add option="-DDISABLE_DSSDK"/>
+					<Add option="-DDISABLE_PCAP"/>
+					<Add option="-DDISABLE_PNG"/>
+					<Add option="-DDISABLE_LIBUSB_1_0"/>
+					<Add option="-DFLANN_STATIC"/>
+					<Add option="-DDISABLE_RSSDK"/>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/local/include/vtk-7.0"/>
+					<Add directory="/home/dan/src/pclregister/include"/>
+					<Add directory="/usr/local/include/pcl-1.8"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/ni"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/../../../../include/c++/6.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/../../../../include/c++/6.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/6.2.1/../../../../include/c++/6.2.1/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 register/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/src/pclregister/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/dan/src/pclregister/include/features.hpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/include/filters.hpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/include/loader.hpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/include/registrator.hpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/src/features.cpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/src/filters.cpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/src/loader.cpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/src/main.cpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/src/registrator.cpp">
+			<Option target="register"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/share/pcl-1.8/PCLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.8\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/share/pcl-1.8/PCLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.8\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKTargets-debug.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkChartsCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonColor.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonDataModel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonMath.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtksys.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonMisc.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonSystem.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonTransforms.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkInfovisCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersExtraction.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonExecutionModel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersGeneral.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkCommonComputationalGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersStatistics.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingFourier.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkalglib.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingContext2D.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersSources.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingFreeType.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkfreetype.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkzlib.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkDICOMParser.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkDomainsChemistry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOXML.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOXMLParser.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkexpat.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkDomainsChemistryOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingHybrid.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOImage.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkMetaIO.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkjpeg.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkpng.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtktiff.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkUtilitiesEncodeString.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkglew.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersAMR.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkParallelCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOLegacy.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkUtilitiesHashSource.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersFlowPaths.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersGeneric.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersHybrid.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingSources.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersHyperTree.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersImaging.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingGeneral.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersModeling.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersParallel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersParallelImaging.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersProgrammable.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersSMP.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersSelection.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersTexture.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkFiltersVerdict.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkverdict.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkGUISupportQt.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkInteractionStyle.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkGUISupportQtSQL.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOSQL.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtksqlite.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkGeovisCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkInfovisLayout.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkInteractionWidgets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingAnnotation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingColor.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingVolume.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkViewsCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtklibproj4.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOAMR.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkhdf5.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOEnSight.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOExodus.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkexodusII.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtknetcdf.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOExport.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingLabel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOImport.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOInfovis.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtklibxml2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOLSDyna.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOMINC.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOMovie.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkoggtheora.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIONetCDF.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOPLY.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOParallel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkjsoncpp.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOParallelXML.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkIOVideo.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingMath.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingMorphological.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingStatistics.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkImagingStencil.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkInteractionImage.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingContextOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingImage.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingLOD.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingQt.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingTk.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkTclTk.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkRenderingVolumeOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkViewsContext2D.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkViewsInfovis.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/local/lib/cmake/vtk-7.0/Modules/vtkViewsQt.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-7.0\Modules\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/share/eigen3/cmake/Eigen3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/share/eigen3/cmake/Eigen3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/dan/src/pclregister/../../../../usr/share/eigen3/cmake/Eigen3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\eigen3\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
