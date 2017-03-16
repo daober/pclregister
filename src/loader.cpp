@@ -4,6 +4,8 @@
 #include <pcl/io/pcd_io.h>
 #include <boost/make_shared.hpp>
 
+
+
 boost::shared_ptr<pcl::PointCloud<pcl::PointXYZRGB> >
 Loader::loadPointCloud(std::string filename, std::string suffix) {
 
@@ -21,11 +23,14 @@ Loader::loadPointCloud(std::string filename, std::string suffix) {
 
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr Loader::loadPoints(std::string filename) {
 
+    //create empty point cloud
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr
             output = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
 
-
     filename.append ("_points.pcd");
+
+    //create new *_points.pcd file if not already on filesystem
+    //pcl::io::savePCDFile(filename, *output);
 
     pcl::io::loadPCDFile (filename, *output);
     pcl::console::print_info ("loaded %s \n", filename.c_str (), output->size ());

@@ -24,7 +24,7 @@ int main(int argc, char **argv){
 
     /*checks if command line program is used correctly*/
     if(argc < 3){
-        PCL_ERROR ("Syntax is: %s <source> <target> [*] (without file ending .pcd!)", argv[0]);
+        PCL_ERROR ("Syntax is: %s <source> <target> ", argv[0]);
         return (-1);
     }
 
@@ -35,6 +35,7 @@ int main(int argc, char **argv){
     boost::shared_ptr<Loader> loader = boost::make_shared<Loader>();
     boost::shared_ptr<Saver> saver = boost::make_shared<Saver>();
     boost::shared_ptr<Features> feature = boost::make_shared<Features>();
+
 
     //load pointcloud source & pointcloud target
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr src_points = loader->loadPoints (argv[1]);

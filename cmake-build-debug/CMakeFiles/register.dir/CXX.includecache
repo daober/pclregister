@@ -91,6 +91,8 @@ pcl/console/print.h
 -
 pcl/io/pcd_io.h
 -
+boost/make_shared.hpp
+-
 
 /home/dan/src/pclregister/src/main.cpp
 registrator.hpp

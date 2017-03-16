@@ -4378,6 +4378,7 @@ CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/lexical_cast/
 CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/lexical_cast/detail/widest_char.hpp
 CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/lexical_cast/try_lexical_convert.hpp
 CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/limits.hpp
+CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/make_shared.hpp
 CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/math/common_factor_ct.hpp
 CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/math/policies/policy.hpp
 CMakeFiles/register.dir/src/loader.cpp.o: /usr/local/include/boost/math/special_functions/detail/fp_traits.hpp
