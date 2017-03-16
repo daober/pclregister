@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
-project(register C CXX)
+project(pclregister C CXX)
 
 set(CMAKE_BUILD_TYPE Debug)
 
@@ -33,5 +33,5 @@ include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
 #headers are in include directory
 set(SOURCES src/main.cpp src/registrator.cpp src/features.cpp src/loader.cpp src/filters.cpp)
 
-add_executable(register ${SOURCES} include/registrator.hpp include/features.hpp include/loader.hpp include/filters.hpp)
-target_link_libraries (register ${PCL_LIBRARIES} ${Boost_LIBRARIES} )
+add_executable(pclregister ${SOURCES} include/registrator.hpp include/features.hpp include/loader.hpp include/filters.hpp)
+target_link_libraries (pclregister ${PCL_LIBRARIES} ${Boost_LIBRARIES} )
